@@ -1,0 +1,115 @@
+# K-DART-QA pipeline configuration
+# All paths are relative to the project root unless otherwise noted.
+
+project:
+  name: kdart_qa
+  version: 0.1.0
+
+paths:
+  raw: data/raw
+  sections: data/sections
+  chunks: data/chunks
+  index: data/index
+  drafts: data/drafts
+  reviewed: data/reviewed
+  calibration: data/calibration
+  final: data/final
+  logs: logs
+
+# DART OpenAPI settings
+dart:
+  base_url: https://opendart.fss.or.kr/api
+  # Companies to collect. Stable list per project spec.
+  companies:
+    - {name: 삼성전자,        corp_code: "00126380", stock: "005930", sector: 제조}
+    - {name: LG전자,          corp_code: "00401731", stock: "066570", sector: 제조}
+    - {name: 현대자동차,      corp_code: "00164742", stock: "005380", sector: 제조}
+    - {name: POSCO홀딩스,     corp_code: "00434003", stock: "005490", sector: 제조}
+    - {name: 신한지주,        corp_code: "00382199", stock: "055550", sector: 금융}
+    - {name: KB금융,          corp_code: "00688996", stock: "105560", sector: 금융}
+    - {name: NAVER,           corp_code: "00266961", stock: "035420", sector: IT}
+    - {name: 카카오,          corp_code: "00258801", stock: "035720", sector: IT}
+    - {name: 신세계,          corp_code: "00126186", stock: "004170", sector: 서비스}
+    - {name: CJ대한통운,      corp_code: "00159219", stock: "000120", sector: 서비스}
+  years: [2022, 2023, 2024]
+  # 11011 = 사업보고서, 11012 = 반기보고서, 11013 = 분기보고서
+  # Try business report first; fall back to quarterly if missing.
+  report_codes_preferred: ["11011", "11013"]
+  # Polite client: stay well under DART's per-minute limit (~1000/min).
+  rate_limit_per_minute: 200
+  request_timeout_seconds: 30
+  max_retries: 5
+
+# Target sections to extract
+sections:
+  # Each entry: id (used in filenames), keyword patterns to match section titles.
+  - id: 사업의내용_5_매출
+    parent_patterns: ["사업의 내용", "사업의 내용"]
+    title_patterns: ["매출 및 수주", "매출및수주", "매출 현황", "주요 제품 및 서비스"]
+  - id: 재무_1_요약
+    parent_patterns: ["재무에 관한 사항", "재무에관한사항"]
+    title_patterns: ["요약재무정보", "요약 재무정보"]
+  - id: 재무_2_연결재무
+    parent_patterns: ["재무에 관한 사항", "재무에관한사항"]
+    title_patterns: ["연결재무제표", "재무제표"]
+  - id: 사업의내용_7_연구개발
+    parent_patterns: ["사업의 내용"]
+    title_patterns: ["주요계약 및 연구개발", "연구개발활동"]
+
+# Chunker settings
+chunker:
+  tokenizer: cl100k_base
+  chunk_tokens: 512
+  overlap_tokens: 50
+  # If a table by itself exceeds chunk_tokens, allow it to live in one oversize chunk.
+  preserve_tables: true
+
+# Embeddings + RAG index
+rag:
+  provider: openai
+  model: text-embedding-3-small
+  embedding_dim: 1536
+  collection_name: kdart_chunks
+  top_k: 5
+  embedding_batch_size: 100
+  cost_per_1m_tokens_usd: 0.02  # OpenAI text-embedding-3-small pricing (Jan 2026)
+
+# Question generation (Phase 2)
+generation:
+  # Question type distribution (must total 40)
+  distribution:
+    T1: 5
+    T2: 10
+    T3: 10
+    T4: 10
+    T5: 5
+  # Cap per (company, year) to keep distribution diverse
+  max_per_company_year: 5
+  # Self-verification retries
+  max_regenerate_attempts: 3
+  # Anthropic model used for question drafting
+  drafter_model: claude-opus-4-7
+  drafter_max_tokens: 4096
+  draft_filename: kdart_qa_draft_v1.json
+
+# Review CLI (Phase 2.5)
+review:
+  reviewed_filename: kdart_qa_reviewed_v1.json
+  changes_log: changes.log
+  autosave: true
+
+# Calibration (Phase 3)
+calibration:
+  llm_model: gemini-2.5-flash
+  attempts_per_question: 3
+  numeric_relative_tolerance: 0.01   # 1% relative error allowed for numeric answers
+  results_filename: results.json
+  # Rough Gemini Flash pricing (Jan 2026) used only for cost estimate display.
+  cost_per_1m_input_tokens_usd: 0.30
+  cost_per_1m_output_tokens_usd: 2.50
+
+# Final export
+export:
+  jsonl_filename: kdart_qa.jsonl
+  parquet_filename: kdart_qa.parquet
+  stats_filename: statistics.md

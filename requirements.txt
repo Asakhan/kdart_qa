@@ -1,0 +1,35 @@
+# --- HTTP / DART ---
+requests==2.32.3
+tenacity==9.0.0
+
+# --- HTML / parsing ---
+beautifulsoup4==4.12.3
+lxml==5.3.0
+html5lib==1.1
+
+# --- Tables / data ---
+pandas==2.2.3
+pyarrow==18.1.0
+tabulate==0.9.0
+
+# --- Tokenization ---
+tiktoken==0.8.0
+
+# --- Embeddings + Vector DB ---
+openai==1.59.6
+chromadb==0.5.23
+
+# --- LLMs (calibration) ---
+google-generativeai==0.8.3
+
+# --- Generation (Phase 2 question drafts via Anthropic SDK) ---
+anthropic==0.42.0
+
+# --- CLI / UX ---
+rich==13.9.4
+pyyaml==6.0.2
+python-dotenv==1.0.1
+click==8.1.8
+
+# --- Tests ---
+pytest==8.3.4
