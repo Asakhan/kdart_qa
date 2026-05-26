@@ -1,0 +1,295 @@
+{
+  "saved_at": "2026-05-26T17:20:11",
+  "states": [
+    {
+      "item": {
+        "id": "DART_T3_017",
+        "question": "2022년 POSCO홀딩스의 사업부문 중 매출총이익이 가장 큰 항목은 무엇인가요?",
+        "gold_answer": "매출총이익",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "Ⅲ.매출총이익"
+        ],
+        "reasoning_steps": [
+          "1. evidence를 통해 2022년 매출총이익을 확인합니다.",
+          "2. 매출총이익 값이 명시된 '매출총이익' 항목을 가장 큰 항목으로 식별합니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "매출총이익이 가장 큰 항목을 찾기 위해 증거 표에서 명시된 매출총이익을 읽고 이해하는 과정을 의도했습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "구조적 결함(T3_001/005/012와 동일): 질문은 사업부문 비교인데 evidence는 손익계산서. gold_answer \"매출총이익\"은 row label일 뿐.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:12:00"
+    },
+    {
+      "item": {
+        "id": "DART_T3_018",
+        "question": "2023년 CJ대한통운에서 매출액이 가장 큰 사업부문은 무엇인가요?",
+        "gold_answer": "글로벌사업부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "CJ대한통운_2023_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "| 글로벌사업부문 | 하역, 운송, 보관 | 4,205,816 | 35.7% |"
+        ],
+        "reasoning_steps": [
+          "1. 각 사업부문의 매출액을 표에서 확인합니다.",
+          "2. 매출액을 비교하여 가장 큰 값인 4,205,816 백만원을 가진 글로벌사업부문을 찾습니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "CJ대한통운",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "사업부문 매출 비교를 통해 최대값을 찾는 과정을 의도."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:13:05"
+    },
+    {
+      "item": {
+        "id": "DART_T3_019",
+        "question": "2022년도 카카오의 각 기별 영업이익(손실) 중 가장 큰 금액은 얼마인가?",
+        "gold_answer": "594,916,913,035",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "카카오_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "| 영업이익(손실)                  | 580,315,993,061     | 594,916,913,035   | 455,855,515,211   |"
+        ],
+        "reasoning_steps": [
+          "1. 2020년, 2021년, 2022년의 영업이익(손실) 수치를 확인합니다.",
+          "2. 확인된 영업이익(손실) 수치 중 가장 큰 값을 선택합니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "영업이익(손실)의 각 연도별 수치 중 최대값을 찾도록 유도했습니다. 약간의 계산 또는 비교가 필요합니다."
+      },
+      "status": "discarded",
+      "discard_reason": "T3 자격 부적합(사업부문 비교 아닌 multi-year 비교) + phrasing 모호(\"2022년\" prefix와 2021년 답 충돌) + T3_005와 같은 evidence/lookup.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:14:09"
+    },
+    {
+      "item": {
+        "id": "DART_T4_015",
+        "question": "POSCO홀딩스의 2022년 연구개발비/매출액 비율이 1% 이상인 사업부문 중 가장 높은 비율을 가진 부문은 무엇인가?",
+        "gold_answer": "친환경미래소재부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2022_사업의내용_7_연구개발_024"
+        ],
+        "evidence_quotes": [
+          "연구개발비/매출액 비율(%) | 1.02% | 0.08% | 0.01% | 0.35% | 1.75% | 46.20% | 0.68%"
+        ],
+        "reasoning_steps": [
+          "1. POSCO홀딩스의 2022년 연구개발비/매출액 비율이 1% 이상인 사업부문을 찾는다.",
+          "2. 해당 부문들 중 가장 높은 비율을 가진 부문을 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "주어진 조건인 연구개발비/매출액 비율 1% 이상을 만족하는 사업부문을 필터링하고, 가장 높은 비율을 가진 부문을 식별하는 문제를 의도했다."
+      },
+      "status": "discarded",
+      "discard_reason": "답 오류: 필터≥1% 통과 부문 중 max는 기타 46.20%인데 모델은 친환경미래소재 1.75%로 답. 모델이 기타를 묵시 outlier 제외했으나 질문이 그 제외를 명시하지 않음.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:15:30"
+    },
+    {
+      "item": {
+        "id": "DART_T4_016",
+        "question": "CJ대한통운의 2023년도 매출 중 비율이 30% 이상인 사업부문 중 매출액이 가장 큰 부문은 어디인가?",
+        "gold_answer": "글로벌사업부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "CJ대한통운_2023_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "| 글로벌사업부문 | 하역, 운송, 보관             | 4,205,816    | 35.7%   |",
+          "| 택배사업부문  | 보관, 가공, 집하, 배송         | 3,722,691    | 31.6%   |"
+        ],
+        "reasoning_steps": [
+          "1. 2023년도 주요 매출 현황에서 각 사업부문의 매출 비율을 확인한다.",
+          "2. 매출 비율이 30% 이상인 사업부문을 필터링하고, 이 중 매출액이 가장 큰 사업부문을 선택한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "CJ대한통운",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "매출 비율 필터링 후 최대값을 찾는 문제를 의도. 글로벌사업부문과 택배사업부문이 후보가 되며, 매출액 기준으로 글로벌사업부문을 선택."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:16:37"
+    },
+    {
+      "item": {
+        "id": "DART_T5_009",
+        "question": "2022년 기준 POSCO홀딩스의 연결에 포함된 회사수는 몇 개입니까?",
+        "gold_answer": "181개",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "POSCO홀딩스_2022_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "연결에 포함된 회사수 | 181개"
+        ],
+        "reasoning_steps": [
+          "1. 주어진 표에서 '연결에 포함된 회사수'라는 항목을 찾는다.",
+          "2. 해당 항목의 가장 최근 연도인 2022년의 수치인 181개를 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "표 하단의 주석에서 주어진 정보를 사용하여 연결에 포함된 회사수를 확인하는 과정을 의도."
+      },
+      "status": "discarded",
+      "discard_reason": "T5_003/T5_004 폐기 정책과 일관성: POSCO 연결 포함 회사수 → 연도만 다른 변형 (2023/192 = T5_003 accepted, 2024/194 = T5_004 discarded, 2022/181 = T5_009 discard).",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:17:34"
+    },
+    {
+      "item": {
+        "id": "DART_T5_010",
+        "question": "신한지주의 2023년 희석주당순이익은 얼마인가?",
+        "gold_answer": "8,048원",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "신한지주_2023_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "| (2) 희석주당순이익      | 8,048원              | 8,498원              | 7,308원"
+        ],
+        "reasoning_steps": [
+          "1. 신한지주의 2023년 희석주당순이익을 찾기 위해 '희석주당순이익' 행을 확인한다.",
+          "2. 해당 행의 '제23기' 열에서 '8,048원'을 조회한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "신한지주",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "표에서 주어진 데이터를 사용하여 2023년의 희석주당순이익을 찾는 것이 목표였다."
+      },
+      "status": "discarded",
+      "discard_reason": "T5_002와 일관: 희석주당순이익 직접 추출은 T1 성격이고 footnote 적용 없음. T5 자격 부적합.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:19:02"
+    },
+    {
+      "item": {
+        "id": "DART_T5_011",
+        "question": "2023년 POSCO홀딩스의 연결에 포함된 회사 수는 몇 개입니까?",
+        "gold_answer": "192개",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "상기 연결에 포함된 회사수는 당사를 포함한 수치입니다."
+        ],
+        "reasoning_steps": [
+          "1. '연결에 포함된 회사수'라는 행에서 2023년도의 수치를 확인한다.",
+          "2. 표 주석을 통해 상기 수치가 당사를 포함한 것임을 확인하고 최종 회사 수를 도출한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "* 주석은 단지 설명을 위한 것으로, 계산에 추가적인 수정 필요 없음."
+      },
+      "status": "discarded",
+      "discard_reason": "T5_003·T5_006와 직접 중복: POSCO 2023 연결포함 회사수 → 192개. 동일 질문 세 번째 출현.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:20:11"
+    }
+  ],
+  "items": [
+    {
+      "id": "DART_T3_018",
+      "question": "2023년 CJ대한통운에서 매출액이 가장 큰 사업부문은 무엇인가요?",
+      "gold_answer": "글로벌사업부문",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "CJ대한통운_2023_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "| 글로벌사업부문 | 하역, 운송, 보관 | 4,205,816 | 35.7% |"
+      ],
+      "reasoning_steps": [
+        "1. 각 사업부문의 매출액을 표에서 확인합니다.",
+        "2. 매출액을 비교하여 가장 큰 값인 4,205,816 백만원을 가진 글로벌사업부문을 찾습니다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "CJ대한통운",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "사업부문 매출 비교를 통해 최대값을 찾는 과정을 의도."
+    },
+    {
+      "id": "DART_T4_016",
+      "question": "CJ대한통운의 2023년도 매출 중 비율이 30% 이상인 사업부문 중 매출액이 가장 큰 부문은 어디인가?",
+      "gold_answer": "글로벌사업부문",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "CJ대한통운_2023_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "| 글로벌사업부문 | 하역, 운송, 보관             | 4,205,816    | 35.7%   |",
+        "| 택배사업부문  | 보관, 가공, 집하, 배송         | 3,722,691    | 31.6%   |"
+      ],
+      "reasoning_steps": [
+        "1. 2023년도 주요 매출 현황에서 각 사업부문의 매출 비율을 확인한다.",
+        "2. 매출 비율이 30% 이상인 사업부문을 필터링하고, 이 중 매출액이 가장 큰 사업부문을 선택한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T4",
+      "source_company": "CJ대한통운",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "매출 비율 필터링 후 최대값을 찾는 문제를 의도. 글로벌사업부문과 택배사업부문이 후보가 되며, 매출액 기준으로 글로벌사업부문을 선택."
+    }
+  ]
+}

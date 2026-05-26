@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Phase 3-1: difficulty calibration with gemini-2.5-flash.
+"""Phase 3-1 (A/B): difficulty calibration with gpt-4o-mini for comparison.
 
-Input:  data/reviewed/kdart_qa_reviewed_v1.json  (Phase 2.5)
-Output: data/calibration/results.json
+Same RAG + same prompt + same grading rule as 06_calibrate.py (Gemini).
+Writes results to data/calibration/results_openai.json so the two runs
+can be compared head-to-head.
 """
 from __future__ import annotations
 
@@ -18,15 +19,15 @@ from src.calibrator import Calibrator  # noqa: E402
 from src.common import ensure_dir, get_logger, load_config, project_path  # noqa: E402
 from src.rag_index import OpenAIEmbedder, RagIndex  # noqa: E402
 
-log = get_logger("calibrate", "phase3_calibrate.log")
+log = get_logger("calibrate_openai", "phase3_calibrate_openai.log")
 
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--input", default=None, help="Override reviewed JSON path.")
-    p.add_argument("--model", default=None, help="Override Gemini model name (default: config calibration.llm_model).")
-    p.add_argument("--out", default=None, help="Override output results JSON path.")
-    p.add_argument("--yes", action="store_true", help="Skip cost confirmation.")
+    p.add_argument("--model", default="gpt-4o-mini")
+    p.add_argument("--input", default=None)
+    p.add_argument("--out", default=None)
+    p.add_argument("--yes", action="store_true")
     return p.parse_args()
 
 
@@ -47,8 +48,7 @@ def main() -> int:
 
     in_path = Path(args.input) if args.input else project_path(cfg["paths"]["reviewed"]) / cfg["review"]["reviewed_filename"]
     out_dir = ensure_dir(project_path(cfg["paths"]["calibration"]))
-    out_path = Path(args.out) if args.out else out_dir / cfg["calibration"]["results_filename"]
-    model_name = args.model or cfg["calibration"]["llm_model"]
+    out_path = Path(args.out) if args.out else out_dir / "results_openai.json"
 
     if not in_path.exists():
         log.error("Reviewed file not found: %s", in_path)
@@ -58,19 +58,18 @@ def main() -> int:
         log.error("No reviewed items found in %s", in_path)
         return 1
 
-    # rough budget estimate: ~1500 input tokens * 3 attempts * N items
+    # gpt-4o-mini pricing (Jan 2026): input $0.15/1M, output $0.60/1M
+    in_price = 0.15
+    out_price = 0.60
     est_in = len(items) * cfg["calibration"]["attempts_per_question"] * 1500
     est_out = len(items) * cfg["calibration"]["attempts_per_question"] * 200
-    est_usd = (
-        est_in / 1_000_000 * cfg["calibration"]["cost_per_1m_input_tokens_usd"]
-        + est_out / 1_000_000 * cfg["calibration"]["cost_per_1m_output_tokens_usd"]
-    )
+    est_usd = est_in / 1_000_000 * in_price + est_out / 1_000_000 * out_price
     log.info(
         "Calibration (%s) on %d items × %d attempts (est cost ≈ $%.4f)",
-        model_name, len(items), cfg["calibration"]["attempts_per_question"], est_usd,
+        args.model, len(items), cfg["calibration"]["attempts_per_question"], est_usd,
     )
     if not args.yes:
-        ans = input(f"Proceed? (est $%.4f) [y/N] " % est_usd).strip().lower()
+        ans = input(f"Proceed? (est ${est_usd:.4f}) [y/N] ").strip().lower()
         if ans not in {"y", "yes"}:
             return 0
 
@@ -83,12 +82,13 @@ def main() -> int:
 
     calib = Calibrator(
         index=index,
-        model_name=model_name,
+        model_name=args.model,
         attempts=cfg["calibration"]["attempts_per_question"],
         rel_tol=cfg["calibration"]["numeric_relative_tolerance"],
         top_k=cfg["rag"]["top_k"],
-        input_price_per_1m=cfg["calibration"]["cost_per_1m_input_tokens_usd"],
-        output_price_per_1m=cfg["calibration"]["cost_per_1m_output_tokens_usd"],
+        input_price_per_1m=in_price,
+        output_price_per_1m=out_price,
+        provider="openai",
     )
 
     results = []
@@ -96,27 +96,18 @@ def main() -> int:
         log.info("[%d/%d] %s", i, len(items), item["id"])
         cr = calib.calibrate(item)
         results.append(cr.to_dict())
-        # incremental save (cheap insurance)
         out_path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    # summary
     by_class = Counter(r["classification"] for r in results)
     log.info("=" * 60)
-    log.info("Calibration 결과")
+    log.info("Calibration 결과 (%s)", args.model)
     log.info("=" * 60)
     log.info("Total: %d", len(results))
     for k in ("accepted", "too_easy", "too_hard"):
         cnt = by_class.get(k, 0)
         pct = cnt / max(len(results), 1) * 100
         log.info("  %-9s: %3d (%.1f%%)", k, cnt, pct)
-    log.info("실측 API 비용 (gemini): $%.4f", calib.estimate_usd())
-
-    too_easy = [r["item_id"] for r in results if r["classification"] == "too_easy"]
-    too_hard = [r["item_id"] for r in results if r["classification"] == "too_hard"]
-    if too_easy:
-        log.info("too_easy: %s", too_easy)
-    if too_hard:
-        log.info("too_hard: %s", too_hard)
+    log.info("실측 API 비용 (%s): $%.4f", args.model, calib.estimate_usd())
     log.info("→ %s", out_path)
     return 0
 

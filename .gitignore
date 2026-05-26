@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# K-DART-QA: regeneratable artifacts (re-built by scripts 01–03)
+data/raw/
+data/sections/
+data/chunks/
+data/index/
+logs/
+
+# Claude Code runtime
+.claude/

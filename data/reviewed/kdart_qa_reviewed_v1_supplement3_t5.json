@@ -1,0 +1,168 @@
+{
+  "saved_at": "2026-05-26T17:24:41",
+  "states": [
+    {
+      "item": {
+        "id": "DART_T5_012",
+        "question": "신한지주의 2023년 사업보고서에 따르면, 기업회계기준서 제1117호(보험계약) 적용으로 소급 재작성된 연결포괄손익계산서의 회계기는 무엇인가?",
+        "gold_answer": "제22기",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2023_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "기업회계기준서 제1117호 '보험계약'이 제23기(당기)부터 최초 적용되어, 기업회계기준서 제1001호 '재무제표 표시'에 근거하여 제22기(전기) 연결포괄손익계산서를 소급하여 재작성하였습니다. 제21기(전전기)는 소급 재작성되지 아니하였습니다."
+        ],
+        "reasoning_steps": [
+          "1. 주1 footnote에서 K-IFRS 제1117호가 제23기(당기)부터 최초 적용됨을 확인한다.",
+          "2. 같은 footnote에서 '제22기(전기) 연결포괄손익계산서를 소급하여 재작성', '제21기(전전기)는 소급 재작성되지 아니하였습니다'를 확인 → 소급재작성된 기는 제22기."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "신한지주",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): footnote 본문을 직접 해석하는 multi-hop T5. 회계기준 적용 시점(제23기)과 그 결과 재작성된 기(제22기)를 구분해서 추출."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T5 to fill quota.",
+      "last_touched": "2026-05-26T17:24:41"
+    },
+    {
+      "item": {
+        "id": "DART_T5_013",
+        "question": "LG전자의 2022년 사업보고서에 따르면, MC사업 종료에 따라 재작성된 회계기는 어느 기인가?",
+        "gold_answer": "제19기",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "LG전자_2022_재무_2_연결재무_004"
+        ],
+        "evidence_quotes": [
+          "주1) 제 20기는 태양광 사업의 종료에 따라 재작성하였고, 제 19기는 태양광 사업 및 MC사업의 종료에 따라 재작성하였습니다."
+        ],
+        "reasoning_steps": [
+          "1. 주1 footnote에서 제20기와 제19기 각각의 재작성 사유를 확인한다.",
+          "2. 제20기는 태양광 사업 종료만, 제19기는 태양광 사업 + MC사업 종료가 사유로 명시됨 → MC사업 종료로 재작성된 기는 제19기."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "LG전자",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): footnote의 두 절(제20기·제19기 각각 다른 사유) 중 MC사업 keyword가 어느 절에 있는지 판별 필요."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T5 to fill quota.",
+      "last_touched": "2026-05-26T17:24:41"
+    },
+    {
+      "item": {
+        "id": "DART_T5_014",
+        "question": "KB금융의 2023년 사업보고서 주석에 따르면, 제14기말 재무제표 작성에 적용된 보험계약 회계기준은 무엇인가?",
+        "gold_answer": "K-IFRS 제1104호",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "KB금융_2023_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "주2) 제15기말 재무제표는 당기 K-IFRS 제1117호(보험계약)적용에 따라 소급재작성 되었습니다.",
+          "주3) 제14기말 재무제표는 K-IFRS 제1104호(구 보험계약)에 따라 작성되었습니다."
+        ],
+        "reasoning_steps": [
+          "1. 주2에서 제15기말은 신규 K-IFRS 제1117호 적용으로 소급재작성됨을 확인한다.",
+          "2. 주3에서 제14기말은 K-IFRS 제1104호(구 보험계약)에 따라 작성됨을 확인 → 제14기말 적용 기준 = K-IFRS 제1104호."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "KB금융",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): 동일 표 두 주석에서 제15기/제14기에 적용된 IFRS 기준을 구분."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T5 to fill quota.",
+      "last_touched": "2026-05-26T17:24:41"
+    }
+  ],
+  "items": [
+    {
+      "id": "DART_T5_012",
+      "question": "신한지주의 2023년 사업보고서에 따르면, 기업회계기준서 제1117호(보험계약) 적용으로 소급 재작성된 연결포괄손익계산서의 회계기는 무엇인가?",
+      "gold_answer": "제22기",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "신한지주_2023_재무_1_요약_004"
+      ],
+      "evidence_quotes": [
+        "기업회계기준서 제1117호 '보험계약'이 제23기(당기)부터 최초 적용되어, 기업회계기준서 제1001호 '재무제표 표시'에 근거하여 제22기(전기) 연결포괄손익계산서를 소급하여 재작성하였습니다. 제21기(전전기)는 소급 재작성되지 아니하였습니다."
+      ],
+      "reasoning_steps": [
+        "1. 주1 footnote에서 K-IFRS 제1117호가 제23기(당기)부터 최초 적용됨을 확인한다.",
+        "2. 같은 footnote에서 '제22기(전기) 연결포괄손익계산서를 소급하여 재작성', '제21기(전전기)는 소급 재작성되지 아니하였습니다'를 확인 → 소급재작성된 기는 제22기."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T5",
+      "source_company": "신한지주",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): footnote 본문을 직접 해석하는 multi-hop T5. 회계기준 적용 시점(제23기)과 그 결과 재작성된 기(제22기)를 구분해서 추출."
+    },
+    {
+      "id": "DART_T5_013",
+      "question": "LG전자의 2022년 사업보고서에 따르면, MC사업 종료에 따라 재작성된 회계기는 어느 기인가?",
+      "gold_answer": "제19기",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "LG전자_2022_재무_2_연결재무_004"
+      ],
+      "evidence_quotes": [
+        "주1) 제 20기는 태양광 사업의 종료에 따라 재작성하였고, 제 19기는 태양광 사업 및 MC사업의 종료에 따라 재작성하였습니다."
+      ],
+      "reasoning_steps": [
+        "1. 주1 footnote에서 제20기와 제19기 각각의 재작성 사유를 확인한다.",
+        "2. 제20기는 태양광 사업 종료만, 제19기는 태양광 사업 + MC사업 종료가 사유로 명시됨 → MC사업 종료로 재작성된 기는 제19기."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T5",
+      "source_company": "LG전자",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): footnote의 두 절(제20기·제19기 각각 다른 사유) 중 MC사업 keyword가 어느 절에 있는지 판별 필요."
+    },
+    {
+      "id": "DART_T5_014",
+      "question": "KB금융의 2023년 사업보고서 주석에 따르면, 제14기말 재무제표 작성에 적용된 보험계약 회계기준은 무엇인가?",
+      "gold_answer": "K-IFRS 제1104호",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "KB금융_2023_재무_1_요약_002"
+      ],
+      "evidence_quotes": [
+        "주2) 제15기말 재무제표는 당기 K-IFRS 제1117호(보험계약)적용에 따라 소급재작성 되었습니다.",
+        "주3) 제14기말 재무제표는 K-IFRS 제1104호(구 보험계약)에 따라 작성되었습니다."
+      ],
+      "reasoning_steps": [
+        "1. 주2에서 제15기말은 신규 K-IFRS 제1117호 적용으로 소급재작성됨을 확인한다.",
+        "2. 주3에서 제14기말은 K-IFRS 제1104호(구 보험계약)에 따라 작성됨을 확인 → 제14기말 적용 기준 = K-IFRS 제1104호."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T5",
+      "source_company": "KB금융",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): 동일 표 두 주석에서 제15기/제14기에 적용된 IFRS 기준을 구분."
+    }
+  ]
+}

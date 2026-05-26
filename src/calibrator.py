@@ -126,12 +126,23 @@ class Calibrator:
         input_price_per_1m: float = 0.30,
         output_price_per_1m: float = 2.50,
         api_key: str | None = None,
+        provider: str = "gemini",
     ) -> None:
-        import google.generativeai as genai  # lazy: avoids hard dep for offline tests
-        self._genai = genai
-        genai.configure(api_key=api_key or require_env("GOOGLE_API_KEY"))
-        self.model = genai.GenerativeModel(model_name)
+        self.provider = provider
         self.model_name = model_name
+        if provider == "gemini":
+            import google.generativeai as genai  # lazy: avoids hard dep for offline tests
+            self._genai = genai
+            genai.configure(api_key=api_key or require_env("GOOGLE_API_KEY"))
+            self.model = genai.GenerativeModel(model_name)
+            self._openai = None
+        elif provider == "openai":
+            from openai import OpenAI
+            self._openai = OpenAI(api_key=api_key or require_env("OPENAI_API_KEY"))
+            self._genai = None
+            self.model = None
+        else:
+            raise ValueError(f"Unknown provider: {provider}")
         self.attempts = attempts
         self.rel_tol = rel_tol
         self.top_k = top_k
@@ -158,16 +169,32 @@ class Calibrator:
                 return line.strip()
         return None
 
+    def _call_llm(self, prompt: str) -> tuple[str, int, int]:
+        """Provider-agnostic LLM call. Returns (raw_text, input_tokens, output_tokens)."""
+        if self.provider == "gemini":
+            resp = self.model.generate_content(prompt)
+            raw = (resp.text or "").strip() if hasattr(resp, "text") else ""
+            in_tok = out_tok = 0
+            meta = getattr(resp, "usage_metadata", None)
+            if meta is not None:
+                in_tok = getattr(meta, "prompt_token_count", 0) or 0
+                out_tok = getattr(meta, "candidates_token_count", 0) or 0
+            return raw, in_tok, out_tok
+        # openai
+        resp = self._openai.chat.completions.create(
+            model=self.model_name,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        raw = (resp.choices[0].message.content or "").strip()
+        usage = resp.usage
+        in_tok = getattr(usage, "prompt_tokens", 0) or 0
+        out_tok = getattr(usage, "completion_tokens", 0) or 0
+        return raw, in_tok, out_tok
+
     def _run_once(self, prompt: str) -> AttemptResult:
         for retry in range(4):
             try:
-                resp = self.model.generate_content(prompt)
-                raw = (resp.text or "").strip() if hasattr(resp, "text") else ""
-                in_tok = out_tok = 0
-                meta = getattr(resp, "usage_metadata", None)
-                if meta is not None:
-                    in_tok = getattr(meta, "prompt_token_count", 0) or 0
-                    out_tok = getattr(meta, "candidates_token_count", 0) or 0
+                raw, in_tok, out_tok = self._call_llm(prompt)
                 pred = self._extract_final(raw)
                 self._total_in += in_tok
                 self._total_out += out_tok
@@ -175,7 +202,8 @@ class Calibrator:
                                      input_tokens=in_tok, output_tokens=out_tok)
             except Exception as e:
                 wait = 2 ** retry
-                log.warning("Gemini call failed (retry %d): %s — sleeping %ds", retry, e, wait)
+                log.warning("%s call failed (retry %d): %s — sleeping %ds",
+                            self.provider, retry, e, wait)
                 time.sleep(wait)
         return AttemptResult(raw="", predicted=None, correct=False)
 

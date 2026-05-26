@@ -1,0 +1,172 @@
+{
+  "saved_at": "2026-05-26T17:28:47",
+  "states": [
+    {
+      "item": {
+        "id": "DART_T3_020",
+        "question": "카카오의 2022년 사업 부문 중 매출액이 가장 큰 부문은 무엇인가?",
+        "gold_answer": "플랫폼 부문",
+        "gold_answer_unit": "사업부문명",
+        "evidence_chunks": [
+          "카카오_2022_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 플랫폼 부문         | 제품/용역              | 톡비즈                | 카카오톡,선물하기              | 3,770,354         | 53.1%",
+          "| 콘텐츠 부문         | 제품/용역              | 게임                 | 카카오게임                  | 3,336,483         | 46.9%"
+        ],
+        "reasoning_steps": [
+          "1. 청크의 사업부문별 매출 표(연결기준)에서 각 부문의 매출액과 비중을 확인한다.",
+          "2. 플랫폼 부문 3,770,354 (53.1%)가 콘텐츠 부문 3,336,483 (46.9%)보다 크다 → 1위는 플랫폼 부문."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): T3_004(카카오 2023 콘텐츠 1위)와 다른 답(플랫폼 1위). 2022→2023 사이 1위 부문이 뒤바뀐 점에서 다양성 기여."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T3/T4.",
+      "last_touched": "2026-05-26T17:28:47"
+    },
+    {
+      "item": {
+        "id": "DART_T3_021",
+        "question": "현대자동차의 2024년 매출액 기준으로 차량부문과 기타부문 중 매출액이 더 큰 부문은 무엇인가?",
+        "gold_answer": "차량부문",
+        "gold_answer_unit": "사업부문명",
+        "evidence_chunks": [
+          "현대자동차_2024_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 차량부문   | 매출액    | 136,725,011 | 78.1",
+          "| 기타부문   | 매출액    | 10,059,492  | 5.7"
+        ],
+        "reasoning_steps": [
+          "1. 청크의 부문별 주요 재무정보 표(연결기준)에서 차량부문 매출 136,725,011과 기타부문 매출 10,059,492를 확인한다.",
+          "2. 두 값을 비교: 차량부문 (78.1%) > 기타부문 (5.7%) → 매출액이 더 큰 부문은 차량부문."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "현대자동차",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): 현대자동차 본체의 차량/기타 부문 비교. 금융부문은 별도 기재 안내(*표)되어 있어 분석 대상 외."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T3/T4.",
+      "last_touched": "2026-05-26T17:28:47"
+    },
+    {
+      "item": {
+        "id": "DART_T4_017",
+        "question": "삼성전자의 2024년 사업부문 중 매출 비중이 10% 미만인 부문들의 매출 합계는 얼마인가?",
+        "gold_answer": "434,327",
+        "gold_answer_unit": "억원",
+        "evidence_chunks": [
+          "삼성전자_2024_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "2024년 매출은 DX 부문이 174조 8,877억원(58.1%), DS 부문이 111조 660억원(36.9%)이며, SDC가 29조 1,578억원(9.7%), Harman은 14조 2,749억원(4.7%)입니다."
+        ],
+        "reasoning_steps": [
+          "1. 청크에 명시된 각 사업부문의 매출 비중을 확인: DX 58.1%, DS 36.9%, SDC 9.7%, Harman 4.7%.",
+          "2. 10% 미만 필터를 적용해 SDC(9.7%)와 Harman(4.7%) 두 부문을 선택.",
+          "3. 두 부문의 매출 합계: 291,578 + 142,749 = 434,327 (억원)."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "삼성전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): T4 다단계 (조건 필터 + 합산). 10% threshold로 SDC·Harman 선별 후 매출 합계 계산."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T3/T4.",
+      "last_touched": "2026-05-26T17:28:47"
+    }
+  ],
+  "items": [
+    {
+      "id": "DART_T3_020",
+      "question": "카카오의 2022년 사업 부문 중 매출액이 가장 큰 부문은 무엇인가?",
+      "gold_answer": "플랫폼 부문",
+      "gold_answer_unit": "사업부문명",
+      "evidence_chunks": [
+        "카카오_2022_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| 플랫폼 부문         | 제품/용역              | 톡비즈                | 카카오톡,선물하기              | 3,770,354         | 53.1%",
+        "| 콘텐츠 부문         | 제품/용역              | 게임                 | 카카오게임                  | 3,336,483         | 46.9%"
+      ],
+      "reasoning_steps": [
+        "1. 청크의 사업부문별 매출 표(연결기준)에서 각 부문의 매출액과 비중을 확인한다.",
+        "2. 플랫폼 부문 3,770,354 (53.1%)가 콘텐츠 부문 3,336,483 (46.9%)보다 크다 → 1위는 플랫폼 부문."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "카카오",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): T3_004(카카오 2023 콘텐츠 1위)와 다른 답(플랫폼 1위). 2022→2023 사이 1위 부문이 뒤바뀐 점에서 다양성 기여."
+    },
+    {
+      "id": "DART_T3_021",
+      "question": "현대자동차의 2024년 매출액 기준으로 차량부문과 기타부문 중 매출액이 더 큰 부문은 무엇인가?",
+      "gold_answer": "차량부문",
+      "gold_answer_unit": "사업부문명",
+      "evidence_chunks": [
+        "현대자동차_2024_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| 차량부문   | 매출액    | 136,725,011 | 78.1",
+        "| 기타부문   | 매출액    | 10,059,492  | 5.7"
+      ],
+      "reasoning_steps": [
+        "1. 청크의 부문별 주요 재무정보 표(연결기준)에서 차량부문 매출 136,725,011과 기타부문 매출 10,059,492를 확인한다.",
+        "2. 두 값을 비교: 차량부문 (78.1%) > 기타부문 (5.7%) → 매출액이 더 큰 부문은 차량부문."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "현대자동차",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): 현대자동차 본체의 차량/기타 부문 비교. 금융부문은 별도 기재 안내(*표)되어 있어 분석 대상 외."
+    },
+    {
+      "id": "DART_T4_017",
+      "question": "삼성전자의 2024년 사업부문 중 매출 비중이 10% 미만인 부문들의 매출 합계는 얼마인가?",
+      "gold_answer": "434,327",
+      "gold_answer_unit": "억원",
+      "evidence_chunks": [
+        "삼성전자_2024_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "2024년 매출은 DX 부문이 174조 8,877억원(58.1%), DS 부문이 111조 660억원(36.9%)이며, SDC가 29조 1,578억원(9.7%), Harman은 14조 2,749억원(4.7%)입니다."
+      ],
+      "reasoning_steps": [
+        "1. 청크에 명시된 각 사업부문의 매출 비중을 확인: DX 58.1%, DS 36.9%, SDC 9.7%, Harman 4.7%.",
+        "2. 10% 미만 필터를 적용해 SDC(9.7%)와 Harman(4.7%) 두 부문을 선택.",
+        "3. 두 부문의 매출 합계: 291,578 + 142,749 = 434,327 (억원)."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "삼성전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): T4 다단계 (조건 필터 + 합산). 10% threshold로 SDC·Harman 선별 후 매출 합계 계산."
+    }
+  ]
+}

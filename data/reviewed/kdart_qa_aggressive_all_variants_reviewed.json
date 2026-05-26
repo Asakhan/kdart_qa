@@ -1,0 +1,1220 @@
+{
+  "saved_at": "2026-05-26T18:50:06",
+  "states": [
+    {
+      "item": {
+        "id": "HVA_T2_003",
+        "question": "카카오의 2022년 별도재무 기준, 자산총계의 전년 대비 증가율과 유동자산의 전년 대비 증가율의 차이는 약 몇 %pt인가?",
+        "gold_answer": "10.88",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "카카오_2022_재무_1_요약_003"
+        ],
+        "evidence_quotes": [
+          "[유동자산]              | 2,334,856,281,209        | 2,412,771,566,068        | 1,782,401,903,517",
+          "| 자산총계                | 10,791,496,254,634       | 10,024,652,294,434       | 7,345,506,484,784"
+        ],
+        "reasoning_steps": [
+          "1. 카카오 2022 별도 재무에서 자산총계(제28기 10,791,496/제27기 10,024,652 백만원)와 유동자산(2,334,856/2,412,772)을 확인.",
+          "2. 자산총계 증가율: (10,791,496−10,024,652)/10,024,652 ≈ 7.65%.",
+          "3. 유동자산 증가율: (2,334,856−2,412,772)/2,412,772 ≈ −3.23%.",
+          "4. 두 증가율 차: 7.65 − (−3.23) = 10.88%pt."
+        ],
+        "reasoning_hops": 4,
+        "task_type": "T4",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T2_003 — cross-row 증가율 비교 (자산총계 vs 유동자산)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T2_004",
+        "question": "현대자동차의 2022년 연결 기준, 영업이익의 전년 대비 증감률과 매출액의 전년 대비 증감률의 차이는 약 몇 %pt인가?",
+        "gold_answer": "25.84",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "현대자동차_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "매출액                  | 142,527,535 | 117,610,626 | 103,997,601",
+          "| 영업이익                 | 9,819,769   | 6,678,949   | 2,394,671"
+        ],
+        "reasoning_steps": [
+          "1. 매출액 제55기 142,527,535, 제54기 117,610,626; 영업이익 제55기 9,819,769, 제54기 6,678,949.",
+          "2. 영업이익 증감률: (9,819,769−6,678,949)/6,678,949 ≈ 47.03%.",
+          "3. 매출액 증감률: (142,527,535−117,610,626)/117,610,626 ≈ 21.19%.",
+          "4. 차: 47.03 − 21.19 = 25.84%pt."
+        ],
+        "reasoning_hops": 4,
+        "task_type": "T4",
+        "source_company": "현대자동차",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T2_004 — 영업이익·매출액 증감률 차."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T2_011",
+        "question": "삼성전자의 2022년 보고서에 따르면, 2022년 자본총계 대비 지배기업 소유주지분 비율은 2021년 대비 약 몇 %pt 변동했는가?",
+        "gold_answer": "0.14",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "삼성전자_2022_재무_2_연결재무_001"
+        ],
+        "evidence_quotes": [
+          "지배기업 소유주지분      | 345,186,142 | 296,237,697 | 267,670,331",
+          "| 자본총계            | 354,749,604 | 304,899,931 | 275,948,016"
+        ],
+        "reasoning_steps": [
+          "1. 2022 지배기업 소유주지분 345,186,142, 자본총계 354,749,604 → 비율 97.30%.",
+          "2. 2021 지배기업 소유주지분 296,237,697, 자본총계 304,899,931 → 비율 97.16%.",
+          "3. 변동: 97.30 − 97.16 = 0.14%pt."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "삼성전자",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T2_011 — 2년치 비율의 변동(%pt)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T2_012",
+        "question": "POSCO홀딩스의 연결요약재무 기준, 자산총계에서 유동자산이 차지하는 비율은 2022년 대비 2023년에 약 몇 %pt 감소(또는 증가)했는가? 부호 포함하여 답하라.",
+        "gold_answer": "-2.64",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_001"
+        ],
+        "evidence_quotes": [
+          "[유동자산]        | 46,212,299      | 47,649,466      | 46,621,631",
+          "| 자산총계          | 100,945,394     | 98,406,781      | 91,471,614"
+        ],
+        "reasoning_steps": [
+          "1. 2023 유동자산 46,212,299 / 자산총계 100,945,394 = 45.78%.",
+          "2. 2022 유동자산 47,649,466 / 자산총계 98,406,781 = 48.42%.",
+          "3. 변동: 45.78 − 48.42 = −2.64%pt (감소)."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T2_012 — 2년치 비율의 변동(%pt)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T3_004",
+        "question": "카카오 2023년 사업보고서에 따르면, 제29기 매출액 1위 사업부문의 매출액은 제28기 매출액 1위 사업부문의 매출액의 약 몇 배인가?",
+        "gold_answer": "1.16",
+        "gold_answer_unit": "배",
+        "evidence_chunks": [
+          "카카오_2023_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 플랫폼 부문 | 제품/용역  | 톡비즈    | 카카오톡,선물하기             | 3,554,442 | 47.0%     | 3,462,565 | 50.9%",
+          "| 콘텐츠 부문 | 제품/용역  | 게임     | 카카오게임                 | 4,002,560 | 53.0%     | 3,336,483 | 49.1%"
+        ],
+        "reasoning_steps": [
+          "1. 제29기(2023) 부문별 매출 비교: 플랫폼 3,554,442(47.0%), 콘텐츠 4,002,560(53.0%) → 1위=콘텐츠.",
+          "2. 제28기(2022) 부문별 매출 비교: 플랫폼 3,462,565(50.9%), 콘텐츠 3,336,483(49.1%) → 1위=플랫폼.",
+          "3. 비율: 4,002,560 / 3,462,565 ≈ 1.156 → 약 1.16배."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "카카오",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_004 — 연도별 1위 부문이 다른 점을 활용한 multi-year cross-rank ratio."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T3_007",
+        "question": "LG전자의 2024년 사업부문 매출액 기준, 1위 부문 매출이 2위 부문 매출의 약 몇 배인가?",
+        "gold_answer": "1.57",
+        "gold_answer_unit": "배",
+        "evidence_chunks": [
+          "LG전자_2024_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| H&A                | 제품/상품/기타           | 냉장고, 세탁기, 에어컨 등                | 가정용 전기제품, 냉난방기기 및 핵심부품     | LG, DIOS, TROMM, LG SIGNATURE, SIGNATURE KITCHEN SUITE, CordZero, 오브제컬렉션, WHISEN, PuriCare, 에어로타워 등 | 332,033             |               37.8",
+          "| 이노텍                | 제품/상품/기타           | Optics Solution 등              | Camera Module 등            | -                                                                                                   | 212,008             |               24.2"
+        ],
+        "reasoning_steps": [
+          "1. LG전자 2024 사업부문 매출 정렬: H&A 332,033(37.8%), 이노텍 212,008(24.2%), HE 152,291(17.4%), VS 106,205(12.1%), BS 56,871(6.5%), 기타 17,874(2%).",
+          "2. 1위 H&A, 2위 이노텍.",
+          "3. 비율: 332,033 / 212,008 ≈ 1.57배."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "LG전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_007 — 1·2위 부문 매출 비율."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T3_015",
+        "question": "신세계의 2022년 사업부문 중 매출액 1위 부문과 매출총이익 1위 부문의 매출총이익률(매출총이익/매출액) 차이는 약 몇 %pt인가?",
+        "gold_answer": "29.75",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "신세계_2022_사업의내용_5_매출_003"
+        ],
+        "evidence_quotes": [
+          "| 백화점                       | 의류 등       | (주)신세계(주)신세계동대구복합환승센터(주)대전신세계(주)광주신세계 | 2,486,946 | 31.8%      | 2,126,512 | 41.8%",
+          "| 면세점사업                     | 의류 등       | (주)신세계디에프(주)신세계디에프글로벌 외               | 3,438,683 | 44.0%      | 1,917,425 | 37.7%"
+        ],
+        "reasoning_steps": [
+          "1. 매출액 1위: 면세점사업 3,438,683(44.0%). 매출총이익 1위: 백화점 2,126,512(41.8%).",
+          "2. 면세점 매출총이익률 = 1,917,425 / 3,438,683 ≈ 55.76%.",
+          "3. 백화점 매출총이익률 = 2,126,512 / 2,486,946 ≈ 85.51%.",
+          "4. 차: 85.51 − 55.76 ≈ 29.75%pt."
+        ],
+        "reasoning_hops": 4,
+        "task_type": "T4",
+        "source_company": "신세계",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_015 — 두 1위 부문(매출 vs 매출총이익)의 매출총이익률 차."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T3_016",
+        "question": "신세계의 2023년 사업부문 중 백화점과 면세점사업의 매출총이익률 차이는 약 몇 %pt인가?",
+        "gold_answer": "54.55",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "신세계_2023_사업의내용_5_매출_003"
+        ],
+        "evidence_quotes": [
+          "| 백화점                       | 의류 등       | (주)신세계(주)신세계동대구복합환승센터(주)대전신세계(주)광주신세계 | 2,556,982 | 40.2%      | 2,166,835 | 56.2%",
+          "| 면세점사업                     | 의류 등       | (주)신세계디에프(주)신세계디에프글로벌 외               | 1,916,545 | 30.2%      | 578,543   | 15.0%"
+        ],
+        "reasoning_steps": [
+          "1. 백화점 매출 2,556,982, 매출총이익 2,166,835 → 매출총이익률 ≈ 84.74%.",
+          "2. 면세점사업 매출 1,916,545, 매출총이익 578,543 → 매출총이익률 ≈ 30.19%.",
+          "3. 차: 84.74 − 30.19 ≈ 54.55%pt."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "신세계",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_016 — 두 부문 매출총이익률 차."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T3_018",
+        "question": "CJ대한통운의 2023년 사업부문 중 매출액 1위·2위 부문의 매출액 합이 전체 합계 매출에서 차지하는 비율은 약 몇 %인가?",
+        "gold_answer": "67.38",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "CJ대한통운_2023_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "| 글로벌사업부문 | 하역, 운송, 보관             | 4,205,816    | 35.7%",
+          "| 택배사업부문  | 보관, 가공, 집하, 배송         | 3,722,691    | 31.6%",
+          "| 합 계     | 합 계                    | 11,767,894   | 100.0%"
+        ],
+        "reasoning_steps": [
+          "1. CJ대한통운 2023 부문 매출: CL 2,853,579(24.3%), 택배 3,722,691(31.6%), 글로벌 4,205,816(35.7%), 건설 985,808(8.4%). 합계 11,767,894.",
+          "2. 1위 글로벌, 2위 택배. 합 = 4,205,816 + 3,722,691 = 7,928,507.",
+          "3. 비율 = 7,928,507 / 11,767,894 × 100 ≈ 67.38%."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "CJ대한통운",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_018 — 1·2위 합/전체 비율 (값 계산)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T3_020",
+        "question": "카카오 2022년 사업부문 매출액 기준, 1위 부문의 매출액은 2위 부문 매출액의 약 몇 배인가?",
+        "gold_answer": "1.13",
+        "gold_answer_unit": "배",
+        "evidence_chunks": [
+          "카카오_2022_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 플랫폼 부문         | 제품/용역              | 톡비즈                | 카카오톡,선물하기              | 3,770,354         | 53.1%",
+          "| 콘텐츠 부문         | 제품/용역              | 게임                 | 카카오게임                  | 3,336,483         | 46.9%"
+        ],
+        "reasoning_steps": [
+          "1. 카카오 2022 사업부문별 매출(연결): 플랫폼 3,770,354(53.1%), 콘텐츠 3,336,483(46.9%).",
+          "2. 1위 = 플랫폼, 2위 = 콘텐츠.",
+          "3. 비율: 3,770,354 / 3,336,483 ≈ 1.13배."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_020 — 1·2위 매출 비율."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T3_021",
+        "question": "현대자동차의 2024년 차량부문 영업이익률과 기타부문 영업이익률의 차이의 절댓값은 약 몇 %pt인가?",
+        "gold_answer": "1.92",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "현대자동차_2024_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 차량부문   | 매출액    | 136,725,011 | 78.1",
+          "| 차량부문   | 영업이익   | 11,411,499  | 80.1",
+          "| 기타부문   | 매출액    | 10,059,492  | 5.7",
+          "| 기타부문   | 영업이익   | 1,032,844   | 7.3"
+        ],
+        "reasoning_steps": [
+          "1. 차량부문 영업이익률 = 11,411,499 / 136,725,011 × 100 ≈ 8.35%.",
+          "2. 기타부문 영업이익률 = 1,032,844 / 10,059,492 × 100 ≈ 10.27%.",
+          "3. 두 영업이익률 차의 절댓값: |8.35 − 10.27| ≈ 1.92%pt."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "현대자동차",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_021 — 두 부문 영업이익률 차."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T4_001",
+        "question": "NAVER의 2022년 사업보고서에 따르면, 연결 기준 R&D/영업수익 비율(제24기·제23기) 평균과 별도 기준 R&D/영업수익 비율(제24기·제23기) 평균의 차이는 약 몇 %pt인가?",
+        "gold_answer": "10.18",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "NAVER_2022_사업의내용_7_연구개발_002"
+        ],
+        "evidence_quotes": [
+          "연구개발비/영업수익 비율* 연구개발비용계÷당기영업수익×100] | 22.01%            | 24.28%            | 13.38%            | 12.55%"
+        ],
+        "reasoning_steps": [
+          "1. 표에서 4개 R&D 비율 확인: 연결 제24기 22.01%, 제23기 24.28%, 별도 제24기 13.38%, 제23기 12.55%.",
+          "2. 연결 평균 = (22.01 + 24.28) / 2 = 23.145%.",
+          "3. 별도 평균 = (13.38 + 12.55) / 2 = 12.965%.",
+          "4. 차: 23.145 − 12.965 = 10.18%pt."
+        ],
+        "reasoning_hops": 4,
+        "task_type": "T4",
+        "source_company": "NAVER",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T4_001 — 그룹 평균 간 비교."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T4_004",
+        "question": "카카오의 2023년 사업보고서에 따르면, 별도 기준 R&D/매출액 비율 3개 연도 평균과 연결 기준 R&D/매출액 비율 3개 연도 평균의 차이는 약 몇 %pt인가?",
+        "gold_answer": "3.97",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "카카오_2023_사업의내용_7_연구개발_005"
+        ],
+        "evidence_quotes": [
+          "연구개발비/매출액 비율         | 연구개발비/매출액 비율         | 16.2%     | 15.0%     | 12.9%    | 19.6%   | 19.1%   | 17.3%"
+        ],
+        "reasoning_steps": [
+          "1. 표에서 연결 3개 연도 비율 16.2%, 15.0%, 12.9% 확인.",
+          "2. 별도 3개 연도 비율 19.6%, 19.1%, 17.3% 확인.",
+          "3. 연결 평균 = (16.2+15.0+12.9)/3 ≈ 14.70%.",
+          "4. 별도 평균 = (19.6+19.1+17.3)/3 ≈ 18.67%.",
+          "5. 차: 18.67 − 14.70 = 3.97%pt."
+        ],
+        "reasoning_hops": 5,
+        "task_type": "T4",
+        "source_company": "카카오",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T4_004 — 두 그룹(연결/별도) 평균 차 (3개씩)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T4_007",
+        "question": "LG전자의 2024년 사업보고서에 따르면, 개발비(무형자산)가 연구개발비용계에서 차지하는 비중의 제23기와 제21기 차이는 약 몇 %pt인가?",
+        "gold_answer": "6.30",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "LG전자_2024_사업의내용_7_연구개발_009"
+        ],
+        "evidence_quotes": [
+          "연구개발비용 계                              | 연구개발비용 계                              | 4,763,249 | 4,283,425 | 4,036,969",
+          "회계처리                                  | 개발비(무형자산)                             | 547,006   | 467,893   | 209,127"
+        ],
+        "reasoning_steps": [
+          "1. 제23기 무형자산 547,006 / 총계 4,763,249 ≈ 11.48%.",
+          "2. 제21기 무형자산 209,127 / 총계 4,036,969 ≈ 5.18%.",
+          "3. 차: 11.48 − 5.18 = 6.30%pt."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "LG전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T4_007 — 무형자산 비중의 양 끝 연도 차."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T4_014",
+        "question": "신세계의 2022년 사업보고서에 따르면, 연구개발비/매출액 비율 3개 연도의 (최댓값−최솟값)을 3개 연도 평균으로 나눈 백분율은 약 몇 %인가?",
+        "gold_answer": "36.49",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "신세계_2022_사업의내용_7_연구개발_000"
+        ],
+        "evidence_quotes": [
+          "| 연구개발비 / 매출액 비율[연구개발비용계÷당기매출액×100] | 0.25%   | 0.20%   | 0.29%"
+        ],
+        "reasoning_steps": [
+          "1. 표에서 비율 3년치: 2022 0.25%, 2021 0.20%, 2020 0.29%.",
+          "2. 최댓값 0.29%, 최솟값 0.20%. 범위 = 0.09%pt.",
+          "3. 평균 = (0.25+0.20+0.29)/3 ≈ 0.2467%.",
+          "4. (범위/평균) × 100 = 0.09 / 0.2467 × 100 ≈ 36.49%."
+        ],
+        "reasoning_hops": 4,
+        "task_type": "T4",
+        "source_company": "신세계",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T4_014 — variation coefficient-like measure (range/mean)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T4_016",
+        "question": "CJ대한통운의 2023년 사업부문 중 매출 비율이 30% 이상인 부문들의 비율 합과, 30% 미만인 부문들의 비율 합의 차이는 약 몇 %pt인가?",
+        "gold_answer": "34.6",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "CJ대한통운_2023_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "| CL사업부문  | 하역, 운송, 보관, 건설, 정비, 기타 | 2,853,579    | 24.3%",
+          "| 택배사업부문  | 보관, 가공, 집하, 배송         | 3,722,691    | 31.6%",
+          "| 글로벌사업부문 | 하역, 운송, 보관             | 4,205,816    | 35.7%",
+          "| 건설사업부문  | 건설, 리조트, 부동산           | 985,808      | 8.4%"
+        ],
+        "reasoning_steps": [
+          "1. 부문별 비율: CL 24.3%, 택배 31.6%, 글로벌 35.7%, 건설 8.4%.",
+          "2. ≥30%: 택배 + 글로벌 = 31.6 + 35.7 = 67.3%.",
+          "3. <30%: CL + 건설 = 24.3 + 8.4 = 32.7%.",
+          "4. 차: 67.3 − 32.7 = 34.6%pt."
+        ],
+        "reasoning_hops": 4,
+        "task_type": "T4",
+        "source_company": "CJ대한통운",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T4_016 — 두 그룹(필터 기준 양쪽) 비율 합 차이."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T4_017",
+        "question": "삼성전자 2024년 사업부문 매출 비중을 기준으로, 비중 10% 이상인 부문의 매출 합에서 10% 미만인 부문의 매출 합을 뺀 값이 10% 이상인 부문 매출 합에서 차지하는 비율은 약 몇 %인가?",
+        "gold_answer": "84.81",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "삼성전자_2024_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "2024년 매출은 DX 부문이 174조 8,877억원(58.1%), DS 부문이 111조 660억원(36.9%)이며, SDC가 29조 1,578억원(9.7%), Harman은 14조 2,749억원(4.7%)입니다."
+        ],
+        "reasoning_steps": [
+          "1. 매출 비중 확인: DX 58.1%, DS 36.9%, SDC 9.7%, Harman 4.7%.",
+          "2. ≥10% 그룹 매출 합: DX 1,748,877 + DS 1,110,660 = 2,859,537 (억원).",
+          "3. <10% 그룹 매출 합: SDC 291,578 + Harman 142,749 = 434,327 (억원).",
+          "4. (2,859,537 − 434,327) / 2,859,537 × 100 ≈ 84.81%."
+        ],
+        "reasoning_hops": 4,
+        "task_type": "T4",
+        "source_company": "삼성전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T4_017 — 차/큰 그룹 비율 (집중도-like)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T5_001",
+        "question": "NAVER의 2022년 연결재무에서 현금및현금성자산이 유동자산에서 차지하는 비율은 2021년 대비 2022년에 약 몇 %pt 변동했는가? 부호 포함하여 답하라.",
+        "gold_answer": "-8.01",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "NAVER_2022_재무_2_연결재무_001"
+        ],
+        "evidence_quotes": [
+          "유동자산                         | 6,439,570,710,743   | 5,527,878,425,552   | 10,544,659,200,319",
+          "현금및현금성자산 (주6,7)              | 2,724,168,321,708   | 2,781,395,543,827   | 1,600,304,349,922"
+        ],
+        "reasoning_steps": [
+          "1. 2022 현금 2,724,168,321,708 / 유동자산 6,439,570,710,743 ≈ 42.30%.",
+          "2. 2021 현금 2,781,395,543,827 / 유동자산 5,527,878,425,552 ≈ 50.32%.",
+          "3. 변동: 42.30 − 50.32 ≈ −8.01%pt."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "NAVER",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T5_001 — 두 해 비율 변동."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T5_005",
+        "question": "KB금융 2022년 사업보고서의 제15기 기준, 기본주당이익과 희석주당이익의 차이는 약 몇 원인가?",
+        "gold_answer": "250",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "KB금융_2022_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "| 11,134원     | 8,843원",
+          "| 희석주당이익               | 10,705원     | 10,890원     | 8,730원"
+        ],
+        "reasoning_steps": [
+          "1. 표에서 제15기 기본주당이익 10,955원, 희석주당이익 10,705원 확인 (주2: 제15기는 주총 승인전 재무제표).",
+          "2. 차이 = 10,955 − 10,705 = 250원."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "KB금융",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T5_005 — 기본주당-희석주당 차 (제15기, 주석 적용)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T5_012",
+        "question": "신한지주의 2023년 사업보고서 주1에 따르면, 기업회계기준서 제1117호 적용으로 영향을 받지 않은 기는 어느 기인가?",
+        "gold_answer": "제21기",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2023_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "기업회계기준서 제1117호 '보험계약'이 제23기(당기)부터 최초 적용되어, 기업회계기준서 제1001호 '재무제표 표시'에 근거하여 제22기(전기) 연결포괄손익계산서를 소급하여 재작성하였습니다. 제21기(전전기)는 소급 재작성되지 아니하였습니다."
+        ],
+        "reasoning_steps": [
+          "1. 주1 footnote에서 제1117호 최초 적용기(제23기 당기) 확인.",
+          "2. 같은 footnote에서 소급재작성 대상(제22기 전기) 확인.",
+          "3. '제21기(전전기)는 소급 재작성되지 아니하였습니다' → 영향 없는 기 = 제21기."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T5",
+        "source_company": "신한지주",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T5_012 — 3개 기(적용/재작성/미영향) 식별 후 미영향기 추출."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    },
+    {
+      "item": {
+        "id": "HVA_T5_014",
+        "question": "KB금융 2023년 사업보고서 주석에 따르면, 제16기말과 제14기말 재무제표에 적용된 보험계약 회계기준(K-IFRS 제XXXX호) 중 더 최신 기준의 호수는 무엇인가?",
+        "gold_answer": "K-IFRS 제1117호",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "KB금융_2023_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "주2) 제15기말 재무제표는 당기 K-IFRS 제1117호(보험계약)적용에 따라 소급재작성 되었습니다.",
+          "주3) 제14기말 재무제표는 K-IFRS 제1104호(구 보험계약)에 따라 작성되었습니다."
+        ],
+        "reasoning_steps": [
+          "1. 주2에서 제15기말은 K-IFRS 제1117호 적용 명시 (제16기말 당기 재무제표도 같은 신규 기준 적용 가정).",
+          "2. 주3에서 제14기말은 K-IFRS 제1104호(구 보험계약) 명시.",
+          "3. 두 호수 비교: 1117 > 1104 → 더 최신 기준은 K-IFRS 제1117호."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T5",
+        "source_company": "KB금융",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T5_014 — 두 footnote 기준 비교, 신규 기준 식별."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:50:06"
+    }
+  ],
+  "items": [
+    {
+      "id": "HVA_T2_003",
+      "question": "카카오의 2022년 별도재무 기준, 자산총계의 전년 대비 증가율과 유동자산의 전년 대비 증가율의 차이는 약 몇 %pt인가?",
+      "gold_answer": "10.88",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "카카오_2022_재무_1_요약_003"
+      ],
+      "evidence_quotes": [
+        "[유동자산]              | 2,334,856,281,209        | 2,412,771,566,068        | 1,782,401,903,517",
+        "| 자산총계                | 10,791,496,254,634       | 10,024,652,294,434       | 7,345,506,484,784"
+      ],
+      "reasoning_steps": [
+        "1. 카카오 2022 별도 재무에서 자산총계(제28기 10,791,496/제27기 10,024,652 백만원)와 유동자산(2,334,856/2,412,772)을 확인.",
+        "2. 자산총계 증가율: (10,791,496−10,024,652)/10,024,652 ≈ 7.65%.",
+        "3. 유동자산 증가율: (2,334,856−2,412,772)/2,412,772 ≈ −3.23%.",
+        "4. 두 증가율 차: 7.65 − (−3.23) = 10.88%pt."
+      ],
+      "reasoning_hops": 4,
+      "task_type": "T4",
+      "source_company": "카카오",
+      "source_report": "2022_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T2_003 — cross-row 증가율 비교 (자산총계 vs 유동자산)."
+    },
+    {
+      "id": "HVA_T2_004",
+      "question": "현대자동차의 2022년 연결 기준, 영업이익의 전년 대비 증감률과 매출액의 전년 대비 증감률의 차이는 약 몇 %pt인가?",
+      "gold_answer": "25.84",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "현대자동차_2022_재무_2_연결재무_003"
+      ],
+      "evidence_quotes": [
+        "매출액                  | 142,527,535 | 117,610,626 | 103,997,601",
+        "| 영업이익                 | 9,819,769   | 6,678,949   | 2,394,671"
+      ],
+      "reasoning_steps": [
+        "1. 매출액 제55기 142,527,535, 제54기 117,610,626; 영업이익 제55기 9,819,769, 제54기 6,678,949.",
+        "2. 영업이익 증감률: (9,819,769−6,678,949)/6,678,949 ≈ 47.03%.",
+        "3. 매출액 증감률: (142,527,535−117,610,626)/117,610,626 ≈ 21.19%.",
+        "4. 차: 47.03 − 21.19 = 25.84%pt."
+      ],
+      "reasoning_hops": 4,
+      "task_type": "T4",
+      "source_company": "현대자동차",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T2_004 — 영업이익·매출액 증감률 차."
+    },
+    {
+      "id": "HVA_T2_011",
+      "question": "삼성전자의 2022년 보고서에 따르면, 2022년 자본총계 대비 지배기업 소유주지분 비율은 2021년 대비 약 몇 %pt 변동했는가?",
+      "gold_answer": "0.14",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "삼성전자_2022_재무_2_연결재무_001"
+      ],
+      "evidence_quotes": [
+        "지배기업 소유주지분      | 345,186,142 | 296,237,697 | 267,670,331",
+        "| 자본총계            | 354,749,604 | 304,899,931 | 275,948,016"
+      ],
+      "reasoning_steps": [
+        "1. 2022 지배기업 소유주지분 345,186,142, 자본총계 354,749,604 → 비율 97.30%.",
+        "2. 2021 지배기업 소유주지분 296,237,697, 자본총계 304,899,931 → 비율 97.16%.",
+        "3. 변동: 97.30 − 97.16 = 0.14%pt."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "삼성전자",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T2_011 — 2년치 비율의 변동(%pt)."
+    },
+    {
+      "id": "HVA_T2_012",
+      "question": "POSCO홀딩스의 연결요약재무 기준, 자산총계에서 유동자산이 차지하는 비율은 2022년 대비 2023년에 약 몇 %pt 감소(또는 증가)했는가? 부호 포함하여 답하라.",
+      "gold_answer": "-2.64",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_재무_1_요약_001"
+      ],
+      "evidence_quotes": [
+        "[유동자산]        | 46,212,299      | 47,649,466      | 46,621,631",
+        "| 자산총계          | 100,945,394     | 98,406,781      | 91,471,614"
+      ],
+      "reasoning_steps": [
+        "1. 2023 유동자산 46,212,299 / 자산총계 100,945,394 = 45.78%.",
+        "2. 2022 유동자산 47,649,466 / 자산총계 98,406,781 = 48.42%.",
+        "3. 변동: 45.78 − 48.42 = −2.64%pt (감소)."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T2_012 — 2년치 비율의 변동(%pt)."
+    },
+    {
+      "id": "HVA_T3_004",
+      "question": "카카오 2023년 사업보고서에 따르면, 제29기 매출액 1위 사업부문의 매출액은 제28기 매출액 1위 사업부문의 매출액의 약 몇 배인가?",
+      "gold_answer": "1.16",
+      "gold_answer_unit": "배",
+      "evidence_chunks": [
+        "카카오_2023_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| 플랫폼 부문 | 제품/용역  | 톡비즈    | 카카오톡,선물하기             | 3,554,442 | 47.0%     | 3,462,565 | 50.9%",
+        "| 콘텐츠 부문 | 제품/용역  | 게임     | 카카오게임                 | 4,002,560 | 53.0%     | 3,336,483 | 49.1%"
+      ],
+      "reasoning_steps": [
+        "1. 제29기(2023) 부문별 매출 비교: 플랫폼 3,554,442(47.0%), 콘텐츠 4,002,560(53.0%) → 1위=콘텐츠.",
+        "2. 제28기(2022) 부문별 매출 비교: 플랫폼 3,462,565(50.9%), 콘텐츠 3,336,483(49.1%) → 1위=플랫폼.",
+        "3. 비율: 4,002,560 / 3,462,565 ≈ 1.156 → 약 1.16배."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "카카오",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_004 — 연도별 1위 부문이 다른 점을 활용한 multi-year cross-rank ratio."
+    },
+    {
+      "id": "HVA_T3_007",
+      "question": "LG전자의 2024년 사업부문 매출액 기준, 1위 부문 매출이 2위 부문 매출의 약 몇 배인가?",
+      "gold_answer": "1.57",
+      "gold_answer_unit": "배",
+      "evidence_chunks": [
+        "LG전자_2024_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| H&A                | 제품/상품/기타           | 냉장고, 세탁기, 에어컨 등                | 가정용 전기제품, 냉난방기기 및 핵심부품     | LG, DIOS, TROMM, LG SIGNATURE, SIGNATURE KITCHEN SUITE, CordZero, 오브제컬렉션, WHISEN, PuriCare, 에어로타워 등 | 332,033             |               37.8",
+        "| 이노텍                | 제품/상품/기타           | Optics Solution 등              | Camera Module 등            | -                                                                                                   | 212,008             |               24.2"
+      ],
+      "reasoning_steps": [
+        "1. LG전자 2024 사업부문 매출 정렬: H&A 332,033(37.8%), 이노텍 212,008(24.2%), HE 152,291(17.4%), VS 106,205(12.1%), BS 56,871(6.5%), 기타 17,874(2%).",
+        "2. 1위 H&A, 2위 이노텍.",
+        "3. 비율: 332,033 / 212,008 ≈ 1.57배."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "LG전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_007 — 1·2위 부문 매출 비율."
+    },
+    {
+      "id": "HVA_T3_015",
+      "question": "신세계의 2022년 사업부문 중 매출액 1위 부문과 매출총이익 1위 부문의 매출총이익률(매출총이익/매출액) 차이는 약 몇 %pt인가?",
+      "gold_answer": "29.75",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "신세계_2022_사업의내용_5_매출_003"
+      ],
+      "evidence_quotes": [
+        "| 백화점                       | 의류 등       | (주)신세계(주)신세계동대구복합환승센터(주)대전신세계(주)광주신세계 | 2,486,946 | 31.8%      | 2,126,512 | 41.8%",
+        "| 면세점사업                     | 의류 등       | (주)신세계디에프(주)신세계디에프글로벌 외               | 3,438,683 | 44.0%      | 1,917,425 | 37.7%"
+      ],
+      "reasoning_steps": [
+        "1. 매출액 1위: 면세점사업 3,438,683(44.0%). 매출총이익 1위: 백화점 2,126,512(41.8%).",
+        "2. 면세점 매출총이익률 = 1,917,425 / 3,438,683 ≈ 55.76%.",
+        "3. 백화점 매출총이익률 = 2,126,512 / 2,486,946 ≈ 85.51%.",
+        "4. 차: 85.51 − 55.76 ≈ 29.75%pt."
+      ],
+      "reasoning_hops": 4,
+      "task_type": "T4",
+      "source_company": "신세계",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_015 — 두 1위 부문(매출 vs 매출총이익)의 매출총이익률 차."
+    },
+    {
+      "id": "HVA_T3_016",
+      "question": "신세계의 2023년 사업부문 중 백화점과 면세점사업의 매출총이익률 차이는 약 몇 %pt인가?",
+      "gold_answer": "54.55",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "신세계_2023_사업의내용_5_매출_003"
+      ],
+      "evidence_quotes": [
+        "| 백화점                       | 의류 등       | (주)신세계(주)신세계동대구복합환승센터(주)대전신세계(주)광주신세계 | 2,556,982 | 40.2%      | 2,166,835 | 56.2%",
+        "| 면세점사업                     | 의류 등       | (주)신세계디에프(주)신세계디에프글로벌 외               | 1,916,545 | 30.2%      | 578,543   | 15.0%"
+      ],
+      "reasoning_steps": [
+        "1. 백화점 매출 2,556,982, 매출총이익 2,166,835 → 매출총이익률 ≈ 84.74%.",
+        "2. 면세점사업 매출 1,916,545, 매출총이익 578,543 → 매출총이익률 ≈ 30.19%.",
+        "3. 차: 84.74 − 30.19 ≈ 54.55%pt."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "신세계",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_016 — 두 부문 매출총이익률 차."
+    },
+    {
+      "id": "HVA_T3_018",
+      "question": "CJ대한통운의 2023년 사업부문 중 매출액 1위·2위 부문의 매출액 합이 전체 합계 매출에서 차지하는 비율은 약 몇 %인가?",
+      "gold_answer": "67.38",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "CJ대한통운_2023_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "| 글로벌사업부문 | 하역, 운송, 보관             | 4,205,816    | 35.7%",
+        "| 택배사업부문  | 보관, 가공, 집하, 배송         | 3,722,691    | 31.6%",
+        "| 합 계     | 합 계                    | 11,767,894   | 100.0%"
+      ],
+      "reasoning_steps": [
+        "1. CJ대한통운 2023 부문 매출: CL 2,853,579(24.3%), 택배 3,722,691(31.6%), 글로벌 4,205,816(35.7%), 건설 985,808(8.4%). 합계 11,767,894.",
+        "2. 1위 글로벌, 2위 택배. 합 = 4,205,816 + 3,722,691 = 7,928,507.",
+        "3. 비율 = 7,928,507 / 11,767,894 × 100 ≈ 67.38%."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "CJ대한통운",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_018 — 1·2위 합/전체 비율 (값 계산)."
+    },
+    {
+      "id": "HVA_T3_020",
+      "question": "카카오 2022년 사업부문 매출액 기준, 1위 부문의 매출액은 2위 부문 매출액의 약 몇 배인가?",
+      "gold_answer": "1.13",
+      "gold_answer_unit": "배",
+      "evidence_chunks": [
+        "카카오_2022_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| 플랫폼 부문         | 제품/용역              | 톡비즈                | 카카오톡,선물하기              | 3,770,354         | 53.1%",
+        "| 콘텐츠 부문         | 제품/용역              | 게임                 | 카카오게임                  | 3,336,483         | 46.9%"
+      ],
+      "reasoning_steps": [
+        "1. 카카오 2022 사업부문별 매출(연결): 플랫폼 3,770,354(53.1%), 콘텐츠 3,336,483(46.9%).",
+        "2. 1위 = 플랫폼, 2위 = 콘텐츠.",
+        "3. 비율: 3,770,354 / 3,336,483 ≈ 1.13배."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "카카오",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_020 — 1·2위 매출 비율."
+    },
+    {
+      "id": "HVA_T3_021",
+      "question": "현대자동차의 2024년 차량부문 영업이익률과 기타부문 영업이익률의 차이의 절댓값은 약 몇 %pt인가?",
+      "gold_answer": "1.92",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "현대자동차_2024_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| 차량부문   | 매출액    | 136,725,011 | 78.1",
+        "| 차량부문   | 영업이익   | 11,411,499  | 80.1",
+        "| 기타부문   | 매출액    | 10,059,492  | 5.7",
+        "| 기타부문   | 영업이익   | 1,032,844   | 7.3"
+      ],
+      "reasoning_steps": [
+        "1. 차량부문 영업이익률 = 11,411,499 / 136,725,011 × 100 ≈ 8.35%.",
+        "2. 기타부문 영업이익률 = 1,032,844 / 10,059,492 × 100 ≈ 10.27%.",
+        "3. 두 영업이익률 차의 절댓값: |8.35 − 10.27| ≈ 1.92%pt."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "현대자동차",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_021 — 두 부문 영업이익률 차."
+    },
+    {
+      "id": "HVA_T4_001",
+      "question": "NAVER의 2022년 사업보고서에 따르면, 연결 기준 R&D/영업수익 비율(제24기·제23기) 평균과 별도 기준 R&D/영업수익 비율(제24기·제23기) 평균의 차이는 약 몇 %pt인가?",
+      "gold_answer": "10.18",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "NAVER_2022_사업의내용_7_연구개발_002"
+      ],
+      "evidence_quotes": [
+        "연구개발비/영업수익 비율* 연구개발비용계÷당기영업수익×100] | 22.01%            | 24.28%            | 13.38%            | 12.55%"
+      ],
+      "reasoning_steps": [
+        "1. 표에서 4개 R&D 비율 확인: 연결 제24기 22.01%, 제23기 24.28%, 별도 제24기 13.38%, 제23기 12.55%.",
+        "2. 연결 평균 = (22.01 + 24.28) / 2 = 23.145%.",
+        "3. 별도 평균 = (13.38 + 12.55) / 2 = 12.965%.",
+        "4. 차: 23.145 − 12.965 = 10.18%pt."
+      ],
+      "reasoning_hops": 4,
+      "task_type": "T4",
+      "source_company": "NAVER",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T4_001 — 그룹 평균 간 비교."
+    },
+    {
+      "id": "HVA_T4_004",
+      "question": "카카오의 2023년 사업보고서에 따르면, 별도 기준 R&D/매출액 비율 3개 연도 평균과 연결 기준 R&D/매출액 비율 3개 연도 평균의 차이는 약 몇 %pt인가?",
+      "gold_answer": "3.97",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "카카오_2023_사업의내용_7_연구개발_005"
+      ],
+      "evidence_quotes": [
+        "연구개발비/매출액 비율         | 연구개발비/매출액 비율         | 16.2%     | 15.0%     | 12.9%    | 19.6%   | 19.1%   | 17.3%"
+      ],
+      "reasoning_steps": [
+        "1. 표에서 연결 3개 연도 비율 16.2%, 15.0%, 12.9% 확인.",
+        "2. 별도 3개 연도 비율 19.6%, 19.1%, 17.3% 확인.",
+        "3. 연결 평균 = (16.2+15.0+12.9)/3 ≈ 14.70%.",
+        "4. 별도 평균 = (19.6+19.1+17.3)/3 ≈ 18.67%.",
+        "5. 차: 18.67 − 14.70 = 3.97%pt."
+      ],
+      "reasoning_hops": 5,
+      "task_type": "T4",
+      "source_company": "카카오",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T4_004 — 두 그룹(연결/별도) 평균 차 (3개씩)."
+    },
+    {
+      "id": "HVA_T4_007",
+      "question": "LG전자의 2024년 사업보고서에 따르면, 개발비(무형자산)가 연구개발비용계에서 차지하는 비중의 제23기와 제21기 차이는 약 몇 %pt인가?",
+      "gold_answer": "6.30",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "LG전자_2024_사업의내용_7_연구개발_009"
+      ],
+      "evidence_quotes": [
+        "연구개발비용 계                              | 연구개발비용 계                              | 4,763,249 | 4,283,425 | 4,036,969",
+        "회계처리                                  | 개발비(무형자산)                             | 547,006   | 467,893   | 209,127"
+      ],
+      "reasoning_steps": [
+        "1. 제23기 무형자산 547,006 / 총계 4,763,249 ≈ 11.48%.",
+        "2. 제21기 무형자산 209,127 / 총계 4,036,969 ≈ 5.18%.",
+        "3. 차: 11.48 − 5.18 = 6.30%pt."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "LG전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T4_007 — 무형자산 비중의 양 끝 연도 차."
+    },
+    {
+      "id": "HVA_T4_014",
+      "question": "신세계의 2022년 사업보고서에 따르면, 연구개발비/매출액 비율 3개 연도의 (최댓값−최솟값)을 3개 연도 평균으로 나눈 백분율은 약 몇 %인가?",
+      "gold_answer": "36.49",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "신세계_2022_사업의내용_7_연구개발_000"
+      ],
+      "evidence_quotes": [
+        "| 연구개발비 / 매출액 비율[연구개발비용계÷당기매출액×100] | 0.25%   | 0.20%   | 0.29%"
+      ],
+      "reasoning_steps": [
+        "1. 표에서 비율 3년치: 2022 0.25%, 2021 0.20%, 2020 0.29%.",
+        "2. 최댓값 0.29%, 최솟값 0.20%. 범위 = 0.09%pt.",
+        "3. 평균 = (0.25+0.20+0.29)/3 ≈ 0.2467%.",
+        "4. (범위/평균) × 100 = 0.09 / 0.2467 × 100 ≈ 36.49%."
+      ],
+      "reasoning_hops": 4,
+      "task_type": "T4",
+      "source_company": "신세계",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T4_014 — variation coefficient-like measure (range/mean)."
+    },
+    {
+      "id": "HVA_T4_016",
+      "question": "CJ대한통운의 2023년 사업부문 중 매출 비율이 30% 이상인 부문들의 비율 합과, 30% 미만인 부문들의 비율 합의 차이는 약 몇 %pt인가?",
+      "gold_answer": "34.6",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "CJ대한통운_2023_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "| CL사업부문  | 하역, 운송, 보관, 건설, 정비, 기타 | 2,853,579    | 24.3%",
+        "| 택배사업부문  | 보관, 가공, 집하, 배송         | 3,722,691    | 31.6%",
+        "| 글로벌사업부문 | 하역, 운송, 보관             | 4,205,816    | 35.7%",
+        "| 건설사업부문  | 건설, 리조트, 부동산           | 985,808      | 8.4%"
+      ],
+      "reasoning_steps": [
+        "1. 부문별 비율: CL 24.3%, 택배 31.6%, 글로벌 35.7%, 건설 8.4%.",
+        "2. ≥30%: 택배 + 글로벌 = 31.6 + 35.7 = 67.3%.",
+        "3. <30%: CL + 건설 = 24.3 + 8.4 = 32.7%.",
+        "4. 차: 67.3 − 32.7 = 34.6%pt."
+      ],
+      "reasoning_hops": 4,
+      "task_type": "T4",
+      "source_company": "CJ대한통운",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T4_016 — 두 그룹(필터 기준 양쪽) 비율 합 차이."
+    },
+    {
+      "id": "HVA_T4_017",
+      "question": "삼성전자 2024년 사업부문 매출 비중을 기준으로, 비중 10% 이상인 부문의 매출 합에서 10% 미만인 부문의 매출 합을 뺀 값이 10% 이상인 부문 매출 합에서 차지하는 비율은 약 몇 %인가?",
+      "gold_answer": "84.81",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "삼성전자_2024_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "2024년 매출은 DX 부문이 174조 8,877억원(58.1%), DS 부문이 111조 660억원(36.9%)이며, SDC가 29조 1,578억원(9.7%), Harman은 14조 2,749억원(4.7%)입니다."
+      ],
+      "reasoning_steps": [
+        "1. 매출 비중 확인: DX 58.1%, DS 36.9%, SDC 9.7%, Harman 4.7%.",
+        "2. ≥10% 그룹 매출 합: DX 1,748,877 + DS 1,110,660 = 2,859,537 (억원).",
+        "3. <10% 그룹 매출 합: SDC 291,578 + Harman 142,749 = 434,327 (억원).",
+        "4. (2,859,537 − 434,327) / 2,859,537 × 100 ≈ 84.81%."
+      ],
+      "reasoning_hops": 4,
+      "task_type": "T4",
+      "source_company": "삼성전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T4_017 — 차/큰 그룹 비율 (집중도-like)."
+    },
+    {
+      "id": "HVA_T5_001",
+      "question": "NAVER의 2022년 연결재무에서 현금및현금성자산이 유동자산에서 차지하는 비율은 2021년 대비 2022년에 약 몇 %pt 변동했는가? 부호 포함하여 답하라.",
+      "gold_answer": "-8.01",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "NAVER_2022_재무_2_연결재무_001"
+      ],
+      "evidence_quotes": [
+        "유동자산                         | 6,439,570,710,743   | 5,527,878,425,552   | 10,544,659,200,319",
+        "현금및현금성자산 (주6,7)              | 2,724,168,321,708   | 2,781,395,543,827   | 1,600,304,349,922"
+      ],
+      "reasoning_steps": [
+        "1. 2022 현금 2,724,168,321,708 / 유동자산 6,439,570,710,743 ≈ 42.30%.",
+        "2. 2021 현금 2,781,395,543,827 / 유동자산 5,527,878,425,552 ≈ 50.32%.",
+        "3. 변동: 42.30 − 50.32 ≈ −8.01%pt."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "NAVER",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T5_001 — 두 해 비율 변동."
+    },
+    {
+      "id": "HVA_T5_005",
+      "question": "KB금융 2022년 사업보고서의 제15기 기준, 기본주당이익과 희석주당이익의 차이는 약 몇 원인가?",
+      "gold_answer": "250",
+      "gold_answer_unit": "원",
+      "evidence_chunks": [
+        "KB금융_2022_재무_1_요약_004"
+      ],
+      "evidence_quotes": [
+        "| 11,134원     | 8,843원",
+        "| 희석주당이익               | 10,705원     | 10,890원     | 8,730원"
+      ],
+      "reasoning_steps": [
+        "1. 표에서 제15기 기본주당이익 10,955원, 희석주당이익 10,705원 확인 (주2: 제15기는 주총 승인전 재무제표).",
+        "2. 차이 = 10,955 − 10,705 = 250원."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "KB금융",
+      "source_report": "2022_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T5_005 — 기본주당-희석주당 차 (제15기, 주석 적용)."
+    },
+    {
+      "id": "HVA_T5_012",
+      "question": "신한지주의 2023년 사업보고서 주1에 따르면, 기업회계기준서 제1117호 적용으로 영향을 받지 않은 기는 어느 기인가?",
+      "gold_answer": "제21기",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "신한지주_2023_재무_1_요약_004"
+      ],
+      "evidence_quotes": [
+        "기업회계기준서 제1117호 '보험계약'이 제23기(당기)부터 최초 적용되어, 기업회계기준서 제1001호 '재무제표 표시'에 근거하여 제22기(전기) 연결포괄손익계산서를 소급하여 재작성하였습니다. 제21기(전전기)는 소급 재작성되지 아니하였습니다."
+      ],
+      "reasoning_steps": [
+        "1. 주1 footnote에서 제1117호 최초 적용기(제23기 당기) 확인.",
+        "2. 같은 footnote에서 소급재작성 대상(제22기 전기) 확인.",
+        "3. '제21기(전전기)는 소급 재작성되지 아니하였습니다' → 영향 없는 기 = 제21기."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T5",
+      "source_company": "신한지주",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T5_012 — 3개 기(적용/재작성/미영향) 식별 후 미영향기 추출."
+    },
+    {
+      "id": "HVA_T5_014",
+      "question": "KB금융 2023년 사업보고서 주석에 따르면, 제16기말과 제14기말 재무제표에 적용된 보험계약 회계기준(K-IFRS 제XXXX호) 중 더 최신 기준의 호수는 무엇인가?",
+      "gold_answer": "K-IFRS 제1117호",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "KB금융_2023_재무_1_요약_002"
+      ],
+      "evidence_quotes": [
+        "주2) 제15기말 재무제표는 당기 K-IFRS 제1117호(보험계약)적용에 따라 소급재작성 되었습니다.",
+        "주3) 제14기말 재무제표는 K-IFRS 제1104호(구 보험계약)에 따라 작성되었습니다."
+      ],
+      "reasoning_steps": [
+        "1. 주2에서 제15기말은 K-IFRS 제1117호 적용 명시 (제16기말 당기 재무제표도 같은 신규 기준 적용 가정).",
+        "2. 주3에서 제14기말은 K-IFRS 제1104호(구 보험계약) 명시.",
+        "3. 두 호수 비교: 1117 > 1104 → 더 최신 기준은 K-IFRS 제1117호."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T5",
+      "source_company": "KB금융",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T5_014 — 두 footnote 기준 비교, 신규 기준 식별."
+    }
+  ]
+}

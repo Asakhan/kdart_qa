@@ -1,0 +1,3087 @@
+{
+  "saved_at": "2026-05-26T17:35:27",
+  "states": [
+    {
+      "item": {
+        "id": "DART_T1_001",
+        "question": "2022년 기준 네이버의 연결에 포함된 종속 회사 수는 몇 개입니까?",
+        "gold_answer": "100",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "NAVER_2022_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "연결에 포함된 종속 회사수   | 100                        |"
+        ],
+        "reasoning_steps": [
+          "1. '연결에 포함된 종속 회사수'가 명시되어 있는 테이블을 찾는다.",
+          "2. 해당 라인의 2022년 값을 확인하여 '100'이라는 값을 도출한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T1",
+        "source_company": "NAVER",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "단순 수치를 추출하는 문제로, 별다른 계산 없이 적절한 위치의 값을 추출했습니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T12:51:40"
+    },
+    {
+      "item": {
+        "id": "DART_T1_002",
+        "question": "2024년 신한지주의 자산 총계는 얼마입니까?",
+        "gold_answer": "739,764,256",
+        "gold_answer_unit": "백만원",
+        "evidence_chunks": [
+          "신한지주_2024_재무_1_요약_001"
+        ],
+        "evidence_quotes": [
+          "자산 총계 | 739,764,256"
+        ],
+        "reasoning_steps": [
+          "1. '신한지주_2024_재무_1_요약_001' 청크에서 2024년 자산 총계 항목을 찾는다.",
+          "2. 2024년 자산 총계 값을 확인해 결과로 제시한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T1",
+        "source_company": "신한지주",
+        "source_report": "2024_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "신한지주 2024년의 자산 총계를 묻는 간단한 수치 질문으로, 청크에서 관련 항목을 확인하고 값을 직접 추출합니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T12:58:41"
+    },
+    {
+      "item": {
+        "id": "DART_T1_003",
+        "question": "2023년 POSCO홀딩스의 별도 재무제표상 비유동부채는 얼마인가?",
+        "gold_answer": "2,326,663",
+        "gold_answer_unit": "백만원",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_003"
+        ],
+        "evidence_quotes": [
+          "[비유동부채] | 2,326,663 | 3,858,263 | 7,339,065"
+        ],
+        "reasoning_steps": [
+          "1. 2023년 별도 재무제표의 비유동부채 항목을 찾는다.",
+          "2. 2023년 12월말의 비유동부채 수치를 추출한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T1",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "별도 재무제표의 비유동부채 항목에서 직접 수치를 추출하는 간단한 질문을 의도함."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T13:05:11"
+    },
+    {
+      "item": {
+        "id": "DART_T1_004",
+        "question": "카카오의 2023년 말 기준 영업이익은 얼마입니까?",
+        "gold_answer": "460,857,845,673",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "카카오_2023_재무_1_요약_003"
+        ],
+        "evidence_quotes": [
+          "영업이익 (손실 ) | 533,021,659,728"
+        ],
+        "reasoning_steps": [
+          "1. 제공된 표에서 '영업이익 (손실)' 행을 찾습니다.",
+          "2. '제 29 (당) 기(2023.12.31)' 열의 값을 읽어옵니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T1",
+        "source_company": "카카오",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "단일 수치를 그대로 추출하는 과제를 위한 질문입니다."
+      },
+      "status": "discarded",
+      "discard_reason": "evidence 모호: 연결/별도 표가 모두 존재해 답이 일의적이지 않음 — 폐기",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T13:35:59"
+    },
+    {
+      "item": {
+        "id": "DART_T1_005",
+        "question": "2022년 카카오의 매출액은 얼마입니까?",
+        "gold_answer": "6,799,047,881,222",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "카카오_2022_재무_1_요약_003"
+        ],
+        "evidence_quotes": [
+          "매출액 | 2,456,590,805,969"
+        ],
+        "reasoning_steps": [
+          "1. evidence 테이블에서 2022년(제28기) 매출액을 확인한다.",
+          "2. 테이블에 '매출액'과 그에 해당하는 수치 '2,456,590,805,969'원을 추출한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T1",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "올바른 테이블 셀에서 정확한 수치를 추출하는 것을 목표로 한다."
+      },
+      "status": "discarded",
+      "discard_reason": "gold_answer가 어떤 evidence에도 존재하지 않아 폐기",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T13:35:59"
+    },
+    {
+      "item": {
+        "id": "DART_T2_001",
+        "question": "신한EZ손해보험의 2024년 영업수익은 전년 대비 몇 퍼센트 증가했습니까?",
+        "gold_answer": "114.65",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "신한지주_2024_사업의내용_5_매출_086"
+        ],
+        "evidence_quotes": [
+          "| 영업수익        |    93.8 |    43.7 |",
+          "| 영업수익        |    93.8 |    43.7 |"
+        ],
+        "reasoning_steps": [
+          "1. 2024년 영업수익은 93.8십억원이고 2023년 영업수익은 43.7십억원으로 주어져 있습니다.",
+          "2. 2023년 대비 2024년의 영업수익 증감률은 ((93.8 - 43.7) / 43.7) * 100% ≈ 114.65% 입니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "신한지주",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "영업수익의 전년 대비 증감률을 계산하도록 의도했습니다. | reviewer fix: 표가 신한지주 본체가 아니라 자회사 신한EZ손해보험의 영업실적이라 질문 회사명을 정정. 산술오차(114.42→114.65) 정정."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T13:31:44"
+    },
+    {
+      "item": {
+        "id": "DART_T2_002",
+        "question": "2023년과 2022년 POSCO홀딩스의 자산총계 대비 부채총계 비율의 증감률은?",
+        "gold_answer": "0.23",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_001"
+        ],
+        "evidence_quotes": [
+          "자산총계 | 100,945,394 | 98,406,781",
+          "부채총계 | 41,281,497 | 40,149,380"
+        ],
+        "reasoning_steps": [
+          "1. 2023년과 2022년의 자산총계 대비 부채총계 비율을 각각 계산한다. 2023년: 41,281,497 / 100,945,394 × 100 = 40.90%, 2022년: 40,149,380 / 98,406,781 × 100 = 40.81%.",
+          "2. 두 비율의 증감률을 계산한다: (40.90 - 40.81) / 40.81 × 100 ≈ +0.23%."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "두 기간의 비율을 구한 후 비율의 변화를 계산하는 문제로 설계 | reviewer fix: 모델 산술 오류 정정 (-2.49% → +0.23%). 정확한 계산은 부채비율 약 40.9%와 40.8% 사이의 0.1pp 차이 → 약 0.23% 증가."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T13:42:46"
+    },
+    {
+      "item": {
+        "id": "DART_T2_003",
+        "question": "카카오의 별도기준 자산총계가 2021년 대비 2022년에 몇 퍼센트 증가했습니까?",
+        "gold_answer": "7.65%",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "카카오_2022_재무_1_요약_003"
+        ],
+        "evidence_quotes": [
+          "자산총계 | 10,791,496,254,634 | 10,024,652,294,434"
+        ],
+        "reasoning_steps": [
+          "1. 2021년 자산총계는 10,024,652,294,434원이고, 2022년 자산총계는 10,791,496,254,634원이다.",
+          "2. 증가율 계산: [(10,791,496,254,634 - 10,024,652,294,434) / 10,024,652,294,434] * 100 = 7.65%"
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "자산총계의 연도별 변화와 그 증가율을 계산하는 목표. | reviewer fix: 별도/연결 모호성 제거 — \"별도기준\" 명시. 2021년 자산총계 10,024,652,294,434 검증 완료 (자산총계 행 직접 + 유동+비유동 합 + 부채자본총계 행으로 3중 확인)."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T13:49:18"
+    },
+    {
+      "item": {
+        "id": "DART_T2_004",
+        "question": "2022년도 현대자동차의 영업이익이 전년 대비 몇 퍼센트 증가했나요?",
+        "gold_answer": "47.03",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "현대자동차_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "영업이익 | 9,819,769 | 6,678,949 | 2,394,671"
+        ],
+        "reasoning_steps": [
+          "1. 2022년 영업이익은 9,819,769 백만원이고, 전년도인 2021년 영업이익은 6,678,949 백만원이다.",
+          "2. 증감률은 ((9,819,769 - 6,678,949) / 6,678,949) * 100 ≈ 47.03%이다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "현대자동차",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "연도별 영업이익 데이터를 사용하여 증감률을 계산하는 문제입니다. | reviewer fix: 47.05 → 47.03 (정확한 계산은 3,140,820/6,678,949 ≈ 47.0257%)."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T13:54:00"
+    },
+    {
+      "item": {
+        "id": "DART_T2_005",
+        "question": "2024년 LG전자의 영업 기본 및 희석 주당순손실의 감소율은 얼마인가?",
+        "gold_answer": "58.8%",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "LG전자_2024_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "영업 기본 및 희석 주당순손실 (단위:원) | (1,577)                  | (650)                    | (1,014)",
+          "[ ()안은 부(-)의 금액입니다. ]"
+        ],
+        "reasoning_steps": [
+          "1. 2023년 주당순손실이 (650)원, 2024년 주당순손실이 (1,577)원임을 확인한다.",
+          "2. 감소율을 계산하기 위해 (650 - 1577) / 1577 * 100을 계산하여 약 58.8%를 얻는다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "LG전자",
+        "source_report": "2024_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "2023년 대비 2024년 손실이 줄어든 비율을 계산하여 감소율을 구하는 것을 목표로 하였다."
+      },
+      "status": "discarded",
+      "discard_reason": "방향·산술·용어 모두 오류: \"감소율\"인데 손실이 실제로 증가(-650→-1577), 산술도 분모 기준 잘못, 용어도 모호.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T13:58:20"
+    },
+    {
+      "item": {
+        "id": "DART_T2_006",
+        "question": "2022년 신한지주의 영업이익 증가율은 전년 대비 얼마인가?",
+        "gold_answer": "27.65",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "신한지주_2022_사업의내용_5_매출_104"
+        ],
+        "evidence_quotes": [
+          "영업이익 | 영업이익 | 영업이익 | 51.6 | 40.5 | 35.5"
+        ],
+        "reasoning_steps": [
+          "1. 2022년의 영업이익은 51.6억원이고 2021년의 영업이익은 40.5억원이다.",
+          "2. 증가율을 계산하기 위해 (51.6 - 40.5) / 40.5 * 100을 수행하면 약 27.65%가 된다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "신한지주",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "영업이익의 연도별 증감률을 계산하도록 의도되었음"
+      },
+      "status": "discarded",
+      "discard_reason": "회사 오귀속(신한지주가 아니라 자회사 신한저축은행의 별도 영업실적표) + 산술오차(27.65 vs 27.41).",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T14:05:33"
+    },
+    {
+      "item": {
+        "id": "DART_T2_007",
+        "question": "POSCO홀딩스의 별도기준 유동부채는 2023년 대비 2024년에 몇 퍼센트 감소했나요?",
+        "gold_answer": "-91.05%",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "POSCO홀딩스_2024_재무_1_요약_003"
+        ],
+        "evidence_quotes": [
+          "[유동부채] | 162,831 | 1,819,670"
+        ],
+        "reasoning_steps": [
+          "1. 2024년 유동부채는 162,831백만원이고, 2023년 유동부채는 1,819,670백만원이다.",
+          "2. 증감률은 ((162,831 - 1,819,670) / 1,819,670) * 100 = -91.05%로 계산된다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2024_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "유동부채의 전년 대비 증감률을 계산하는 문제로 설정하였습니다. | reviewer fix: 별도/연결 모호성 제거 — \"별도기준\" 명시. 2023 보고서와 교차검증: 제56기 1,819,670 일치. 별도 유동부채는 단기차입금 상환으로 -91% 감소."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T14:29:24"
+    },
+    {
+      "item": {
+        "id": "DART_T2_008",
+        "question": "KB금융의 2022년 보험손익은 2021년에 비해 몇 % 증가했나요?",
+        "gold_answer": "7.83%",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "KB금융_2022_사업의내용_5_매출_220"
+        ],
+        "evidence_quotes": [
+          "보험손익 | 518,419 | 480,751"
+        ],
+        "reasoning_steps": [
+          "1. 2022년 보험손익 및 2021년 보험손익 수치를 찾습니다: 각각 518,419 백만원, 480,751 백만원입니다.",
+          "2. 2022년 보험손익이 2021년에 비해 얼마나 증가했는지 퍼센트로 계산합니다: ((518,419 - 480,751) / 480,751) * 100 = 7.83%."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "KB금융",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "2022년 대비 2021년의 보험손익 증가율을 계산하는 문제입니다."
+      },
+      "status": "discarded",
+      "discard_reason": "회사 오귀속: 보험손익 518,419/480,751은 KB금융 본체가 아니라 자회사 KB라이프생명(구.푸르덴셜생명)의 데이터. 청크 직전에 [KB라이프생명] 헤더로 명시됨.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T14:31:54"
+    },
+    {
+      "item": {
+        "id": "DART_T2_009",
+        "question": "2022년 POSCO홀딩스의 영업활동으로 인한 현금흐름은 전년 대비 증감률이 얼마인가?",
+        "gold_answer": "−1.16%",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "POSCO홀딩스_2022_재무_2_연결재무_007"
+        ],
+        "evidence_quotes": [
+          "Ⅰ.영업활동으로 인한 현금흐름 | 6,186,764,805,543 | 6,259,365,289,022"
+        ],
+        "reasoning_steps": [
+          "1. 2022년 영업활동으로 인한 현금흐름은 6,186,764,805,543원이고, 2021년에는 6,259,365,289,022원임을 확인한다.",
+          "2. 증감률을 계산하기 위해 ((2022년 값 - 2021년 값) / 2021년 값) * 100을 수행하여 −1.16%로 계산한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "영업활동으로 인한 현금흐름의 증감률 계산을 요구하는 문제로, 단순히 두 해의 현금흐름 수치를 비교 및 계산하여 증감률을 산출해야 합니다. | reviewer fix: 답이 음수(-1.16%)이므로 질문을 \"증가했는가\" → \"증감률\" 중립 표현으로 변경."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T14:35:16"
+    },
+    {
+      "item": {
+        "id": "DART_T2_010",
+        "question": "신세계의 2022년 면세점사업의 매출총이익을 매출액으로 나눈 매출총이익률은 약 몇 %인가?",
+        "gold_answer": "55.76",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "신세계_2022_사업의내용_5_매출_003"
+        ],
+        "evidence_quotes": [
+          "면세점사업 | 의류 등 | (주)신세계디에프(주)신세계디에프글로벌 외 | 3,438,683 | 44.0% | 1,917,425 | 37.7%"
+        ],
+        "reasoning_steps": [
+          "1. 신세계 2022 사업부문별 매출 표(연결)에서 면세점사업 매출액 3,438,683백만원과 매출총이익 1,917,425백만원을 확인한다.",
+          "2. 매출총이익률 = 1,917,425 / 3,438,683 × 100 ≈ 55.76%."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "신세계",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "면세점사업의 매출 비중을 계상하는 것을 의도하였습니다. | reviewer fix: 표에 직접 명시된 매출 비중(44.0%)이 아닌, 셀에 노출되지 않은 매출총이익률을 계산하는 진정한 T2로 재작성."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:34:06"
+    },
+    {
+      "item": {
+        "id": "DART_T3_001",
+        "question": "2022년도 네이버의 전체 사업부문 중 금융비용이 가장 높은 사업부문은 무엇인가?",
+        "gold_answer": "금융비용",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "NAVER_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "| 금융비용 (주26) | 931,522,674,095 | 349,334,091,066 | 146,432,800,279 |"
+        ],
+        "reasoning_steps": [
+          "1. 주어진 표에서 각 년도의 금융비용 값을 확인한다.",
+          "2. 2022년도의 금융비용이 가장 높은지 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "NAVER",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "금융비용이 여러 사업부문에서 기록될 수 있지만, 이 예에서는 단일 '금융비용' 항목으로 처리했습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "질문이 사업부문별 비교를 요구하나 evidence는 연결 손익계산서(연도별)일 뿐 사업부문 분해표 아님. gold_answer도 placeholder \"금융비용\"으로 의미 불명.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T14:43:11"
+    },
+    {
+      "item": {
+        "id": "DART_T3_002",
+        "question": "신한은행 2024년 사업 부문별 소계 중 가장 큰 소계 금액을 기록한 부문은 무엇인가?",
+        "gold_answer": "이자부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2024_사업의내용_5_매출_030"
+        ],
+        "evidence_quotes": [
+          "| 이자부문            | 소계              | 소계                    | 7,650.4  |",
+          "| 수수료부문           | 소계              | 소계                    | 1,000.2  |",
+          "| 기타영업부문          | 소계              | 소계                    | -993.5   |"
+        ],
+        "reasoning_steps": [
+          "1. 2024년 각 사업 부문의 소계를 확인한다.",
+          "2. 이자부문 소계 7,650.4억원이 수수료부문 소계 1,000.2억원 및 기타영업부문 소계 -993.5억원보다 큰 것을 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "신한지주",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "사업 부문별 소계가 무엇인지 파악하고 가장 큰 값을 찾는 추론을 의도. | reviewer fix: 영업실적표는 신한지주 본체가 아니라 자회사 신한은행의 별도 영업실적. 직전 청크가 신한은행 브랜드 수상 등 신한은행 관련 컨텍스트."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T14:54:06"
+    },
+    {
+      "item": {
+        "id": "DART_T3_003",
+        "question": "2023년 POSCO홀딩스의 사업부문별 매출액 합계는 어느 부문이 가장 많은가?",
+        "gold_answer": "철강부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "철강부문 | 합계 | 합계 | 403,933"
+        ],
+        "reasoning_steps": [
+          "1. 주어진 데이터를 통해 각 사업부문별 '합계' 매출액을 확인한다.",
+          "2. 매출액을 비교하여 가장 높은 매출액을 가진 사업부문을 찾는다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "각 사업부의 매출액 합계를 비교하여 가장 높은 사업부를 식별하는 문제입니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T14:57:25"
+    },
+    {
+      "item": {
+        "id": "DART_T3_004",
+        "question": "카카오 2023년 사업 부문 중 매출액이 가장 큰 사업 부문은 무엇인가?",
+        "gold_answer": "콘텐츠 부문",
+        "gold_answer_unit": "사업 부문명",
+        "evidence_chunks": [
+          "카카오_2023_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "플랫폼 부문 | 제품/용역  | 톡비즈    | 카카오톡,선물하기             | 3,554,442 | 47.0%     ",
+          "콘텐츠 부문 | 제품/용역  | 게임     | 카카오게임                 | 4,002,560 | 53.0%     "
+        ],
+        "reasoning_steps": [
+          "1. 각 사업 부문의 2023년 매출액을 비교한다.",
+          "2. 플랫폼 부문과 콘텐츠 부문의 매출액을 각각 확인하여, 콘텐츠 부문의 매출액이 더 큰 것을 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "카카오",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "사업부문별 매출액을 비교하여 가장 큰 부문을 찾는 것을 의도함."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:01:19"
+    },
+    {
+      "item": {
+        "id": "DART_T3_005",
+        "question": "2022년 카카오의 가장 높은 영업이익을 기록한 사업부문은 무엇인가요?",
+        "gold_answer": "제 27 기",
+        "gold_answer_unit": "기",
+        "evidence_chunks": [
+          "카카오_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "| 영업이익(손실) | 580,315,993,061 | 594,916,913,035 | 455,855,515,211 |"
+        ],
+        "reasoning_steps": [
+          "1. 카카오의 각 기별 영업이익을 비교한다: 제 28 기 580,315,993,061원, 제 27 기 594,916,913,035원, 제 26 기 455,855,515,211원.",
+          "2. 이 중 가장 높은 영업이익을 기록한 기를 확인한다: 제 27 기가 가장 높은 594,916,913,035원을 기록했다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "각 사업부문(기)의 영업이익을 비교하여 최대 영업이익을 기록한 기를 찾는 방향으로 출제했습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "구조적 결함: 질문은 사업부문 비교(T3)인데 evidence는 기별 손익계산서. gold_answer \"제27기\"는 회계기 표시일 뿐 사업부문 아님.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:02:48"
+    },
+    {
+      "item": {
+        "id": "DART_T3_006",
+        "question": "2022년 현대자동차의 매출총이익은 얼마입니까?",
+        "gold_answer": "283,180.52",
+        "gold_answer_unit": "억원",
+        "evidence_chunks": [
+          "현대자동차_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "| 매출총이익                | 28,318,052  |"
+        ],
+        "reasoning_steps": [
+          "1. 2022년 현대자동차의 매출총이익을 찾기 위해 evidence에서 관련된 표를 확인합니다.",
+          "2. 해당 표에서 '매출총이익' 항목의 2022년 수치인 '28,318,052 백만원'을 확인하고, 이를 억단위로 변환하여 283,180.52 억원으로 계산합니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T1",
+        "source_company": "현대자동차",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "매출총이익이라는 특정 항목의 값을 단순히 추출하는 과정이었으며, 백만원 단위에서 억원 단위로의 변환이 필요했습니다. | reviewer fix: T3로 생성됐지만 단일 수치 추출이라 task_type을 T1로 재분류 (ID는 안정성 위해 DART_T3_006 유지)."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:03:59"
+    },
+    {
+      "item": {
+        "id": "DART_T3_007",
+        "question": "2024년 LG전자 사업부문 중 가장 높은 매출액을 기록한 부문은?",
+        "gold_answer": "H&A",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "LG전자_2024_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| H&A                | 제품/상품/기타           | 냉장고, 세탁기, 에어컨 등                | 가정용 전기제품, 냉난방기기 및 핵심부품     | LG, DIOS, TROMM, LG SIGNATURE, SIGNATURE KITCHEN SUITE, CordZero, 오브제컬렉션, WHISEN, PuriCare, 에어로타워 등 | 332,033             |               37.8 |"
+        ],
+        "reasoning_steps": [
+          "1. 각 사업부문의 매출액을 비교한다.",
+          "2. 가장 높은 매출액을 기록한 사업부문인 H&A를 선택한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "LG전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "LG전자의 다양한 사업부문 매출을 비교하여 가장 높은 것을 식별하는 질문을 만들었습니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:06:12"
+    },
+    {
+      "item": {
+        "id": "DART_T3_008",
+        "question": "2022년 신한지주의 사업부문 중 소계 이익이 가장 높은 부문은 무엇인가?",
+        "gold_answer": "이자부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2022_사업의내용_5_매출_030"
+        ],
+        "evidence_quotes": [
+          "| 이자부문            | 소계              | 소계                    | 7,238.4  | 5,841.9  | 5,236.4  |",
+          "| 수수료부문           | 소계              | 소계                    | 894.7    | 950.9    | 961.5    |",
+          "| 기타영업부문          | 소계              | 소계                    | -1,192.1 | -598.4   | -699.8   |"
+        ],
+        "reasoning_steps": [
+          "1. 2022년 각각의 사업부문 소계 이익을 나열합니다: 이자부문 7,238.4억원, 수수료부문 894.7억원, 기타영업부문 -1,192.1억원.",
+          "2. 이들 중 가장 높은 소계 이익을 가진 것을 선택합니다. 따라서 이자부문이 가장 높습니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "신한지주",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "각 사업부문의 '소계' 부분을 비교하여 가장 큰 값을 찾는 과정을 의도하였다."
+      },
+      "status": "discarded",
+      "discard_reason": "T3_002와 준중복: 신한지주(→신한은행) 사업부문별 소계 최대 = 이자부문. 연도만 다름(2024 vs 2022). 다양성 위해 폐기.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:08:43"
+    },
+    {
+      "item": {
+        "id": "DART_T3_009",
+        "question": "POSCO홀딩스의 2024년 사업부문 중 '합계' 기준으로 매출액이 가장 높은 부문은?",
+        "gold_answer": "철강부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2024_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "철강부문 | 합계 | 합계 | 391,041",
+          "인프라 | 합계 | 합계 | 306,985",
+          "이차전지소재부문 | 합계 | 합계 | 28,125",
+          "기타부문 | 합계 | 합계 | 730"
+        ],
+        "reasoning_steps": [
+          "1. 각 사업부문별 '합계' 행의 매출액을 확인한다.",
+          "2. 철강부문, 인프라, 이차전지소재부문, 기타부문 중 철강부문의 매출액인 391,041 억원이 가장 높으므로 철강부문이 매출액이 가장 높은 부문이다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "각 사업부의 '합계' 행의 매출액을 비교하여 가장 높은 매출의 사업부를 찾는 것을 목표로 했다."
+      },
+      "status": "discarded",
+      "discard_reason": "T3_003과 준중복: POSCO홀딩스 사업부문별 매출 합계 최대 → 철강부문. 연도만 다름(2023 vs 2024). 다양성 위해 폐기.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:09:37"
+    },
+    {
+      "item": {
+        "id": "DART_T3_010",
+        "question": "2022년 KB금융의 주요 사업부문 중 영업이익이 가장 낮은 부문은 무엇인가?",
+        "gold_answer": "자산운용부문(S&T부문)",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "KB금융_2022_사업의내용_5_매출_123"
+        ],
+        "evidence_quotes": [
+          "- FY2022 (2022.1.1~2022.12.31) 기간 동안 위탁/자산관리 영업이익은 전년동기 대비 2,004억 감소한 1,493억을 기록하였습니다.",
+          "- FY2022 (2022.1.1~2022.12.31) 기간 동안 기업금융 부문 영업이익은 전년동기 대비 1,469억 감소한 1,337억을 기록하였습니다.",
+          "- FY2022 (2022.1.1~2022.12.31) 기간 동안 자산운용부문 영업이익은 전년동기 대비 2,005억 감소한 -1,211억을 기록하였습니다."
+        ],
+        "reasoning_steps": [
+          "1. 각 사업부문의 2022년 영업이익을 확인한다: 위탁/자산관리 부문 1,493억, 기업금융 부문 1,337억, 자산운용부문 -1,211억.",
+          "2. 세 부문 중 영업이익이 가장 낮은 수치는 자산운용부문의 -1,211억이므로, 자산운용부문이 영업이익이 가장 낮은 부문임을 결론짓는다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "KB금융",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "다양한 사업부의 영업이익을 비교하여 가장 낮은 부문을 찾는 방식의 추론을 의도"
+      },
+      "status": "discarded",
+      "discard_reason": "회사 오귀속: 자산관리/IB/S&T 부문은 KB금융 본체가 아니라 자회사 KB증권의 사업부문. 청크 _117에 [KB증권]가. 영업의 개황 헤더로 명시됨.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:16:00"
+    },
+    {
+      "item": {
+        "id": "DART_T4_001",
+        "question": "NAVER의 2022년 사업보고서에 명시된 연결·별도 기준 R&D/영업수익 비율 4개(연결 제24기·제23기, 별도 제24기·제23기) 중 15% 이상인 값들의 합은 약 몇 %인가?",
+        "gold_answer": "46.29",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "NAVER_2022_사업의내용_7_연구개발_002"
+        ],
+        "evidence_quotes": [
+          "연구개발비/영업수익 비율* 연구개발비용계÷당기영업수익×100] | 22.01% | 24.28% | 13.38% | 12.55%"
+        ],
+        "reasoning_steps": [
+          "1. 청크의 4개 비율 확인: 연결 제24기 22.01%, 제23기 24.28%, 별도 제24기 13.38%, 제23기 12.55%.",
+          "2. 15% 이상 필터: 22.01%와 24.28% 통과 (별도 두 값은 13.38·12.55로 모두 미달).",
+          "3. 통과한 두 값의 합: 22.01 + 24.28 = 46.29%."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "NAVER",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "연구개발비/영업수익 비율에서 15% 초과 조건을 바탕으로 필터링 후, 최대값을 찾는 과정을 의도했습니다. | reviewer fix: 통과 후보 1개만 있던 degenerate filter를 다중 통과 + 합산 형태로 재작성해 T4 자격(필터+집계) 충족."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:34:06"
+    },
+    {
+      "item": {
+        "id": "DART_T4_002",
+        "question": "2024년 신한지주의 가장 높은 이자수익 세부 항목명을 찾되, 그 금액이 1,000억원 이상인 항목을 선택하세요.",
+        "gold_answer": "유가증권이자",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2024_사업의내용_5_매출_074"
+        ],
+        "evidence_quotes": [
+          "| 이자부문            |                 | 유가증권이자                | 949.2   | 725.0   | 453.2   |"
+        ],
+        "reasoning_steps": [
+          "1. 2024년 이자부문에서 각 세부 항목의 이자수익을 확인합니다.",
+          "2. 이자수익 금액이 1,000억원 이상인 항목을 찾고 가장 큰 값을 선택합니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "신한지주",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "주어진 조건에 따라 이자수익 세부 항목 중 금액이 1,000억원 이상인 항목을 찾고 명시된 값에 따라 항목명을 도출하는 것을 의도했습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "회사 오귀속: 이자수익 세부 항목 1,401.5 십억원은 신한지주 본체가 아니라 자회사 신한투자증권의 별도 영업실적. 청크 _073 끝에 신한투자증권 명시.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:25:39"
+    },
+    {
+      "item": {
+        "id": "DART_T4_003",
+        "question": "2023년 POSCO홀딩스 사업부문 중 연구개발비/매출액 비율이 1% 이상인 부문들 중 연구개발비 총합이 가장 큰 부문은 무엇인가?",
+        "gold_answer": "철강 부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_사업의내용_7_연구개발_019"
+        ],
+        "evidence_quotes": [
+          "| 연구개발비/매출액 비율(%) | 1.09%   | 0.02%    | 0.08%    | 4.37%    | 1.38%       | 78.01%  | 0.79%   |"
+        ],
+        "reasoning_steps": [
+          "1. 2023년 연구개발비/매출액 비율이 1% 이상인 사업부문을 필터링한다. 이 경우 철강 부문이 1.09%로 조건에 부합한다.",
+          "2. 필터링된 부문들 중 연구개발비 총합을 확인하여, 철강 부문이 가장 큰 총합을 가지고 있는 사업부문임을 파악한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "질문에서 각 부문의 비율 조건을 통해 부문을 필터링하고, 최종적으로 연구개발비 총합을 통해 최대 값을 비교하도록 설정했습니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:30:32"
+    },
+    {
+      "item": {
+        "id": "DART_T4_004",
+        "question": "2023년 카카오의 연결 기준 연구개발비/매출액 비율이 15% 이상인 해 중에서 가장 높은 연구개발비/매출액 비율은 얼마였나요?",
+        "gold_answer": "16.2%",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "카카오_2023_사업의내용_7_연구개발_005"
+        ],
+        "evidence_quotes": [
+          "연구개발비/매출액 비율 | 연구개발비/매출액 비율 | 16.2% | 15.0% | 12.9%"
+        ],
+        "reasoning_steps": [
+          "1. 각 연도의 '연구개발비/매출액 비율'이 15% 이상인 연도를 찾기 위해 표에서 각 연도의 비율 값을 확인했다.",
+          "2. 15% 이상인 해의 비율 중 최대 값을 선택했다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "카카오",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "연구개발비/매출액 비율이 15% 이상인 해를 필터링하고, 최대값을 찾는 과정을 의도했습니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:35:36"
+    },
+    {
+      "item": {
+        "id": "DART_T4_005",
+        "question": "카카오의 2022년 연구개발비/매출액 비율이 13% 이상인 회계처리 항목 중 가장 높은 비율은 몇 %인가?",
+        "gold_answer": "14.4%",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "카카오_2022_사업의내용_7_연구개발_003"
+        ],
+        "evidence_quotes": [
+          "연구개발비/매출액 비율 | 연구개발비/매출액 비율 | 14.4% | 12.5% | 12.9% | 14.6% | 17.3% | 15.8%"
+        ],
+        "reasoning_steps": [
+          "1. 연구개발비/매출액 비율이 13% 이상인 항목을 필터링한다.",
+          "2. 필터링된 비율 중에서 최대 값을 선택한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "연구개발비/매출액 비율이 특정 이상인 항목들을 비교하여 가장 높은 값을 도출하는 추론을 의도하였습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "\"회계처리 항목\"이라는 분류 evidence에 존재 안 함; 어떤 해석으로도 13% 이상 중 max는 17.3%(별도 2021)이지 14.4% 아님.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:37:07"
+    },
+    {
+      "item": {
+        "id": "DART_T4_006",
+        "question": "2022년 연구개발비/매출액 비율이 2.5% 이상인 경우, 연구개발비용의 금액은?",
+        "gold_answer": "3,340,589",
+        "gold_answer_unit": "백만원",
+        "evidence_chunks": [
+          "현대자동차_2022_사업의내용_7_연구개발_002"
+        ],
+        "evidence_quotes": [
+          "연구개발비용 계 | 3,340,589 | 3,100,111 | 3,108,591 | -",
+          "연구개발비/매출액 비율[연구개발비용계÷당기매출액×100] | 2.3% | 2.6% | 3.0% | -"
+        ],
+        "reasoning_steps": [
+          "1. 2022년의 연구개발비/매출액 비율을 확인한다. 이는 2.3%이다.",
+          "2. 2.5% 이상이 되어야 하므로, 조건에 만족하지 않는다. 해당 조건에 부합하는 경우가 없으므로, 2022년 연구개발비용인 3,340,589백만원을 그대로 사용한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "현대자동차",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "연구개발비/매출액 비율의 계산 및 비교를 통해 연구개발비의 금액 조건을 확인하는 과정을 의도했다."
+      },
+      "status": "discarded",
+      "discard_reason": "논리 오류: 2022년 비율 2.3% < 2.5%이므로 조건 불만족인데 모델이 그대로 2022 R&D 3,340,589 제시. reasoning에서도 자기모순 인정.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:37:58"
+    },
+    {
+      "item": {
+        "id": "DART_T4_007",
+        "question": "LG전자의 2024년 사업보고서에 따르면, 개발비(무형자산) 금액이 전년 대비 200,000백만원 이상 증가한 회계기는 어느 기인가?",
+        "gold_answer": "제22기",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "LG전자_2024_사업의내용_7_연구개발_009"
+        ],
+        "evidence_quotes": [
+          "개발비(무형자산) | 547,006 | 467,893 | 209,127"
+        ],
+        "reasoning_steps": [
+          "1. 표에서 개발비(무형자산) 3개 연도 값 확인: 제23기 547,006 / 제22기 467,893 / 제21기 209,127 (백만원).",
+          "2. 연도별 YoY 증가 계산: 22기-21기 = 258,766, 23기-22기 = 79,113.",
+          "3. 200,000백만원 이상 필터: 22기(258,766) 통과 ✓, 23기(79,113) 탈락 ✗. → 답: 제22기."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "LG전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "연도별로 증가폭을 비교하여 가장 크게 증가한 연도를 찾는 과정을 의도했다. | reviewer fix: 질문에 회사명(LG전자) 누락된 점 정정. | reviewer fix: 단순 3-year max에 \"전년 대비 200,000백만 이상 증가\" 필터 조건을 추가해 T4(필터+선택) 자격 확보."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:34:06"
+    },
+    {
+      "item": {
+        "id": "DART_T4_008",
+        "question": "2022년 신한투자증권의 부문별 이익 중에서 소계가 음수인 기타영업부문에서 가장 큰 수익 항목은 무엇인가?",
+        "gold_answer": "파생상품 관련 이익",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2022_사업의내용_5_매출_072"
+        ],
+        "evidence_quotes": [
+          "기타영업부문          | 소계              | 소계                    | -141.1  | 245.8   | 26.2",
+          "기타영업부문          |                 | 파생상품 관련 이익            | 5,541.7 | 3,311.7 | 4,138.2"
+        ],
+        "reasoning_steps": [
+          "1. 2022년 기타영업부문에서 소계가 음수인지 확인한다. 해당 부문은 소계가 -141.1로서 음수임을 확인했다.",
+          "2. 기타영업부문의 여러 수익 항목 중에서 가장 큰 금액을 가진 항목은 파생상품 관련 이익(5,541.7억 원)으로, 그것이 가장 큰 수익 항목이다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "신한지주",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "기타영업부문에서 소계가 음수인 조건을 만족하며 수익 항목 중 파생상품 관련 이익이 가장 큰 값인 것을 추론함. | reviewer fix: 영업실적표는 신한지주 본체가 아니라 자회사 신한투자증권의 별도 영업실적. 청크 _071 끝에 신한투자증권 명시."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:57:50"
+    },
+    {
+      "item": {
+        "id": "DART_T4_009",
+        "question": "POSCO홀딩스의 2024년 사업부문 중 연구개발비/매출액 비율이 1% 이상인 사업부문들 중 연구개발비(무형자산) 지출이 가장 많은 사업부문은 무엇인가?",
+        "gold_answer": "1.철강 부문",
+        "gold_answer_unit": "사업부문명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2024_사업의내용_7_연구개발_021"
+        ],
+        "evidence_quotes": [
+          "연구개발비/매출액 비율(%) | 1.05%   | 0.02%  | 0.09%  | 2.11%  | 1.58%      | 171.99%",
+          "연구개발비(무형자산)     | 36,682"
+        ],
+        "reasoning_steps": [
+          "1. 연구개발비/매출액 비율이 1% 이상인 사업부문을 필터링하면, '1.철강 부문', '물류등', '이차전지소재부문', '기타 부문'이 해당된다.",
+          "2. 필터링된 사업부문 중 연구개발비(무형자산) 지출이 가장 많은 사업부문은 '1.철강 부문'이다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "사업부문들의 연구개발비/매출액 비율을 기준으로 필터를 먼저 하고 그 다음 연구개발비(무형자산)를 비교하여 가장 큰 값을 찾는 과정입니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T15:59:08"
+    },
+    {
+      "item": {
+        "id": "DART_T4_010",
+        "question": "2022년 KB금융의 사업부문 중 매출 구성비가 10% 이상인 부문들 중 최대 금액을 차지하는 부문은 무엇인가?",
+        "gold_answer": "대출 및 팩토링",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "KB금융_2022_사업의내용_5_매출_252"
+        ],
+        "evidence_quotes": [
+          "대출 및 팩토링 | 7,401,235 | 74.58%"
+        ],
+        "reasoning_steps": [
+          "1. 2022년의 각 사업부문의 매출 구성비를 확인하여, 10% 이상인 부문을 필터링한다.",
+          "2. 필터링된 부문 중에서 매출 금액이 최대인 부문을 찾는다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "KB금융",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "이익률이 아닌 매출 구성비를 기준으로 필터링하여 최대 매출 금액을 가진 부문을 찾는 것이 목표입니다."
+      },
+      "status": "discarded",
+      "discard_reason": "회사 오귀속: 사업부문(리스/할부금융/렌터카/대출 및 팩토링)은 KB금융 본체가 아니라 자회사 KB캐피탈(여신전문금융)의 데이터. 청크 _241에 KB캐피탈 명시.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:06:00"
+    },
+    {
+      "item": {
+        "id": "DART_T5_001",
+        "question": "2022년 NAVER의 현금및현금성자산이 차지하는 비중은 전체 유동자산의 몇 퍼센트인가?",
+        "gold_answer": "42.30",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "NAVER_2022_재무_2_연결재무_001"
+        ],
+        "evidence_quotes": [
+          "유동자산 | 6,439,570,710,743",
+          "현금및현금성자산 (주6,7) | 2,724,168,321,708"
+        ],
+        "reasoning_steps": [
+          "1. NAVER의 2022년(제24기) 유동자산 6,439,570,710,743원과 현금및현금성자산 2,724,168,321,708원을 확인한다.",
+          "2. 비중 = 2,724,168,321,708 / 6,439,570,710,743 × 100 ≈ 42.30%."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "NAVER",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "현금및현금성자산이 전체 유동자산에서 차지하는 비중을 계산하는 문제입니다. | reviewer fix: 정확값 42.30%로 정정 (모델은 42.31%); T5(주석참조)가 아니라 단순 비율(T2)이라 task_type 재분류."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:09:11"
+    },
+    {
+      "item": {
+        "id": "DART_T5_002",
+        "question": "신한지주 2024년도의 희석주당순이익은 얼마입니까?",
+        "gold_answer": "8,441원",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "신한지주_2024_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "| (2) 희석주당순이익      | 8,441원              | 8,048원              | 8,498원              |"
+        ],
+        "reasoning_steps": [
+          "1. 청크에서 제공된 표에서 '희석주당순이익' 항목을 확인한다.",
+          "2. 해당 항목에서 제24기에 해당하는 수치를 선택한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "신한지주",
+        "source_report": "2024_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "희석주당순이익을 확인할 때, 표에 명시된 순서를 따른다."
+      },
+      "status": "discarded",
+      "discard_reason": "T5(각주·별표 참조) type 부적합 — 답이 footnote 적용을 요구하지 않음. T1 성격. (그리고 다른 단순 수치 추출은 이미 충분히 확보됨)",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:10:14"
+    },
+    {
+      "item": {
+        "id": "DART_T5_003",
+        "question": "2023년 POSCO홀딩스의 연결에 포함된 회사수는 몇 개입니까?",
+        "gold_answer": "192개",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "연결에 포함된 회사수   | 192개            | 181개            | 170개            |",
+          "* 상기 연결에 포함된 회사수는 당사를 포함한 수치입니다."
+        ],
+        "reasoning_steps": [
+          "1. 표에서 '연결에 포함된 회사수'에 관련된 행을 확인한다.",
+          "2. '상기 연결에 포함된 회사수는 당사를 포함한 수치입니다'라는 주석을 참고하여, 당사 및 전체 연결된 회사 수를 포함하여 해석한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "표 하단의 주석을 고려하여 POSCO홀딩스를 포함한 연결된 회사수를 찾는 것이 목표입니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:12:35"
+    },
+    {
+      "item": {
+        "id": "DART_T5_004",
+        "question": "2024년 말 기준 POSCO홀딩스의 연결에 포함된 회사 수는 얼마입니까?",
+        "gold_answer": "181개",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "POSCO홀딩스_2024_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "연결에 포함된 회사수 | 194개 | 192개 | 181개",
+          "* 상기 연결에 포함된 회사수는 당사를 포함한 수치입니다."
+        ],
+        "reasoning_steps": [
+          "1. '연결에 포함된 회사수' 열에서 각 연도의 값을 확인한다.",
+          "2. 2024년 말 기준 수치인 '181개'를 선택한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2024_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "표의 마지막 열(2024년)에서 직접적인 값을 찾고, 주석을 통해 이를 검증합니다."
+      },
+      "status": "discarded",
+      "discard_reason": "답 오류(2024년=194개인데 모델은 181개=2022년값 사용) + T5_003과 연도-shift 준중복.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:13:29"
+    },
+    {
+      "item": {
+        "id": "DART_T5_005",
+        "question": "2022년 KB금융의 제15기 희석주당이익은 얼마입니까?",
+        "gold_answer": "10,705",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "KB금융_2022_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "제15기 재무제표는 주주총회 승인전 재무제표이며, 향후 정기주주총회에서 재무제표 승인 관련 안건이 부결되거나 수정이 발생할 경우 정정보고서를 통해 그 내용 및 사유 등을 반영할 예정입니다.",
+          "희석주당이익 | 10,705원 | 10,890원 | 8,730원"
+        ],
+        "reasoning_steps": [
+          "1. KB금융지주 2022 보고서의 요약 연결재무정보 표에서 희석주당이익 행을 확인한다: 10,705원 | 10,890원 | 8,730원.",
+          "2. 주2 '제15기 재무제표는 주주총회 승인전 재무제표'를 참조해 제15기가 당기(2022, 첫 번째 열)임을 식별. 따라서 제15기 희석주당이익은 10,705원."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "KB금융",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "희석주당이익에 관한 제15기의 숫자를 같은 표에서 직접 추출하고, 해당 숫자가 주주총회 승인전 수치라는 주석을 참조하여 최종 수치를 결정함 | reviewer fix: 모델이 두 번째 열(제14기, 2021) 값을 답으로 잘못 적음. 정답은 첫 번째 열 10,705원 (제15기/2022)."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:19:22"
+    },
+    {
+      "item": {
+        "id": "DART_T1_006",
+        "question": "삼성전자 2024년 요약연결재무정보의 보고 단위는 무엇인가?",
+        "gold_answer": "백만원",
+        "gold_answer_unit": "단위명",
+        "evidence_chunks": [
+          "삼성전자_2024_재무_1_요약_000"
+        ],
+        "evidence_quotes": [
+          "(단위 : 백만원)"
+        ],
+        "reasoning_steps": [
+          "1. 삼성전자의 2024년 요약연결재무정보 청크에서 단위 정보를 찾는다.",
+          "2. 해당 단위가 백만원으로 명시되어 있음을 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T1",
+        "source_company": "삼성전자",
+        "source_report": "2024_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "요약연결재무정보의 보고 단위를 묻는 것으로, 주어진 청크에서 이 정보를 정확하게 파악할 수 있다."
+      },
+      "status": "discarded",
+      "discard_reason": "메타-질문(표의 단위 라벨)이라 학술 가치 없음. T1 단일 수치 추출 의도와 부합 안 함.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:26:45"
+    },
+    {
+      "item": {
+        "id": "DART_T2_011",
+        "question": "2022년 삼성전자의 자본 총계 대비 지배기업 소유주 지분의 비율은 얼마입니까?",
+        "gold_answer": "97.30",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "삼성전자_2022_재무_2_연결재무_001"
+        ],
+        "evidence_quotes": [
+          "자본총계 | 354,749,604 |",
+          "지배기업 소유주지분 | 345,186,142 |"
+        ],
+        "reasoning_steps": [
+          "1. 2022년도 삼성전자의 자본총계는 354,749,604 백만원이고, 지배기업 소유주지분은 345,186,142 백만원이다.",
+          "2. 지배기업 소유주 지분을 자본 총계로 나누고 100을 곱하여 비율을 계산하면, (345,186,142 / 354,749,604) × 100 ≈ 97.30%이다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "삼성전자",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "자본총계와 지배기업 소유주지분 데이터를 사용하여 비율을 계산하도록 의도하였다. | reviewer fix: 97.31 → 97.30 (정확값 97.3042%)."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:30:30"
+    },
+    {
+      "item": {
+        "id": "DART_T2_012",
+        "question": "2023년 POSCO홀딩스의 자산총계에서 유동자산이 차지하는 비율은 얼마입니까?",
+        "gold_answer": "45.78%",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_001"
+        ],
+        "evidence_quotes": [
+          "자산총계 | 100,945,394",
+          "[유동자산] | 46,212,299"
+        ],
+        "reasoning_steps": [
+          "1. POSCO홀딩스의 2023년 유동자산은 46,212,299백만원이고 자산총계는 100,945,394백만원임을 확인한다.",
+          "2. 유동자산이 자산총계에서 차지하는 비율을 계산하기 위해 유동자산을 자산총계로 나눈 후 100을 곱하여, (46,212,299 / 100,945,394) * 100 = 45.78%로 계산한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "보고서에서 제공된 유동자산과 자산총계의 값을 통해 유동자산이 자산총계에서 차지하는 비율을 계산하도록 의도했다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:32:45"
+    },
+    {
+      "item": {
+        "id": "DART_T3_011",
+        "question": "삼성전자의 2024년 사업 부문 중에서 매출액이 가장 높은 부문은 무엇인가요?",
+        "gold_answer": "DX 부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "삼성전자_2024_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "2024년 매출은 DX 부문이 174조 8,877억원(58.1%)"
+        ],
+        "reasoning_steps": [
+          "1. 주어진 청크에서 2024년 각 사업 부문의 매출액을 확인한다.",
+          "2. 확인한 매출액 중 가장 높은 값을 가진 부문이 어디인지 파악한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "삼성전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "다른 부문과 비교한 후 최대 값의 부문명을 묻는 질문을 의도하였습니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:37:05"
+    },
+    {
+      "item": {
+        "id": "DART_T3_012",
+        "question": "2022년에 삼성전자의 영업이익이 가장 컸던 사업부문은 무엇인가요?",
+        "gold_answer": "영업이익",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "삼성전자_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "영업이익                       | 43,376,630  | 51,633,856  | 35,993,876"
+        ],
+        "reasoning_steps": [
+          "1. 삼성전자의 2022년 영업이익 데이터를 확인합니다.",
+          "2. 2022년의 영업이익이 가장 컸던 사업부문을 식별합니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "삼성전자",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "삼성전자의 연결재무제표에서 명시된 사업별 영업이익 수치를 사용하여 2022년 기준 가장 영업이익이 컸던 사업부문을 식별하기 위해 구성된 질문입니다. 해당 청크에서 사업별 세부적인 영업이익 구분이 명시되지 않아 직접적으로 특정 사업부문을 질문할 수 없으므로 '영업이익' 항목명을 사용했습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "구조적 결함(T3_001/005와 동일): 질문은 사업부문 비교인데 evidence는 연결 손익계산서. gold_answer \"영업이익\"은 row label일 뿐 사업부문 아님. 모델 generation_notes도 자질 부족 인정.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:37:53"
+    },
+    {
+      "item": {
+        "id": "DART_T3_013",
+        "question": "2023년 POSCO홀딩스의 사업부문 중 매출액이 가장 높은 부문은 어디인가?",
+        "gold_answer": "철강부문",
+        "gold_answer_unit": "사업부문",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 철강부문      | 단순합계    | 단순합계      | 635,387      | 100.0%       | 706,496      | 100.0%       | 635,489      | 100.0%       |",
+          "| 친환경인프라    | 단순합계    | 단순합계      | 571,572      | 100.0%       | 659,008      | 100.0%       | 556,174      | 100.0%       |",
+          "| 친환경미래소재부문 | 단순합계    | 단순합계      | 48,219       | 100.0%       | 33,888       | 100.0%       | 20,892       | 100.0%       |",
+          "| 기타부문      | 단순합계    | 단순합계      | 15,622       | 100.0%       | 11,695       | 100.0%       | 17,842       | 100.0%       |"
+        ],
+        "reasoning_steps": [
+          "1. 각 사업부문의 2023년도 매출액을 비교한다.",
+          "2. 철강부문의 매출액 635,387억원이 가장 크므로 철강부문이 매출액이 가장 높은 부문이다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "청크에서 제공된 표에서 각 사업부문의 매출액을 비교하여 가장 높은 매출액을 가진 사업부문을 식별하는 과정을 의도하였다."
+      },
+      "status": "discarded",
+      "discard_reason": "T3_003(이미 accept)과 준중복: POSCO 2023 사업부문별 매출 1위 → 철강부문. metric만 미세 차이(합계 vs 단순합계). T3_009와 같은 사유.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:38:53"
+    },
+    {
+      "item": {
+        "id": "DART_T3_014",
+        "question": "2024년 신한지주에서 영업부문별 소계 이익 중 가장 높은 부문은 무엇인가요?",
+        "gold_answer": "이자부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2024_사업의내용_5_매출_008"
+        ],
+        "evidence_quotes": [
+          "이자부문 | 소계 | 소계 | 11,402.3",
+          "수수료부문 | 소계 | 소계 | 2,714.9",
+          "기타영업부문 | 소계 | 소계 | -1,542.3"
+        ],
+        "reasoning_steps": [
+          "1. 청크에서 이자부문, 수수료부문, 기타영업부문의 2024년 소계 이익을 확인한다.",
+          "2. 각 부문의 소계 이익을 비교하여 가장 높은 이익을 가진 부문을 식별한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "신한지주",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "각 부문의 소계 이익을 비교하여 최대값을 확인하는 추론 구조가 필요합니다."
+      },
+      "status": "discarded",
+      "discard_reason": "T3_002와 답 동일(이자부문)이라 사실상 준중복. 그룹 연결 vs 자회사 별도 스코프 차이는 있지만 검수자가 다양성 위해 폐기 선택.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:51:17"
+    },
+    {
+      "item": {
+        "id": "DART_T3_015",
+        "question": "2022년 신세계의 사업부문 중에서 매출액이 가장 높은 사업부문은 무엇인가?",
+        "gold_answer": "면세점사업",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신세계_2022_사업의내용_5_매출_003"
+        ],
+        "evidence_quotes": [
+          "면세점사업 | 의류 등 | (주)신세계디에프(주)신세계디에프글로벌 외 | 3,438,683 | 44.0%"
+        ],
+        "reasoning_steps": [
+          "1. 주어진 표에서 각 사업부문의 매출액을 확인한다.",
+          "2. 각 사업부문의 매출액 중 가장 큰 값을 찾는다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "신세계",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "각 사업부의 매출액을 비교하여 가장 높은 사업부문을 결정하는 과정을 의도함."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:54:31"
+    },
+    {
+      "item": {
+        "id": "DART_T3_016",
+        "question": "2023년 신세계 사업부문 중 매출총이익의 비중이 가장 높은 부문은 무엇인가요?",
+        "gold_answer": "백화점",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신세계_2023_사업의내용_5_매출_003"
+        ],
+        "evidence_quotes": [
+          "| 백화점 | 의류 등 | (주)신세계(주)신세계동대구복합환승센터(주)대전신세계(주)광주신세계 | 2,556,982 | 40.2% | 2,166,835 | 56.2% |"
+        ],
+        "reasoning_steps": [
+          "1. 각 사업부문별 매출총이익의 비율을 표에서 확인합니다.",
+          "2. 매출총이익의 비율이 가장 높은 56.2%를 기록한 '백화점' 부문을 선택합니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "신세계",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "각 사업부문의 매출총이익 비중을 비교하여 가장 높은 것을 찾는 문항을 의도했습니다."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T16:58:37"
+    },
+    {
+      "item": {
+        "id": "DART_T4_011",
+        "question": "삼성전자의 2024년 사업보고서에 따르면, 연구개발비/매출액 비율이 10% 이상인 회계기 중 비율이 가장 높은 해는 어느 기인가?",
+        "gold_answer": "제56기",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "삼성전자_2024_사업의내용_7_연구개발_004"
+        ],
+        "evidence_quotes": [
+          "[연구개발비용 총계÷당기매출액×100] | 11.6% | 10.9% | 8.2%"
+        ],
+        "reasoning_steps": [
+          "1. 표에서 R&D/매출 비율 3개 확인: 제56기 11.6% / 제55기 10.9% / 제54기 8.2%.",
+          "2. 10% 이상 필터: 제56기·제55기 통과 (제54기 8.2% 탈락).",
+          "3. 통과 중 가장 높은 값은 제56기 11.6%. → 답: 제56기."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "삼성전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "보고서에서 주어진 애매한 값들을 비교하여 가장 높은 값을 찾도록 의도했습니다. | reviewer fix: 단순 max를 \"≥10% 필터 + max\" 다단계로 격상."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:34:06"
+    },
+    {
+      "item": {
+        "id": "DART_T4_012",
+        "question": "2023년 POSCO홀딩스의 연구개발비/매출액 비율이 가장 높은 사업 부문은 어디인가?",
+        "gold_answer": "기타 부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_사업의내용_7_연구개발_019"
+        ],
+        "evidence_quotes": [
+          "연구개발비/매출액 비율(%) | 1.09%   | 0.02%    | 0.08%    | 4.37%    | 1.38%       | 78.01%  | 0.79%"
+        ],
+        "reasoning_steps": [
+          "1. 각 사업 부문의 2023년 연구개발비/매출액 비율을 열거한다.",
+          "2. 이 중에서 가장 높은 비율을 가진 부문을 선택한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "비율에 따라 사업 부문을 필터링하고 정렬하는 문제를 의도했습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "답(기타 부문 78.01%)이 매출 미미한 부문의 degenerate outlier. T4_003과 같은 데이터지만 필터 없는 단순 max라 의미 작음. T4 다단계 자격 부족.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:01:23"
+    },
+    {
+      "item": {
+        "id": "DART_T4_013",
+        "question": "신한지주의 2024년 총당기순이익이 200억 원 이상인 부문별 이익 중에서 가장 큰 소계 항목은 무엇인가?",
+        "gold_answer": "이자부문 소계",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2024_사업의내용_5_매출_074"
+        ],
+        "evidence_quotes": [
+          "| 부문별 이익 합계 | 부문별 이익 합계 | 부문별 이익 합계 | 1,090.6 | 1,091.3 | 834.6 |",
+          "| 이자부문 | 소계 | 소계 | 506.5 | 457.6 | 413.8 |",
+          "| 수수료부문 | 소계 | 소계 | 601.6 | 556.1 | 561.8 |"
+        ],
+        "reasoning_steps": [
+          "1. 먼저, 부문별 이익 합계 중에서 총당기순이익이 200억 원 이상인 연도를 확인한다. 이 경우 2024년 총당기순이익이 215.3억 원으로 200억 원 이상이다.",
+          "2. 2024년의 각 부문별 소계 항목들의 금액을 비교하여 가장 큰 소계 항목을 찾는다. 이자부문 소계 506.5억 원, 수수료부문 소계 601.6억 원, 기타영업부문 소계 -17.5억 원이므로, 가장 큰 금액인 수수료부문 소계 601.6억 원이 선택된다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "신한지주",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "부문별 소계 중 가장 큰 값을 찾는 과정을 설명하고자 했습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "다중 결함: (1) reasoning과 gold_answer 자기모순 (reasoning은 수수료부문 601.6 max라 하면서 답은 이자부문 소계), (2) 자회사 신한투자증권 misattribution(T4_002와 같은 chunk), (3) 필터 \"200억\" 무의미(모든 부문 소계가 수천억원).",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:02:36"
+    },
+    {
+      "item": {
+        "id": "DART_T4_014",
+        "question": "신세계의 2022년 사업보고서에 따르면, 연구개발비용이 4,000백만원 이상이면서 연구개발비/매출액 비율이 0.25% 이상인 연도 중 비율이 가장 높은 해는?",
+        "gold_answer": "2020년",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신세계_2022_사업의내용_7_연구개발_000"
+        ],
+        "evidence_quotes": [
+          "| 연구개발비 / 매출액 비율[연구개발비용계÷당기매출액×100] | 0.25%   | 0.20%   | 0.29%   |"
+        ],
+        "reasoning_steps": [
+          "1. 표에서 연도별 연구개발비용과 비율 확인: 2022(4,614, 0.25%), 2021(3,318, 0.20%), 2020(4,193, 0.29%).",
+          "2. 두 조건(R&D ≥4,000백만 AND 비율 ≥0.25%) 동시 만족 필터: 2022 통과, 2020 통과, 2021은 R&D 3,318로 탈락.",
+          "3. 통과한 두 해의 비율 비교: 2020 0.29% > 2022 0.25%. → 답: 2020년."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "신세계",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "연도별로 연구개발비가 매출액에 비해 차지하는 비율을 비교하여, 이 비율이 가장 높은 해를 찾는 다단계 추론을 의도했습니다. | reviewer fix: 단순 max를 \"두 조건 AND 필터 + max\" 다단계로 격상해 T4 자격 확보."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:34:06"
+    },
+    {
+      "item": {
+        "id": "DART_T5_006",
+        "question": "2023년 기준 POSCO홀딩스를 포함한 연결에 포함된 회사 수는 몇 개입니까?",
+        "gold_answer": "192개",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "상기 연결에 포함된 회사수는 당사를 포함한 수치입니다.",
+          "연결에 포함된 회사수   | 192개"
+        ],
+        "reasoning_steps": [
+          "1. '상기 연결에 포함된 회사수는 당사를 포함한 수치입니다.'라는 주석을 통해 '연결에 포함된 회사수'가 POSCO홀딩스를 포함한 수치임을 확인합니다.",
+          "2. 표에서 2023년의 연결에 포함된 회사 수가 192개임을 확인하고 주석을 적용하여 이 수치가 POSCO홀딩스를 포함한 것이라는 결론을 내립니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "주석을 통해 '연결에 포함된 회사수'에 POSCO홀딩스가 포함되어 있다는 점을 활용하는 추론을 의도."
+      },
+      "status": "discarded",
+      "discard_reason": "T5_003과 명백한 준중복: 같은 회사·연도·청크·답(192개)·주석 활용 방식. 질문 표현만 미세 차이.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:04:19"
+    },
+    {
+      "item": {
+        "id": "DART_T5_007",
+        "question": "2024년 신한지주의 희석주당순이익은 얼마입니까?",
+        "gold_answer": "8,498원",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "신한지주_2024_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "| (2) 희석주당순이익      | 8,441원              | 8,048원              | 8,498원              |"
+        ],
+        "reasoning_steps": [
+          "1. 표에서 '희석주당순이익' 값을 찾는다.",
+          "2. '희석주당순이익'의 제24기 값이 8,498원임을 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "신한지주",
+        "source_report": "2024_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "주석을 활용할 필요가 없는 값 도출 문제였으며, 가장 최근 연도의 데이터를 확인하는 것이 핵심입니다."
+      },
+      "status": "discarded",
+      "discard_reason": "답 오류(8,498원은 제22기/2022년, 2024년 당기는 8,441원) + T5_002와 같은 청크/metric 준중복 + T5(각주참조) 자격 부족.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:05:31"
+    },
+    {
+      "item": {
+        "id": "DART_T5_008",
+        "question": "LG전자의 2022년 우선주기본주당손실은 얼마입니까?",
+        "gold_answer": "(801)",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "LG전자_2022_재무_2_연결재무_004"
+        ],
+        "evidence_quotes": [
+          "업 우선주기본주당이익(손실) (단위 : 원) | (801)"
+        ],
+        "reasoning_steps": [
+          "1. '우선주기본주당이익(손실)' 표에서 2022년을 확인한다.",
+          "2. 2022년 우선주기본주당손실이 (801) 원임을 찾는다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T1",
+        "source_company": "LG전자",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "주식 관련 손실 수치 질문을 통해 표의 주석이나 별표를 참고하도록 유도 | reviewer fix: footnote 적용 없이 셀 값 직접 추출이므로 T5→T1 재분류."
+      },
+      "status": "edited",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:07:03"
+    },
+    {
+      "item": {
+        "id": "DART_T3_017",
+        "question": "2022년 POSCO홀딩스의 사업부문 중 매출총이익이 가장 큰 항목은 무엇인가요?",
+        "gold_answer": "매출총이익",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "Ⅲ.매출총이익"
+        ],
+        "reasoning_steps": [
+          "1. evidence를 통해 2022년 매출총이익을 확인합니다.",
+          "2. 매출총이익 값이 명시된 '매출총이익' 항목을 가장 큰 항목으로 식별합니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "매출총이익이 가장 큰 항목을 찾기 위해 증거 표에서 명시된 매출총이익을 읽고 이해하는 과정을 의도했습니다."
+      },
+      "status": "discarded",
+      "discard_reason": "구조적 결함(T3_001/005/012와 동일): 질문은 사업부문 비교인데 evidence는 손익계산서. gold_answer \"매출총이익\"은 row label일 뿐.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:12:00"
+    },
+    {
+      "item": {
+        "id": "DART_T3_018",
+        "question": "2023년 CJ대한통운에서 매출액이 가장 큰 사업부문은 무엇인가요?",
+        "gold_answer": "글로벌사업부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "CJ대한통운_2023_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "| 글로벌사업부문 | 하역, 운송, 보관 | 4,205,816 | 35.7% |"
+        ],
+        "reasoning_steps": [
+          "1. 각 사업부문의 매출액을 표에서 확인합니다.",
+          "2. 매출액을 비교하여 가장 큰 값인 4,205,816 백만원을 가진 글로벌사업부문을 찾습니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "CJ대한통운",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "사업부문 매출 비교를 통해 최대값을 찾는 과정을 의도."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:13:05"
+    },
+    {
+      "item": {
+        "id": "DART_T3_019",
+        "question": "2022년도 카카오의 각 기별 영업이익(손실) 중 가장 큰 금액은 얼마인가?",
+        "gold_answer": "594,916,913,035",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "카카오_2022_재무_2_연결재무_003"
+        ],
+        "evidence_quotes": [
+          "| 영업이익(손실)                  | 580,315,993,061     | 594,916,913,035   | 455,855,515,211   |"
+        ],
+        "reasoning_steps": [
+          "1. 2020년, 2021년, 2022년의 영업이익(손실) 수치를 확인합니다.",
+          "2. 확인된 영업이익(손실) 수치 중 가장 큰 값을 선택합니다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "영업이익(손실)의 각 연도별 수치 중 최대값을 찾도록 유도했습니다. 약간의 계산 또는 비교가 필요합니다."
+      },
+      "status": "discarded",
+      "discard_reason": "T3 자격 부적합(사업부문 비교 아닌 multi-year 비교) + phrasing 모호(\"2022년\" prefix와 2021년 답 충돌) + T3_005와 같은 evidence/lookup.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:14:09"
+    },
+    {
+      "item": {
+        "id": "DART_T4_015",
+        "question": "POSCO홀딩스의 2022년 연구개발비/매출액 비율이 1% 이상인 사업부문 중 가장 높은 비율을 가진 부문은 무엇인가?",
+        "gold_answer": "친환경미래소재부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "POSCO홀딩스_2022_사업의내용_7_연구개발_024"
+        ],
+        "evidence_quotes": [
+          "연구개발비/매출액 비율(%) | 1.02% | 0.08% | 0.01% | 0.35% | 1.75% | 46.20% | 0.68%"
+        ],
+        "reasoning_steps": [
+          "1. POSCO홀딩스의 2022년 연구개발비/매출액 비율이 1% 이상인 사업부문을 찾는다.",
+          "2. 해당 부문들 중 가장 높은 비율을 가진 부문을 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_7_연구개발",
+        "source_pages": null,
+        "generation_notes": "주어진 조건인 연구개발비/매출액 비율 1% 이상을 만족하는 사업부문을 필터링하고, 가장 높은 비율을 가진 부문을 식별하는 문제를 의도했다."
+      },
+      "status": "discarded",
+      "discard_reason": "답 오류: 필터≥1% 통과 부문 중 max는 기타 46.20%인데 모델은 친환경미래소재 1.75%로 답. 모델이 기타를 묵시 outlier 제외했으나 질문이 그 제외를 명시하지 않음.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:15:30"
+    },
+    {
+      "item": {
+        "id": "DART_T4_016",
+        "question": "CJ대한통운의 2023년도 매출 중 비율이 30% 이상인 사업부문 중 매출액이 가장 큰 부문은 어디인가?",
+        "gold_answer": "글로벌사업부문",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "CJ대한통운_2023_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "| 글로벌사업부문 | 하역, 운송, 보관             | 4,205,816    | 35.7%   |",
+          "| 택배사업부문  | 보관, 가공, 집하, 배송         | 3,722,691    | 31.6%   |"
+        ],
+        "reasoning_steps": [
+          "1. 2023년도 주요 매출 현황에서 각 사업부문의 매출 비율을 확인한다.",
+          "2. 매출 비율이 30% 이상인 사업부문을 필터링하고, 이 중 매출액이 가장 큰 사업부문을 선택한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T4",
+        "source_company": "CJ대한통운",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "매출 비율 필터링 후 최대값을 찾는 문제를 의도. 글로벌사업부문과 택배사업부문이 후보가 되며, 매출액 기준으로 글로벌사업부문을 선택."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:16:37"
+    },
+    {
+      "item": {
+        "id": "DART_T5_009",
+        "question": "2022년 기준 POSCO홀딩스의 연결에 포함된 회사수는 몇 개입니까?",
+        "gold_answer": "181개",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "POSCO홀딩스_2022_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "연결에 포함된 회사수 | 181개"
+        ],
+        "reasoning_steps": [
+          "1. 주어진 표에서 '연결에 포함된 회사수'라는 항목을 찾는다.",
+          "2. 해당 항목의 가장 최근 연도인 2022년의 수치인 181개를 확인한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "표 하단의 주석에서 주어진 정보를 사용하여 연결에 포함된 회사수를 확인하는 과정을 의도."
+      },
+      "status": "discarded",
+      "discard_reason": "T5_003/T5_004 폐기 정책과 일관성: POSCO 연결 포함 회사수 → 연도만 다른 변형 (2023/192 = T5_003 accepted, 2024/194 = T5_004 discarded, 2022/181 = T5_009 discard).",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:17:34"
+    },
+    {
+      "item": {
+        "id": "DART_T5_010",
+        "question": "신한지주의 2023년 희석주당순이익은 얼마인가?",
+        "gold_answer": "8,048원",
+        "gold_answer_unit": "원",
+        "evidence_chunks": [
+          "신한지주_2023_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "| (2) 희석주당순이익      | 8,048원              | 8,498원              | 7,308원"
+        ],
+        "reasoning_steps": [
+          "1. 신한지주의 2023년 희석주당순이익을 찾기 위해 '희석주당순이익' 행을 확인한다.",
+          "2. 해당 행의 '제23기' 열에서 '8,048원'을 조회한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "신한지주",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "표에서 주어진 데이터를 사용하여 2023년의 희석주당순이익을 찾는 것이 목표였다."
+      },
+      "status": "discarded",
+      "discard_reason": "T5_002와 일관: 희석주당순이익 직접 추출은 T1 성격이고 footnote 적용 없음. T5 자격 부적합.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:19:02"
+    },
+    {
+      "item": {
+        "id": "DART_T5_011",
+        "question": "2023년 POSCO홀딩스의 연결에 포함된 회사 수는 몇 개입니까?",
+        "gold_answer": "192개",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "상기 연결에 포함된 회사수는 당사를 포함한 수치입니다."
+        ],
+        "reasoning_steps": [
+          "1. '연결에 포함된 회사수'라는 행에서 2023년도의 수치를 확인한다.",
+          "2. 표 주석을 통해 상기 수치가 당사를 포함한 것임을 확인하고 최종 회사 수를 도출한다."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "* 주석은 단지 설명을 위한 것으로, 계산에 추가적인 수정 필요 없음."
+      },
+      "status": "discarded",
+      "discard_reason": "T5_003·T5_006와 직접 중복: POSCO 2023 연결포함 회사수 → 192개. 동일 질문 세 번째 출현.",
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T17:20:11"
+    },
+    {
+      "item": {
+        "id": "DART_T5_012",
+        "question": "신한지주의 2023년 사업보고서에 따르면, 기업회계기준서 제1117호(보험계약) 적용으로 소급 재작성된 연결포괄손익계산서의 회계기는 무엇인가?",
+        "gold_answer": "제22기",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "신한지주_2023_재무_1_요약_004"
+        ],
+        "evidence_quotes": [
+          "기업회계기준서 제1117호 '보험계약'이 제23기(당기)부터 최초 적용되어, 기업회계기준서 제1001호 '재무제표 표시'에 근거하여 제22기(전기) 연결포괄손익계산서를 소급하여 재작성하였습니다. 제21기(전전기)는 소급 재작성되지 아니하였습니다."
+        ],
+        "reasoning_steps": [
+          "1. 주1 footnote에서 K-IFRS 제1117호가 제23기(당기)부터 최초 적용됨을 확인한다.",
+          "2. 같은 footnote에서 '제22기(전기) 연결포괄손익계산서를 소급하여 재작성', '제21기(전전기)는 소급 재작성되지 아니하였습니다'를 확인 → 소급재작성된 기는 제22기."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "신한지주",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): footnote 본문을 직접 해석하는 multi-hop T5. 회계기준 적용 시점(제23기)과 그 결과 재작성된 기(제22기)를 구분해서 추출."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T5 to fill quota.",
+      "last_touched": "2026-05-26T17:24:41"
+    },
+    {
+      "item": {
+        "id": "DART_T5_013",
+        "question": "LG전자의 2022년 사업보고서에 따르면, MC사업 종료에 따라 재작성된 회계기는 어느 기인가?",
+        "gold_answer": "제19기",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "LG전자_2022_재무_2_연결재무_004"
+        ],
+        "evidence_quotes": [
+          "주1) 제 20기는 태양광 사업의 종료에 따라 재작성하였고, 제 19기는 태양광 사업 및 MC사업의 종료에 따라 재작성하였습니다."
+        ],
+        "reasoning_steps": [
+          "1. 주1 footnote에서 제20기와 제19기 각각의 재작성 사유를 확인한다.",
+          "2. 제20기는 태양광 사업 종료만, 제19기는 태양광 사업 + MC사업 종료가 사유로 명시됨 → MC사업 종료로 재작성된 기는 제19기."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "LG전자",
+        "source_report": "2022_11011",
+        "source_section": "재무_2_연결재무",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): footnote의 두 절(제20기·제19기 각각 다른 사유) 중 MC사업 keyword가 어느 절에 있는지 판별 필요."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T5 to fill quota.",
+      "last_touched": "2026-05-26T17:24:41"
+    },
+    {
+      "item": {
+        "id": "DART_T5_014",
+        "question": "KB금융의 2023년 사업보고서 주석에 따르면, 제14기말 재무제표 작성에 적용된 보험계약 회계기준은 무엇인가?",
+        "gold_answer": "K-IFRS 제1104호",
+        "gold_answer_unit": "항목명",
+        "evidence_chunks": [
+          "KB금융_2023_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "주2) 제15기말 재무제표는 당기 K-IFRS 제1117호(보험계약)적용에 따라 소급재작성 되었습니다.",
+          "주3) 제14기말 재무제표는 K-IFRS 제1104호(구 보험계약)에 따라 작성되었습니다."
+        ],
+        "reasoning_steps": [
+          "1. 주2에서 제15기말은 신규 K-IFRS 제1117호 적용으로 소급재작성됨을 확인한다.",
+          "2. 주3에서 제14기말은 K-IFRS 제1104호(구 보험계약)에 따라 작성됨을 확인 → 제14기말 적용 기준 = K-IFRS 제1104호."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T5",
+        "source_company": "KB금융",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): 동일 표 두 주석에서 제15기/제14기에 적용된 IFRS 기준을 구분."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T5 to fill quota.",
+      "last_touched": "2026-05-26T17:24:41"
+    },
+    {
+      "item": {
+        "id": "DART_T3_020",
+        "question": "카카오의 2022년 사업 부문 중 매출액이 가장 큰 부문은 무엇인가?",
+        "gold_answer": "플랫폼 부문",
+        "gold_answer_unit": "사업부문명",
+        "evidence_chunks": [
+          "카카오_2022_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 플랫폼 부문         | 제품/용역              | 톡비즈                | 카카오톡,선물하기              | 3,770,354         | 53.1%",
+          "| 콘텐츠 부문         | 제품/용역              | 게임                 | 카카오게임                  | 3,336,483         | 46.9%"
+        ],
+        "reasoning_steps": [
+          "1. 청크의 사업부문별 매출 표(연결기준)에서 각 부문의 매출액과 비중을 확인한다.",
+          "2. 플랫폼 부문 3,770,354 (53.1%)가 콘텐츠 부문 3,336,483 (46.9%)보다 크다 → 1위는 플랫폼 부문."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "카카오",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): T3_004(카카오 2023 콘텐츠 1위)와 다른 답(플랫폼 1위). 2022→2023 사이 1위 부문이 뒤바뀐 점에서 다양성 기여."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T3/T4.",
+      "last_touched": "2026-05-26T17:28:47"
+    },
+    {
+      "item": {
+        "id": "DART_T3_021",
+        "question": "현대자동차의 2024년 매출액 기준으로 차량부문과 기타부문 중 매출액이 더 큰 부문은 무엇인가?",
+        "gold_answer": "차량부문",
+        "gold_answer_unit": "사업부문명",
+        "evidence_chunks": [
+          "현대자동차_2024_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 차량부문   | 매출액    | 136,725,011 | 78.1",
+          "| 기타부문   | 매출액    | 10,059,492  | 5.7"
+        ],
+        "reasoning_steps": [
+          "1. 청크의 부문별 주요 재무정보 표(연결기준)에서 차량부문 매출 136,725,011과 기타부문 매출 10,059,492를 확인한다.",
+          "2. 두 값을 비교: 차량부문 (78.1%) > 기타부문 (5.7%) → 매출액이 더 큰 부문은 차량부문."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T3",
+        "source_company": "현대자동차",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): 현대자동차 본체의 차량/기타 부문 비교. 금융부문은 별도 기재 안내(*표)되어 있어 분석 대상 외."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T3/T4.",
+      "last_touched": "2026-05-26T17:28:47"
+    },
+    {
+      "item": {
+        "id": "DART_T4_017",
+        "question": "삼성전자의 2024년 사업부문 중 매출 비중이 10% 미만인 부문들의 매출 합계는 얼마인가?",
+        "gold_answer": "434,327",
+        "gold_answer_unit": "억원",
+        "evidence_chunks": [
+          "삼성전자_2024_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "2024년 매출은 DX 부문이 174조 8,877억원(58.1%), DS 부문이 111조 660억원(36.9%)이며, SDC가 29조 1,578억원(9.7%), Harman은 14조 2,749억원(4.7%)입니다."
+        ],
+        "reasoning_steps": [
+          "1. 청크에 명시된 각 사업부문의 매출 비중을 확인: DX 58.1%, DS 36.9%, SDC 9.7%, Harman 4.7%.",
+          "2. 10% 미만 필터를 적용해 SDC(9.7%)와 Harman(4.7%) 두 부문을 선택.",
+          "3. 두 부문의 매출 합계: 291,578 + 142,749 = 434,327 (억원)."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "삼성전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "reviewer-authored (Claude): T4 다단계 (조건 필터 + 합산). 10% threshold로 SDC·Harman 선별 후 매출 합계 계산."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "Claude-authored T3/T4.",
+      "last_touched": "2026-05-26T17:28:47"
+    }
+  ],
+  "items": [
+    {
+      "id": "DART_T1_001",
+      "question": "2022년 기준 네이버의 연결에 포함된 종속 회사 수는 몇 개입니까?",
+      "gold_answer": "100",
+      "gold_answer_unit": "개",
+      "evidence_chunks": [
+        "NAVER_2022_재무_1_요약_002"
+      ],
+      "evidence_quotes": [
+        "연결에 포함된 종속 회사수   | 100                        |"
+      ],
+      "reasoning_steps": [
+        "1. '연결에 포함된 종속 회사수'가 명시되어 있는 테이블을 찾는다.",
+        "2. 해당 라인의 2022년 값을 확인하여 '100'이라는 값을 도출한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T1",
+      "source_company": "NAVER",
+      "source_report": "2022_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "단순 수치를 추출하는 문제로, 별다른 계산 없이 적절한 위치의 값을 추출했습니다."
+    },
+    {
+      "id": "DART_T1_002",
+      "question": "2024년 신한지주의 자산 총계는 얼마입니까?",
+      "gold_answer": "739,764,256",
+      "gold_answer_unit": "백만원",
+      "evidence_chunks": [
+        "신한지주_2024_재무_1_요약_001"
+      ],
+      "evidence_quotes": [
+        "자산 총계 | 739,764,256"
+      ],
+      "reasoning_steps": [
+        "1. '신한지주_2024_재무_1_요약_001' 청크에서 2024년 자산 총계 항목을 찾는다.",
+        "2. 2024년 자산 총계 값을 확인해 결과로 제시한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T1",
+      "source_company": "신한지주",
+      "source_report": "2024_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "신한지주 2024년의 자산 총계를 묻는 간단한 수치 질문으로, 청크에서 관련 항목을 확인하고 값을 직접 추출합니다."
+    },
+    {
+      "id": "DART_T1_003",
+      "question": "2023년 POSCO홀딩스의 별도 재무제표상 비유동부채는 얼마인가?",
+      "gold_answer": "2,326,663",
+      "gold_answer_unit": "백만원",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_재무_1_요약_003"
+      ],
+      "evidence_quotes": [
+        "[비유동부채] | 2,326,663 | 3,858,263 | 7,339,065"
+      ],
+      "reasoning_steps": [
+        "1. 2023년 별도 재무제표의 비유동부채 항목을 찾는다.",
+        "2. 2023년 12월말의 비유동부채 수치를 추출한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T1",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "별도 재무제표의 비유동부채 항목에서 직접 수치를 추출하는 간단한 질문을 의도함."
+    },
+    {
+      "id": "DART_T2_001",
+      "question": "신한EZ손해보험의 2024년 영업수익은 전년 대비 몇 퍼센트 증가했습니까?",
+      "gold_answer": "114.65",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "신한지주_2024_사업의내용_5_매출_086"
+      ],
+      "evidence_quotes": [
+        "| 영업수익        |    93.8 |    43.7 |",
+        "| 영업수익        |    93.8 |    43.7 |"
+      ],
+      "reasoning_steps": [
+        "1. 2024년 영업수익은 93.8십억원이고 2023년 영업수익은 43.7십억원으로 주어져 있습니다.",
+        "2. 2023년 대비 2024년의 영업수익 증감률은 ((93.8 - 43.7) / 43.7) * 100% ≈ 114.65% 입니다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "신한지주",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "영업수익의 전년 대비 증감률을 계산하도록 의도했습니다. | reviewer fix: 표가 신한지주 본체가 아니라 자회사 신한EZ손해보험의 영업실적이라 질문 회사명을 정정. 산술오차(114.42→114.65) 정정."
+    },
+    {
+      "id": "DART_T2_002",
+      "question": "2023년과 2022년 POSCO홀딩스의 자산총계 대비 부채총계 비율의 증감률은?",
+      "gold_answer": "0.23",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_재무_1_요약_001"
+      ],
+      "evidence_quotes": [
+        "자산총계 | 100,945,394 | 98,406,781",
+        "부채총계 | 41,281,497 | 40,149,380"
+      ],
+      "reasoning_steps": [
+        "1. 2023년과 2022년의 자산총계 대비 부채총계 비율을 각각 계산한다. 2023년: 41,281,497 / 100,945,394 × 100 = 40.90%, 2022년: 40,149,380 / 98,406,781 × 100 = 40.81%.",
+        "2. 두 비율의 증감률을 계산한다: (40.90 - 40.81) / 40.81 × 100 ≈ +0.23%."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "두 기간의 비율을 구한 후 비율의 변화를 계산하는 문제로 설계 | reviewer fix: 모델 산술 오류 정정 (-2.49% → +0.23%). 정확한 계산은 부채비율 약 40.9%와 40.8% 사이의 0.1pp 차이 → 약 0.23% 증가."
+    },
+    {
+      "id": "DART_T2_003",
+      "question": "카카오의 별도기준 자산총계가 2021년 대비 2022년에 몇 퍼센트 증가했습니까?",
+      "gold_answer": "7.65%",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "카카오_2022_재무_1_요약_003"
+      ],
+      "evidence_quotes": [
+        "자산총계 | 10,791,496,254,634 | 10,024,652,294,434"
+      ],
+      "reasoning_steps": [
+        "1. 2021년 자산총계는 10,024,652,294,434원이고, 2022년 자산총계는 10,791,496,254,634원이다.",
+        "2. 증가율 계산: [(10,791,496,254,634 - 10,024,652,294,434) / 10,024,652,294,434] * 100 = 7.65%"
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "카카오",
+      "source_report": "2022_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "자산총계의 연도별 변화와 그 증가율을 계산하는 목표. | reviewer fix: 별도/연결 모호성 제거 — \"별도기준\" 명시. 2021년 자산총계 10,024,652,294,434 검증 완료 (자산총계 행 직접 + 유동+비유동 합 + 부채자본총계 행으로 3중 확인)."
+    },
+    {
+      "id": "DART_T2_004",
+      "question": "2022년도 현대자동차의 영업이익이 전년 대비 몇 퍼센트 증가했나요?",
+      "gold_answer": "47.03",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "현대자동차_2022_재무_2_연결재무_003"
+      ],
+      "evidence_quotes": [
+        "영업이익 | 9,819,769 | 6,678,949 | 2,394,671"
+      ],
+      "reasoning_steps": [
+        "1. 2022년 영업이익은 9,819,769 백만원이고, 전년도인 2021년 영업이익은 6,678,949 백만원이다.",
+        "2. 증감률은 ((9,819,769 - 6,678,949) / 6,678,949) * 100 ≈ 47.03%이다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "현대자동차",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "연도별 영업이익 데이터를 사용하여 증감률을 계산하는 문제입니다. | reviewer fix: 47.05 → 47.03 (정확한 계산은 3,140,820/6,678,949 ≈ 47.0257%)."
+    },
+    {
+      "id": "DART_T2_007",
+      "question": "POSCO홀딩스의 별도기준 유동부채는 2023년 대비 2024년에 몇 퍼센트 감소했나요?",
+      "gold_answer": "-91.05%",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "POSCO홀딩스_2024_재무_1_요약_003"
+      ],
+      "evidence_quotes": [
+        "[유동부채] | 162,831 | 1,819,670"
+      ],
+      "reasoning_steps": [
+        "1. 2024년 유동부채는 162,831백만원이고, 2023년 유동부채는 1,819,670백만원이다.",
+        "2. 증감률은 ((162,831 - 1,819,670) / 1,819,670) * 100 = -91.05%로 계산된다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2024_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "유동부채의 전년 대비 증감률을 계산하는 문제로 설정하였습니다. | reviewer fix: 별도/연결 모호성 제거 — \"별도기준\" 명시. 2023 보고서와 교차검증: 제56기 1,819,670 일치. 별도 유동부채는 단기차입금 상환으로 -91% 감소."
+    },
+    {
+      "id": "DART_T2_009",
+      "question": "2022년 POSCO홀딩스의 영업활동으로 인한 현금흐름은 전년 대비 증감률이 얼마인가?",
+      "gold_answer": "−1.16%",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "POSCO홀딩스_2022_재무_2_연결재무_007"
+      ],
+      "evidence_quotes": [
+        "Ⅰ.영업활동으로 인한 현금흐름 | 6,186,764,805,543 | 6,259,365,289,022"
+      ],
+      "reasoning_steps": [
+        "1. 2022년 영업활동으로 인한 현금흐름은 6,186,764,805,543원이고, 2021년에는 6,259,365,289,022원임을 확인한다.",
+        "2. 증감률을 계산하기 위해 ((2022년 값 - 2021년 값) / 2021년 값) * 100을 수행하여 −1.16%로 계산한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "영업활동으로 인한 현금흐름의 증감률 계산을 요구하는 문제로, 단순히 두 해의 현금흐름 수치를 비교 및 계산하여 증감률을 산출해야 합니다. | reviewer fix: 답이 음수(-1.16%)이므로 질문을 \"증가했는가\" → \"증감률\" 중립 표현으로 변경."
+    },
+    {
+      "id": "DART_T2_010",
+      "question": "신세계의 2022년 면세점사업의 매출총이익을 매출액으로 나눈 매출총이익률은 약 몇 %인가?",
+      "gold_answer": "55.76",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "신세계_2022_사업의내용_5_매출_003"
+      ],
+      "evidence_quotes": [
+        "면세점사업 | 의류 등 | (주)신세계디에프(주)신세계디에프글로벌 외 | 3,438,683 | 44.0% | 1,917,425 | 37.7%"
+      ],
+      "reasoning_steps": [
+        "1. 신세계 2022 사업부문별 매출 표(연결)에서 면세점사업 매출액 3,438,683백만원과 매출총이익 1,917,425백만원을 확인한다.",
+        "2. 매출총이익률 = 1,917,425 / 3,438,683 × 100 ≈ 55.76%."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "신세계",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "면세점사업의 매출 비중을 계상하는 것을 의도하였습니다. | reviewer fix: 표에 직접 명시된 매출 비중(44.0%)이 아닌, 셀에 노출되지 않은 매출총이익률을 계산하는 진정한 T2로 재작성."
+    },
+    {
+      "id": "DART_T3_002",
+      "question": "신한은행 2024년 사업 부문별 소계 중 가장 큰 소계 금액을 기록한 부문은 무엇인가?",
+      "gold_answer": "이자부문",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "신한지주_2024_사업의내용_5_매출_030"
+      ],
+      "evidence_quotes": [
+        "| 이자부문            | 소계              | 소계                    | 7,650.4  |",
+        "| 수수료부문           | 소계              | 소계                    | 1,000.2  |",
+        "| 기타영업부문          | 소계              | 소계                    | -993.5   |"
+      ],
+      "reasoning_steps": [
+        "1. 2024년 각 사업 부문의 소계를 확인한다.",
+        "2. 이자부문 소계 7,650.4억원이 수수료부문 소계 1,000.2억원 및 기타영업부문 소계 -993.5억원보다 큰 것을 확인한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "신한지주",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "사업 부문별 소계가 무엇인지 파악하고 가장 큰 값을 찾는 추론을 의도. | reviewer fix: 영업실적표는 신한지주 본체가 아니라 자회사 신한은행의 별도 영업실적. 직전 청크가 신한은행 브랜드 수상 등 신한은행 관련 컨텍스트."
+    },
+    {
+      "id": "DART_T3_003",
+      "question": "2023년 POSCO홀딩스의 사업부문별 매출액 합계는 어느 부문이 가장 많은가?",
+      "gold_answer": "철강부문",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "철강부문 | 합계 | 합계 | 403,933"
+      ],
+      "reasoning_steps": [
+        "1. 주어진 데이터를 통해 각 사업부문별 '합계' 매출액을 확인한다.",
+        "2. 매출액을 비교하여 가장 높은 매출액을 가진 사업부문을 찾는다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "각 사업부의 매출액 합계를 비교하여 가장 높은 사업부를 식별하는 문제입니다."
+    },
+    {
+      "id": "DART_T3_004",
+      "question": "카카오 2023년 사업 부문 중 매출액이 가장 큰 사업 부문은 무엇인가?",
+      "gold_answer": "콘텐츠 부문",
+      "gold_answer_unit": "사업 부문명",
+      "evidence_chunks": [
+        "카카오_2023_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "플랫폼 부문 | 제품/용역  | 톡비즈    | 카카오톡,선물하기             | 3,554,442 | 47.0%     ",
+        "콘텐츠 부문 | 제품/용역  | 게임     | 카카오게임                 | 4,002,560 | 53.0%     "
+      ],
+      "reasoning_steps": [
+        "1. 각 사업 부문의 2023년 매출액을 비교한다.",
+        "2. 플랫폼 부문과 콘텐츠 부문의 매출액을 각각 확인하여, 콘텐츠 부문의 매출액이 더 큰 것을 확인한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "카카오",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "사업부문별 매출액을 비교하여 가장 큰 부문을 찾는 것을 의도함."
+    },
+    {
+      "id": "DART_T3_006",
+      "question": "2022년 현대자동차의 매출총이익은 얼마입니까?",
+      "gold_answer": "283,180.52",
+      "gold_answer_unit": "억원",
+      "evidence_chunks": [
+        "현대자동차_2022_재무_2_연결재무_003"
+      ],
+      "evidence_quotes": [
+        "| 매출총이익                | 28,318,052  |"
+      ],
+      "reasoning_steps": [
+        "1. 2022년 현대자동차의 매출총이익을 찾기 위해 evidence에서 관련된 표를 확인합니다.",
+        "2. 해당 표에서 '매출총이익' 항목의 2022년 수치인 '28,318,052 백만원'을 확인하고, 이를 억단위로 변환하여 283,180.52 억원으로 계산합니다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T1",
+      "source_company": "현대자동차",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "매출총이익이라는 특정 항목의 값을 단순히 추출하는 과정이었으며, 백만원 단위에서 억원 단위로의 변환이 필요했습니다. | reviewer fix: T3로 생성됐지만 단일 수치 추출이라 task_type을 T1로 재분류 (ID는 안정성 위해 DART_T3_006 유지)."
+    },
+    {
+      "id": "DART_T3_007",
+      "question": "2024년 LG전자 사업부문 중 가장 높은 매출액을 기록한 부문은?",
+      "gold_answer": "H&A",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "LG전자_2024_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| H&A                | 제품/상품/기타           | 냉장고, 세탁기, 에어컨 등                | 가정용 전기제품, 냉난방기기 및 핵심부품     | LG, DIOS, TROMM, LG SIGNATURE, SIGNATURE KITCHEN SUITE, CordZero, 오브제컬렉션, WHISEN, PuriCare, 에어로타워 등 | 332,033             |               37.8 |"
+      ],
+      "reasoning_steps": [
+        "1. 각 사업부문의 매출액을 비교한다.",
+        "2. 가장 높은 매출액을 기록한 사업부문인 H&A를 선택한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "LG전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "LG전자의 다양한 사업부문 매출을 비교하여 가장 높은 것을 식별하는 질문을 만들었습니다."
+    },
+    {
+      "id": "DART_T4_001",
+      "question": "NAVER의 2022년 사업보고서에 명시된 연결·별도 기준 R&D/영업수익 비율 4개(연결 제24기·제23기, 별도 제24기·제23기) 중 15% 이상인 값들의 합은 약 몇 %인가?",
+      "gold_answer": "46.29",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "NAVER_2022_사업의내용_7_연구개발_002"
+      ],
+      "evidence_quotes": [
+        "연구개발비/영업수익 비율* 연구개발비용계÷당기영업수익×100] | 22.01% | 24.28% | 13.38% | 12.55%"
+      ],
+      "reasoning_steps": [
+        "1. 청크의 4개 비율 확인: 연결 제24기 22.01%, 제23기 24.28%, 별도 제24기 13.38%, 제23기 12.55%.",
+        "2. 15% 이상 필터: 22.01%와 24.28% 통과 (별도 두 값은 13.38·12.55로 모두 미달).",
+        "3. 통과한 두 값의 합: 22.01 + 24.28 = 46.29%."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "NAVER",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "연구개발비/영업수익 비율에서 15% 초과 조건을 바탕으로 필터링 후, 최대값을 찾는 과정을 의도했습니다. | reviewer fix: 통과 후보 1개만 있던 degenerate filter를 다중 통과 + 합산 형태로 재작성해 T4 자격(필터+집계) 충족."
+    },
+    {
+      "id": "DART_T4_003",
+      "question": "2023년 POSCO홀딩스 사업부문 중 연구개발비/매출액 비율이 1% 이상인 부문들 중 연구개발비 총합이 가장 큰 부문은 무엇인가?",
+      "gold_answer": "철강 부문",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_사업의내용_7_연구개발_019"
+      ],
+      "evidence_quotes": [
+        "| 연구개발비/매출액 비율(%) | 1.09%   | 0.02%    | 0.08%    | 4.37%    | 1.38%       | 78.01%  | 0.79%   |"
+      ],
+      "reasoning_steps": [
+        "1. 2023년 연구개발비/매출액 비율이 1% 이상인 사업부문을 필터링한다. 이 경우 철강 부문이 1.09%로 조건에 부합한다.",
+        "2. 필터링된 부문들 중 연구개발비 총합을 확인하여, 철강 부문이 가장 큰 총합을 가지고 있는 사업부문임을 파악한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T4",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "질문에서 각 부문의 비율 조건을 통해 부문을 필터링하고, 최종적으로 연구개발비 총합을 통해 최대 값을 비교하도록 설정했습니다."
+    },
+    {
+      "id": "DART_T4_004",
+      "question": "2023년 카카오의 연결 기준 연구개발비/매출액 비율이 15% 이상인 해 중에서 가장 높은 연구개발비/매출액 비율은 얼마였나요?",
+      "gold_answer": "16.2%",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "카카오_2023_사업의내용_7_연구개발_005"
+      ],
+      "evidence_quotes": [
+        "연구개발비/매출액 비율 | 연구개발비/매출액 비율 | 16.2% | 15.0% | 12.9%"
+      ],
+      "reasoning_steps": [
+        "1. 각 연도의 '연구개발비/매출액 비율'이 15% 이상인 연도를 찾기 위해 표에서 각 연도의 비율 값을 확인했다.",
+        "2. 15% 이상인 해의 비율 중 최대 값을 선택했다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T4",
+      "source_company": "카카오",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "연구개발비/매출액 비율이 15% 이상인 해를 필터링하고, 최대값을 찾는 과정을 의도했습니다."
+    },
+    {
+      "id": "DART_T4_007",
+      "question": "LG전자의 2024년 사업보고서에 따르면, 개발비(무형자산) 금액이 전년 대비 200,000백만원 이상 증가한 회계기는 어느 기인가?",
+      "gold_answer": "제22기",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "LG전자_2024_사업의내용_7_연구개발_009"
+      ],
+      "evidence_quotes": [
+        "개발비(무형자산) | 547,006 | 467,893 | 209,127"
+      ],
+      "reasoning_steps": [
+        "1. 표에서 개발비(무형자산) 3개 연도 값 확인: 제23기 547,006 / 제22기 467,893 / 제21기 209,127 (백만원).",
+        "2. 연도별 YoY 증가 계산: 22기-21기 = 258,766, 23기-22기 = 79,113.",
+        "3. 200,000백만원 이상 필터: 22기(258,766) 통과 ✓, 23기(79,113) 탈락 ✗. → 답: 제22기."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "LG전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "연도별로 증가폭을 비교하여 가장 크게 증가한 연도를 찾는 과정을 의도했다. | reviewer fix: 질문에 회사명(LG전자) 누락된 점 정정. | reviewer fix: 단순 3-year max에 \"전년 대비 200,000백만 이상 증가\" 필터 조건을 추가해 T4(필터+선택) 자격 확보."
+    },
+    {
+      "id": "DART_T4_008",
+      "question": "2022년 신한투자증권의 부문별 이익 중에서 소계가 음수인 기타영업부문에서 가장 큰 수익 항목은 무엇인가?",
+      "gold_answer": "파생상품 관련 이익",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "신한지주_2022_사업의내용_5_매출_072"
+      ],
+      "evidence_quotes": [
+        "기타영업부문          | 소계              | 소계                    | -141.1  | 245.8   | 26.2",
+        "기타영업부문          |                 | 파생상품 관련 이익            | 5,541.7 | 3,311.7 | 4,138.2"
+      ],
+      "reasoning_steps": [
+        "1. 2022년 기타영업부문에서 소계가 음수인지 확인한다. 해당 부문은 소계가 -141.1로서 음수임을 확인했다.",
+        "2. 기타영업부문의 여러 수익 항목 중에서 가장 큰 금액을 가진 항목은 파생상품 관련 이익(5,541.7억 원)으로, 그것이 가장 큰 수익 항목이다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T4",
+      "source_company": "신한지주",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "기타영업부문에서 소계가 음수인 조건을 만족하며 수익 항목 중 파생상품 관련 이익이 가장 큰 값인 것을 추론함. | reviewer fix: 영업실적표는 신한지주 본체가 아니라 자회사 신한투자증권의 별도 영업실적. 청크 _071 끝에 신한투자증권 명시."
+    },
+    {
+      "id": "DART_T4_009",
+      "question": "POSCO홀딩스의 2024년 사업부문 중 연구개발비/매출액 비율이 1% 이상인 사업부문들 중 연구개발비(무형자산) 지출이 가장 많은 사업부문은 무엇인가?",
+      "gold_answer": "1.철강 부문",
+      "gold_answer_unit": "사업부문명",
+      "evidence_chunks": [
+        "POSCO홀딩스_2024_사업의내용_7_연구개발_021"
+      ],
+      "evidence_quotes": [
+        "연구개발비/매출액 비율(%) | 1.05%   | 0.02%  | 0.09%  | 2.11%  | 1.58%      | 171.99%",
+        "연구개발비(무형자산)     | 36,682"
+      ],
+      "reasoning_steps": [
+        "1. 연구개발비/매출액 비율이 1% 이상인 사업부문을 필터링하면, '1.철강 부문', '물류등', '이차전지소재부문', '기타 부문'이 해당된다.",
+        "2. 필터링된 사업부문 중 연구개발비(무형자산) 지출이 가장 많은 사업부문은 '1.철강 부문'이다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T4",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "사업부문들의 연구개발비/매출액 비율을 기준으로 필터를 먼저 하고 그 다음 연구개발비(무형자산)를 비교하여 가장 큰 값을 찾는 과정입니다."
+    },
+    {
+      "id": "DART_T5_001",
+      "question": "2022년 NAVER의 현금및현금성자산이 차지하는 비중은 전체 유동자산의 몇 퍼센트인가?",
+      "gold_answer": "42.30",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "NAVER_2022_재무_2_연결재무_001"
+      ],
+      "evidence_quotes": [
+        "유동자산 | 6,439,570,710,743",
+        "현금및현금성자산 (주6,7) | 2,724,168,321,708"
+      ],
+      "reasoning_steps": [
+        "1. NAVER의 2022년(제24기) 유동자산 6,439,570,710,743원과 현금및현금성자산 2,724,168,321,708원을 확인한다.",
+        "2. 비중 = 2,724,168,321,708 / 6,439,570,710,743 × 100 ≈ 42.30%."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "NAVER",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "현금및현금성자산이 전체 유동자산에서 차지하는 비중을 계산하는 문제입니다. | reviewer fix: 정확값 42.30%로 정정 (모델은 42.31%); T5(주석참조)가 아니라 단순 비율(T2)이라 task_type 재분류."
+    },
+    {
+      "id": "DART_T5_003",
+      "question": "2023년 POSCO홀딩스의 연결에 포함된 회사수는 몇 개입니까?",
+      "gold_answer": "192개",
+      "gold_answer_unit": "개",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_재무_1_요약_002"
+      ],
+      "evidence_quotes": [
+        "연결에 포함된 회사수   | 192개            | 181개            | 170개            |",
+        "* 상기 연결에 포함된 회사수는 당사를 포함한 수치입니다."
+      ],
+      "reasoning_steps": [
+        "1. 표에서 '연결에 포함된 회사수'에 관련된 행을 확인한다.",
+        "2. '상기 연결에 포함된 회사수는 당사를 포함한 수치입니다'라는 주석을 참고하여, 당사 및 전체 연결된 회사 수를 포함하여 해석한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T5",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "표 하단의 주석을 고려하여 POSCO홀딩스를 포함한 연결된 회사수를 찾는 것이 목표입니다."
+    },
+    {
+      "id": "DART_T5_005",
+      "question": "2022년 KB금융의 제15기 희석주당이익은 얼마입니까?",
+      "gold_answer": "10,705",
+      "gold_answer_unit": "원",
+      "evidence_chunks": [
+        "KB금융_2022_재무_1_요약_004"
+      ],
+      "evidence_quotes": [
+        "제15기 재무제표는 주주총회 승인전 재무제표이며, 향후 정기주주총회에서 재무제표 승인 관련 안건이 부결되거나 수정이 발생할 경우 정정보고서를 통해 그 내용 및 사유 등을 반영할 예정입니다.",
+        "희석주당이익 | 10,705원 | 10,890원 | 8,730원"
+      ],
+      "reasoning_steps": [
+        "1. KB금융지주 2022 보고서의 요약 연결재무정보 표에서 희석주당이익 행을 확인한다: 10,705원 | 10,890원 | 8,730원.",
+        "2. 주2 '제15기 재무제표는 주주총회 승인전 재무제표'를 참조해 제15기가 당기(2022, 첫 번째 열)임을 식별. 따라서 제15기 희석주당이익은 10,705원."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T5",
+      "source_company": "KB금융",
+      "source_report": "2022_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "희석주당이익에 관한 제15기의 숫자를 같은 표에서 직접 추출하고, 해당 숫자가 주주총회 승인전 수치라는 주석을 참조하여 최종 수치를 결정함 | reviewer fix: 모델이 두 번째 열(제14기, 2021) 값을 답으로 잘못 적음. 정답은 첫 번째 열 10,705원 (제15기/2022)."
+    },
+    {
+      "id": "DART_T2_011",
+      "question": "2022년 삼성전자의 자본 총계 대비 지배기업 소유주 지분의 비율은 얼마입니까?",
+      "gold_answer": "97.30",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "삼성전자_2022_재무_2_연결재무_001"
+      ],
+      "evidence_quotes": [
+        "자본총계 | 354,749,604 |",
+        "지배기업 소유주지분 | 345,186,142 |"
+      ],
+      "reasoning_steps": [
+        "1. 2022년도 삼성전자의 자본총계는 354,749,604 백만원이고, 지배기업 소유주지분은 345,186,142 백만원이다.",
+        "2. 지배기업 소유주 지분을 자본 총계로 나누고 100을 곱하여 비율을 계산하면, (345,186,142 / 354,749,604) × 100 ≈ 97.30%이다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "삼성전자",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "자본총계와 지배기업 소유주지분 데이터를 사용하여 비율을 계산하도록 의도하였다. | reviewer fix: 97.31 → 97.30 (정확값 97.3042%)."
+    },
+    {
+      "id": "DART_T2_012",
+      "question": "2023년 POSCO홀딩스의 자산총계에서 유동자산이 차지하는 비율은 얼마입니까?",
+      "gold_answer": "45.78%",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_재무_1_요약_001"
+      ],
+      "evidence_quotes": [
+        "자산총계 | 100,945,394",
+        "[유동자산] | 46,212,299"
+      ],
+      "reasoning_steps": [
+        "1. POSCO홀딩스의 2023년 유동자산은 46,212,299백만원이고 자산총계는 100,945,394백만원임을 확인한다.",
+        "2. 유동자산이 자산총계에서 차지하는 비율을 계산하기 위해 유동자산을 자산총계로 나눈 후 100을 곱하여, (46,212,299 / 100,945,394) * 100 = 45.78%로 계산한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "보고서에서 제공된 유동자산과 자산총계의 값을 통해 유동자산이 자산총계에서 차지하는 비율을 계산하도록 의도했다."
+    },
+    {
+      "id": "DART_T3_011",
+      "question": "삼성전자의 2024년 사업 부문 중에서 매출액이 가장 높은 부문은 무엇인가요?",
+      "gold_answer": "DX 부문",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "삼성전자_2024_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "2024년 매출은 DX 부문이 174조 8,877억원(58.1%)"
+      ],
+      "reasoning_steps": [
+        "1. 주어진 청크에서 2024년 각 사업 부문의 매출액을 확인한다.",
+        "2. 확인한 매출액 중 가장 높은 값을 가진 부문이 어디인지 파악한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "삼성전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "다른 부문과 비교한 후 최대 값의 부문명을 묻는 질문을 의도하였습니다."
+    },
+    {
+      "id": "DART_T3_015",
+      "question": "2022년 신세계의 사업부문 중에서 매출액이 가장 높은 사업부문은 무엇인가?",
+      "gold_answer": "면세점사업",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "신세계_2022_사업의내용_5_매출_003"
+      ],
+      "evidence_quotes": [
+        "면세점사업 | 의류 등 | (주)신세계디에프(주)신세계디에프글로벌 외 | 3,438,683 | 44.0%"
+      ],
+      "reasoning_steps": [
+        "1. 주어진 표에서 각 사업부문의 매출액을 확인한다.",
+        "2. 각 사업부문의 매출액 중 가장 큰 값을 찾는다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "신세계",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "각 사업부의 매출액을 비교하여 가장 높은 사업부문을 결정하는 과정을 의도함."
+    },
+    {
+      "id": "DART_T3_016",
+      "question": "2023년 신세계 사업부문 중 매출총이익의 비중이 가장 높은 부문은 무엇인가요?",
+      "gold_answer": "백화점",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "신세계_2023_사업의내용_5_매출_003"
+      ],
+      "evidence_quotes": [
+        "| 백화점 | 의류 등 | (주)신세계(주)신세계동대구복합환승센터(주)대전신세계(주)광주신세계 | 2,556,982 | 40.2% | 2,166,835 | 56.2% |"
+      ],
+      "reasoning_steps": [
+        "1. 각 사업부문별 매출총이익의 비율을 표에서 확인합니다.",
+        "2. 매출총이익의 비율이 가장 높은 56.2%를 기록한 '백화점' 부문을 선택합니다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "신세계",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "각 사업부문의 매출총이익 비중을 비교하여 가장 높은 것을 찾는 문항을 의도했습니다."
+    },
+    {
+      "id": "DART_T4_011",
+      "question": "삼성전자의 2024년 사업보고서에 따르면, 연구개발비/매출액 비율이 10% 이상인 회계기 중 비율이 가장 높은 해는 어느 기인가?",
+      "gold_answer": "제56기",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "삼성전자_2024_사업의내용_7_연구개발_004"
+      ],
+      "evidence_quotes": [
+        "[연구개발비용 총계÷당기매출액×100] | 11.6% | 10.9% | 8.2%"
+      ],
+      "reasoning_steps": [
+        "1. 표에서 R&D/매출 비율 3개 확인: 제56기 11.6% / 제55기 10.9% / 제54기 8.2%.",
+        "2. 10% 이상 필터: 제56기·제55기 통과 (제54기 8.2% 탈락).",
+        "3. 통과 중 가장 높은 값은 제56기 11.6%. → 답: 제56기."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "삼성전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "보고서에서 주어진 애매한 값들을 비교하여 가장 높은 값을 찾도록 의도했습니다. | reviewer fix: 단순 max를 \"≥10% 필터 + max\" 다단계로 격상."
+    },
+    {
+      "id": "DART_T4_014",
+      "question": "신세계의 2022년 사업보고서에 따르면, 연구개발비용이 4,000백만원 이상이면서 연구개발비/매출액 비율이 0.25% 이상인 연도 중 비율이 가장 높은 해는?",
+      "gold_answer": "2020년",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "신세계_2022_사업의내용_7_연구개발_000"
+      ],
+      "evidence_quotes": [
+        "| 연구개발비 / 매출액 비율[연구개발비용계÷당기매출액×100] | 0.25%   | 0.20%   | 0.29%   |"
+      ],
+      "reasoning_steps": [
+        "1. 표에서 연도별 연구개발비용과 비율 확인: 2022(4,614, 0.25%), 2021(3,318, 0.20%), 2020(4,193, 0.29%).",
+        "2. 두 조건(R&D ≥4,000백만 AND 비율 ≥0.25%) 동시 만족 필터: 2022 통과, 2020 통과, 2021은 R&D 3,318로 탈락.",
+        "3. 통과한 두 해의 비율 비교: 2020 0.29% > 2022 0.25%. → 답: 2020년."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "신세계",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_7_연구개발",
+      "source_pages": null,
+      "generation_notes": "연도별로 연구개발비가 매출액에 비해 차지하는 비율을 비교하여, 이 비율이 가장 높은 해를 찾는 다단계 추론을 의도했습니다. | reviewer fix: 단순 max를 \"두 조건 AND 필터 + max\" 다단계로 격상해 T4 자격 확보."
+    },
+    {
+      "id": "DART_T5_008",
+      "question": "LG전자의 2022년 우선주기본주당손실은 얼마입니까?",
+      "gold_answer": "(801)",
+      "gold_answer_unit": "원",
+      "evidence_chunks": [
+        "LG전자_2022_재무_2_연결재무_004"
+      ],
+      "evidence_quotes": [
+        "업 우선주기본주당이익(손실) (단위 : 원) | (801)"
+      ],
+      "reasoning_steps": [
+        "1. '우선주기본주당이익(손실)' 표에서 2022년을 확인한다.",
+        "2. 2022년 우선주기본주당손실이 (801) 원임을 찾는다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T1",
+      "source_company": "LG전자",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "주식 관련 손실 수치 질문을 통해 표의 주석이나 별표를 참고하도록 유도 | reviewer fix: footnote 적용 없이 셀 값 직접 추출이므로 T5→T1 재분류."
+    },
+    {
+      "id": "DART_T3_018",
+      "question": "2023년 CJ대한통운에서 매출액이 가장 큰 사업부문은 무엇인가요?",
+      "gold_answer": "글로벌사업부문",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "CJ대한통운_2023_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "| 글로벌사업부문 | 하역, 운송, 보관 | 4,205,816 | 35.7% |"
+      ],
+      "reasoning_steps": [
+        "1. 각 사업부문의 매출액을 표에서 확인합니다.",
+        "2. 매출액을 비교하여 가장 큰 값인 4,205,816 백만원을 가진 글로벌사업부문을 찾습니다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "CJ대한통운",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "사업부문 매출 비교를 통해 최대값을 찾는 과정을 의도."
+    },
+    {
+      "id": "DART_T4_016",
+      "question": "CJ대한통운의 2023년도 매출 중 비율이 30% 이상인 사업부문 중 매출액이 가장 큰 부문은 어디인가?",
+      "gold_answer": "글로벌사업부문",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "CJ대한통운_2023_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "| 글로벌사업부문 | 하역, 운송, 보관             | 4,205,816    | 35.7%   |",
+        "| 택배사업부문  | 보관, 가공, 집하, 배송         | 3,722,691    | 31.6%   |"
+      ],
+      "reasoning_steps": [
+        "1. 2023년도 주요 매출 현황에서 각 사업부문의 매출 비율을 확인한다.",
+        "2. 매출 비율이 30% 이상인 사업부문을 필터링하고, 이 중 매출액이 가장 큰 사업부문을 선택한다."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T4",
+      "source_company": "CJ대한통운",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "매출 비율 필터링 후 최대값을 찾는 문제를 의도. 글로벌사업부문과 택배사업부문이 후보가 되며, 매출액 기준으로 글로벌사업부문을 선택."
+    },
+    {
+      "id": "DART_T5_012",
+      "question": "신한지주의 2023년 사업보고서에 따르면, 기업회계기준서 제1117호(보험계약) 적용으로 소급 재작성된 연결포괄손익계산서의 회계기는 무엇인가?",
+      "gold_answer": "제22기",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "신한지주_2023_재무_1_요약_004"
+      ],
+      "evidence_quotes": [
+        "기업회계기준서 제1117호 '보험계약'이 제23기(당기)부터 최초 적용되어, 기업회계기준서 제1001호 '재무제표 표시'에 근거하여 제22기(전기) 연결포괄손익계산서를 소급하여 재작성하였습니다. 제21기(전전기)는 소급 재작성되지 아니하였습니다."
+      ],
+      "reasoning_steps": [
+        "1. 주1 footnote에서 K-IFRS 제1117호가 제23기(당기)부터 최초 적용됨을 확인한다.",
+        "2. 같은 footnote에서 '제22기(전기) 연결포괄손익계산서를 소급하여 재작성', '제21기(전전기)는 소급 재작성되지 아니하였습니다'를 확인 → 소급재작성된 기는 제22기."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T5",
+      "source_company": "신한지주",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): footnote 본문을 직접 해석하는 multi-hop T5. 회계기준 적용 시점(제23기)과 그 결과 재작성된 기(제22기)를 구분해서 추출."
+    },
+    {
+      "id": "DART_T5_013",
+      "question": "LG전자의 2022년 사업보고서에 따르면, MC사업 종료에 따라 재작성된 회계기는 어느 기인가?",
+      "gold_answer": "제19기",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "LG전자_2022_재무_2_연결재무_004"
+      ],
+      "evidence_quotes": [
+        "주1) 제 20기는 태양광 사업의 종료에 따라 재작성하였고, 제 19기는 태양광 사업 및 MC사업의 종료에 따라 재작성하였습니다."
+      ],
+      "reasoning_steps": [
+        "1. 주1 footnote에서 제20기와 제19기 각각의 재작성 사유를 확인한다.",
+        "2. 제20기는 태양광 사업 종료만, 제19기는 태양광 사업 + MC사업 종료가 사유로 명시됨 → MC사업 종료로 재작성된 기는 제19기."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T5",
+      "source_company": "LG전자",
+      "source_report": "2022_11011",
+      "source_section": "재무_2_연결재무",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): footnote의 두 절(제20기·제19기 각각 다른 사유) 중 MC사업 keyword가 어느 절에 있는지 판별 필요."
+    },
+    {
+      "id": "DART_T5_014",
+      "question": "KB금융의 2023년 사업보고서 주석에 따르면, 제14기말 재무제표 작성에 적용된 보험계약 회계기준은 무엇인가?",
+      "gold_answer": "K-IFRS 제1104호",
+      "gold_answer_unit": "항목명",
+      "evidence_chunks": [
+        "KB금융_2023_재무_1_요약_002"
+      ],
+      "evidence_quotes": [
+        "주2) 제15기말 재무제표는 당기 K-IFRS 제1117호(보험계약)적용에 따라 소급재작성 되었습니다.",
+        "주3) 제14기말 재무제표는 K-IFRS 제1104호(구 보험계약)에 따라 작성되었습니다."
+      ],
+      "reasoning_steps": [
+        "1. 주2에서 제15기말은 신규 K-IFRS 제1117호 적용으로 소급재작성됨을 확인한다.",
+        "2. 주3에서 제14기말은 K-IFRS 제1104호(구 보험계약)에 따라 작성됨을 확인 → 제14기말 적용 기준 = K-IFRS 제1104호."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T5",
+      "source_company": "KB금융",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): 동일 표 두 주석에서 제15기/제14기에 적용된 IFRS 기준을 구분."
+    },
+    {
+      "id": "DART_T3_020",
+      "question": "카카오의 2022년 사업 부문 중 매출액이 가장 큰 부문은 무엇인가?",
+      "gold_answer": "플랫폼 부문",
+      "gold_answer_unit": "사업부문명",
+      "evidence_chunks": [
+        "카카오_2022_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| 플랫폼 부문         | 제품/용역              | 톡비즈                | 카카오톡,선물하기              | 3,770,354         | 53.1%",
+        "| 콘텐츠 부문         | 제품/용역              | 게임                 | 카카오게임                  | 3,336,483         | 46.9%"
+      ],
+      "reasoning_steps": [
+        "1. 청크의 사업부문별 매출 표(연결기준)에서 각 부문의 매출액과 비중을 확인한다.",
+        "2. 플랫폼 부문 3,770,354 (53.1%)가 콘텐츠 부문 3,336,483 (46.9%)보다 크다 → 1위는 플랫폼 부문."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "카카오",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): T3_004(카카오 2023 콘텐츠 1위)와 다른 답(플랫폼 1위). 2022→2023 사이 1위 부문이 뒤바뀐 점에서 다양성 기여."
+    },
+    {
+      "id": "DART_T3_021",
+      "question": "현대자동차의 2024년 매출액 기준으로 차량부문과 기타부문 중 매출액이 더 큰 부문은 무엇인가?",
+      "gold_answer": "차량부문",
+      "gold_answer_unit": "사업부문명",
+      "evidence_chunks": [
+        "현대자동차_2024_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| 차량부문   | 매출액    | 136,725,011 | 78.1",
+        "| 기타부문   | 매출액    | 10,059,492  | 5.7"
+      ],
+      "reasoning_steps": [
+        "1. 청크의 부문별 주요 재무정보 표(연결기준)에서 차량부문 매출 136,725,011과 기타부문 매출 10,059,492를 확인한다.",
+        "2. 두 값을 비교: 차량부문 (78.1%) > 기타부문 (5.7%) → 매출액이 더 큰 부문은 차량부문."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T3",
+      "source_company": "현대자동차",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): 현대자동차 본체의 차량/기타 부문 비교. 금융부문은 별도 기재 안내(*표)되어 있어 분석 대상 외."
+    },
+    {
+      "id": "DART_T4_017",
+      "question": "삼성전자의 2024년 사업부문 중 매출 비중이 10% 미만인 부문들의 매출 합계는 얼마인가?",
+      "gold_answer": "434,327",
+      "gold_answer_unit": "억원",
+      "evidence_chunks": [
+        "삼성전자_2024_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "2024년 매출은 DX 부문이 174조 8,877억원(58.1%), DS 부문이 111조 660억원(36.9%)이며, SDC가 29조 1,578억원(9.7%), Harman은 14조 2,749억원(4.7%)입니다."
+      ],
+      "reasoning_steps": [
+        "1. 청크에 명시된 각 사업부문의 매출 비중을 확인: DX 58.1%, DS 36.9%, SDC 9.7%, Harman 4.7%.",
+        "2. 10% 미만 필터를 적용해 SDC(9.7%)와 Harman(4.7%) 두 부문을 선택.",
+        "3. 두 부문의 매출 합계: 291,578 + 142,749 = 434,327 (억원)."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "삼성전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "reviewer-authored (Claude): T4 다단계 (조건 필터 + 합산). 10% threshold로 SDC·Harman 선별 후 매출 합계 계산."
+    }
+  ]
+}

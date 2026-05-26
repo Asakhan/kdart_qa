@@ -1,0 +1,292 @@
+{
+  "saved_at": "2026-05-26T18:40:38",
+  "states": [
+    {
+      "item": {
+        "id": "DART_T4_HVA1",
+        "question": "NAVER의 2022년 사업보고서에서 연결에 포함된 종속 회사 수의 2020→2021 변동 절댓값과 2021→2022 변동 절댓값의 합은 몇 개인가?",
+        "gold_answer": "83",
+        "gold_answer_unit": "개",
+        "evidence_chunks": [
+          "NAVER_2022_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "연결에 포함된 종속 회사수   | 100                        | 75                         | 133"
+        ],
+        "reasoning_steps": [
+          "1. NAVER 2022 보고서 표에서 연결 종속회사수 확인: 2020년 133, 2021년 75, 2022년 100.",
+          "2. 2020→2021 변동 절댓값: |75−133| = 58.",
+          "3. 2021→2022 변동 절댓값: |100−75| = 25.",
+          "4. 두 변동의 합: 58 + 25 = 83."
+        ],
+        "reasoning_hops": 4,
+        "task_type": "T4",
+        "source_company": "NAVER",
+        "source_report": "2022_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T1_001 — 3년치 cross-year abs-diff sum (multi-hop 4)."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:40:38"
+    },
+    {
+      "item": {
+        "id": "DART_T4_HVA2",
+        "question": "POSCO홀딩스의 2023년 사업부문별 합계 매출 1위 부문과 2위 부문에 대해, 각 부문의 (단순합계/합계) 비율의 차이는 약 몇 %pt 인가?",
+        "gold_answer": "16.93",
+        "gold_answer_unit": "%pt",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_사업의내용_5_매출_001"
+        ],
+        "evidence_quotes": [
+          "| 철강부문      | 단순합계    | 단순합계      | 635,387      |",
+          "| 철강부문      | 합계      | 합계        | 403,933      |",
+          "| 친환경인프라    | 단순합계    | 단순합계      | 571,572      |",
+          "| 친환경인프라    | 합계      | 합계        | 328,052      |"
+        ],
+        "reasoning_steps": [
+          "1. 사업부문 합계 매출 확인: 철강 403,933, 친환경인프라 328,052, 친환경미래소재 38,160, 기타 1,127. 1위=철강, 2위=친환경인프라.",
+          "2. 각 부문의 (단순합계/합계) 비율 계산: 철강 635,387/403,933 = 1.5730, 친환경인프라 571,572/328,052 = 1.7423.",
+          "3. 두 비율의 차의 절댓값(%pt 단위): |1.7423−1.5730|×100 ≈ 16.93%pt."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_003 — cross-row 비율 비교 (단순합계/합계). multi-hop 3."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:40:38"
+    },
+    {
+      "item": {
+        "id": "DART_T4_HVA3",
+        "question": "신세계의 2022년 사업부문 중 매출 구성비가 20% 이상인 부문들의 매출총이익률(매출총이익/매출액)의 평균은 약 몇 %인가?",
+        "gold_answer": "70.63",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "신세계_2022_사업의내용_5_매출_003"
+        ],
+        "evidence_quotes": [
+          "| 백화점                       | 의류 등       | (주)신세계(주)신세계동대구복합환승센터(주)대전신세계(주)광주신세계 | 2,486,946 | 31.8%      | 2,126,512 | 41.8%        |",
+          "| 패션 및 라이프스타일, 화장품 제조 및 도소매 | 의류화장품 등    | (주)신세계인터내셔날(주)신세계톰보이 외                | 1,553,877 | 19.9%      | 945,832   | 18.6%        |",
+          "| 면세점사업                     | 의류 등       | (주)신세계디에프(주)신세계디에프글로벌 외               | 3,438,683 | 44.0%      | 1,917,425 | 37.7%        |"
+        ],
+        "reasoning_steps": [
+          "1. 사업부문별 매출 비중 확인. 20% 이상 통과 부문: 백화점(31.8%), 면세점사업(44.0%). 패션은 19.9%로 탈락.",
+          "2. 각 통과 부문의 매출총이익률 계산: 백화점 2,126,512/2,486,946 ≈ 85.51%, 면세점사업 1,917,425/3,438,683 ≈ 55.76%.",
+          "3. 두 매출총이익률의 평균: (85.51 + 55.76) / 2 ≈ 70.63%."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "신세계",
+        "source_report": "2022_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T2_010 — filter + 2 ratios + average. multi-hop 3."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:40:38"
+    },
+    {
+      "item": {
+        "id": "DART_T2_HVA4",
+        "question": "POSCO홀딩스의 2023년 연결에 포함된 회사 수가 2022년 대비 변동한 비율은 약 몇 %인가?",
+        "gold_answer": "6.08",
+        "gold_answer_unit": "%",
+        "evidence_chunks": [
+          "POSCO홀딩스_2023_재무_1_요약_002"
+        ],
+        "evidence_quotes": [
+          "연결에 포함된 회사수   | 192개            | 181개            | 170개            |"
+        ],
+        "reasoning_steps": [
+          "1. POSCO홀딩스 2023 연결회사수 192, 2022 회사수 181 확인.",
+          "2. YoY 변동률: (192−181)/181 × 100 ≈ 6.08%."
+        ],
+        "reasoning_hops": 2,
+        "task_type": "T2",
+        "source_company": "POSCO홀딩스",
+        "source_report": "2023_11011",
+        "source_section": "재무_1_요약",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T5_003 — 절댓값 차 → 비율(%). 단순 차보다 한 단계 추가."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:40:38"
+    },
+    {
+      "item": {
+        "id": "DART_T4_HVA5",
+        "question": "삼성전자의 2024년 사업부문 중 매출 비중이 30% 이상인 부문들의 매출 합이, 30% 미만인 부문들의 매출 합의 약 몇 배인가?",
+        "gold_answer": "6.58",
+        "gold_answer_unit": "배",
+        "evidence_chunks": [
+          "삼성전자_2024_사업의내용_5_매출_000"
+        ],
+        "evidence_quotes": [
+          "2024년 매출은 DX 부문이 174조 8,877억원(58.1%), DS 부문이 111조 660억원(36.9%)이며, SDC가 29조 1,578억원(9.7%), Harman은 14조 2,749억원(4.7%)입니다."
+        ],
+        "reasoning_steps": [
+          "1. 사업부문별 매출과 비중 확인: DX 174.8877조(58.1%), DS 111.0660조(36.9%), SDC 29.1578조(9.7%), Harman 14.2749조(4.7%).",
+          "2. 30% 이상 그룹: DX + DS = 285.9537 조원. 30% 미만 그룹: SDC + Harman = 43.4327 조원.",
+          "3. 비율: 285.9537 / 43.4327 ≈ 6.58배."
+        ],
+        "reasoning_hops": 3,
+        "task_type": "T4",
+        "source_company": "삼성전자",
+        "source_report": "2024_11011",
+        "source_section": "사업의내용_5_매출",
+        "source_pages": null,
+        "generation_notes": "aggressive variant of T3_011 — group filter + 2 group sums + ratio. multi-hop 3."
+      },
+      "status": "accepted",
+      "discard_reason": null,
+      "regenerate_reason": null,
+      "reviewer_notes": "",
+      "last_touched": "2026-05-26T18:40:38"
+    }
+  ],
+  "items": [
+    {
+      "id": "DART_T4_HVA1",
+      "question": "NAVER의 2022년 사업보고서에서 연결에 포함된 종속 회사 수의 2020→2021 변동 절댓값과 2021→2022 변동 절댓값의 합은 몇 개인가?",
+      "gold_answer": "83",
+      "gold_answer_unit": "개",
+      "evidence_chunks": [
+        "NAVER_2022_재무_1_요약_002"
+      ],
+      "evidence_quotes": [
+        "연결에 포함된 종속 회사수   | 100                        | 75                         | 133"
+      ],
+      "reasoning_steps": [
+        "1. NAVER 2022 보고서 표에서 연결 종속회사수 확인: 2020년 133, 2021년 75, 2022년 100.",
+        "2. 2020→2021 변동 절댓값: |75−133| = 58.",
+        "3. 2021→2022 변동 절댓값: |100−75| = 25.",
+        "4. 두 변동의 합: 58 + 25 = 83."
+      ],
+      "reasoning_hops": 4,
+      "task_type": "T4",
+      "source_company": "NAVER",
+      "source_report": "2022_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T1_001 — 3년치 cross-year abs-diff sum (multi-hop 4)."
+    },
+    {
+      "id": "DART_T4_HVA2",
+      "question": "POSCO홀딩스의 2023년 사업부문별 합계 매출 1위 부문과 2위 부문에 대해, 각 부문의 (단순합계/합계) 비율의 차이는 약 몇 %pt 인가?",
+      "gold_answer": "16.93",
+      "gold_answer_unit": "%pt",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_사업의내용_5_매출_001"
+      ],
+      "evidence_quotes": [
+        "| 철강부문      | 단순합계    | 단순합계      | 635,387      |",
+        "| 철강부문      | 합계      | 합계        | 403,933      |",
+        "| 친환경인프라    | 단순합계    | 단순합계      | 571,572      |",
+        "| 친환경인프라    | 합계      | 합계        | 328,052      |"
+      ],
+      "reasoning_steps": [
+        "1. 사업부문 합계 매출 확인: 철강 403,933, 친환경인프라 328,052, 친환경미래소재 38,160, 기타 1,127. 1위=철강, 2위=친환경인프라.",
+        "2. 각 부문의 (단순합계/합계) 비율 계산: 철강 635,387/403,933 = 1.5730, 친환경인프라 571,572/328,052 = 1.7423.",
+        "3. 두 비율의 차의 절댓값(%pt 단위): |1.7423−1.5730|×100 ≈ 16.93%pt."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_003 — cross-row 비율 비교 (단순합계/합계). multi-hop 3."
+    },
+    {
+      "id": "DART_T4_HVA3",
+      "question": "신세계의 2022년 사업부문 중 매출 구성비가 20% 이상인 부문들의 매출총이익률(매출총이익/매출액)의 평균은 약 몇 %인가?",
+      "gold_answer": "70.63",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "신세계_2022_사업의내용_5_매출_003"
+      ],
+      "evidence_quotes": [
+        "| 백화점                       | 의류 등       | (주)신세계(주)신세계동대구복합환승센터(주)대전신세계(주)광주신세계 | 2,486,946 | 31.8%      | 2,126,512 | 41.8%        |",
+        "| 패션 및 라이프스타일, 화장품 제조 및 도소매 | 의류화장품 등    | (주)신세계인터내셔날(주)신세계톰보이 외                | 1,553,877 | 19.9%      | 945,832   | 18.6%        |",
+        "| 면세점사업                     | 의류 등       | (주)신세계디에프(주)신세계디에프글로벌 외               | 3,438,683 | 44.0%      | 1,917,425 | 37.7%        |"
+      ],
+      "reasoning_steps": [
+        "1. 사업부문별 매출 비중 확인. 20% 이상 통과 부문: 백화점(31.8%), 면세점사업(44.0%). 패션은 19.9%로 탈락.",
+        "2. 각 통과 부문의 매출총이익률 계산: 백화점 2,126,512/2,486,946 ≈ 85.51%, 면세점사업 1,917,425/3,438,683 ≈ 55.76%.",
+        "3. 두 매출총이익률의 평균: (85.51 + 55.76) / 2 ≈ 70.63%."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "신세계",
+      "source_report": "2022_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T2_010 — filter + 2 ratios + average. multi-hop 3."
+    },
+    {
+      "id": "DART_T2_HVA4",
+      "question": "POSCO홀딩스의 2023년 연결에 포함된 회사 수가 2022년 대비 변동한 비율은 약 몇 %인가?",
+      "gold_answer": "6.08",
+      "gold_answer_unit": "%",
+      "evidence_chunks": [
+        "POSCO홀딩스_2023_재무_1_요약_002"
+      ],
+      "evidence_quotes": [
+        "연결에 포함된 회사수   | 192개            | 181개            | 170개            |"
+      ],
+      "reasoning_steps": [
+        "1. POSCO홀딩스 2023 연결회사수 192, 2022 회사수 181 확인.",
+        "2. YoY 변동률: (192−181)/181 × 100 ≈ 6.08%."
+      ],
+      "reasoning_hops": 2,
+      "task_type": "T2",
+      "source_company": "POSCO홀딩스",
+      "source_report": "2023_11011",
+      "source_section": "재무_1_요약",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T5_003 — 절댓값 차 → 비율(%). 단순 차보다 한 단계 추가."
+    },
+    {
+      "id": "DART_T4_HVA5",
+      "question": "삼성전자의 2024년 사업부문 중 매출 비중이 30% 이상인 부문들의 매출 합이, 30% 미만인 부문들의 매출 합의 약 몇 배인가?",
+      "gold_answer": "6.58",
+      "gold_answer_unit": "배",
+      "evidence_chunks": [
+        "삼성전자_2024_사업의내용_5_매출_000"
+      ],
+      "evidence_quotes": [
+        "2024년 매출은 DX 부문이 174조 8,877억원(58.1%), DS 부문이 111조 660억원(36.9%)이며, SDC가 29조 1,578억원(9.7%), Harman은 14조 2,749억원(4.7%)입니다."
+      ],
+      "reasoning_steps": [
+        "1. 사업부문별 매출과 비중 확인: DX 174.8877조(58.1%), DS 111.0660조(36.9%), SDC 29.1578조(9.7%), Harman 14.2749조(4.7%).",
+        "2. 30% 이상 그룹: DX + DS = 285.9537 조원. 30% 미만 그룹: SDC + Harman = 43.4327 조원.",
+        "3. 비율: 285.9537 / 43.4327 ≈ 6.58배."
+      ],
+      "reasoning_hops": 3,
+      "task_type": "T4",
+      "source_company": "삼성전자",
+      "source_report": "2024_11011",
+      "source_section": "사업의내용_5_매출",
+      "source_pages": null,
+      "generation_notes": "aggressive variant of T3_011 — group filter + 2 group sums + ratio. multi-hop 3."
+    }
+  ]
+}
