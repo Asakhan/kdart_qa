@@ -207,10 +207,10 @@ def maybe_regenerate(session: ReviewSession, cfg: dict, chunk_index: dict[str, d
         chunks_block=gen._format_chunks_block(evidence),
         first_chunk_id=evidence[0]["chunk_id"],
     )
-    raw = gen._call_claude(prompt)
+    raw = gen._call_openai(prompt)
     payload = gen._extract_json(raw)
     if not payload:
-        console.print("[red]Claude 응답을 JSON으로 파싱하지 못했습니다.[/]")
+        console.print("[red]OpenAI 응답을 JSON으로 파싱하지 못했습니다.[/]")
         return
     ok, why = gen._verify(payload, evidence)
     if not ok:

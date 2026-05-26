@@ -87,8 +87,8 @@ generation:
   max_per_company_year: 5
   # Self-verification retries
   max_regenerate_attempts: 3
-  # Anthropic model used for question drafting
-  drafter_model: claude-opus-4-7
+  # OpenAI model used for question drafting
+  drafter_model: gpt-4o
   drafter_max_tokens: 4096
   draft_filename: kdart_qa_draft_v1.json
 

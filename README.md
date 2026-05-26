@@ -9,7 +9,7 @@
 | Phase | 단계 | 산출물 |
 |---|---|---|
 | 1 | DART 수집 → 섹션 추출 → 청크 분할 → RAG 인덱스 | `data/raw`, `data/sections`, `data/chunks`, `data/index` |
-| 2 | Claude로 40문항 초안 생성 (self-verification 포함) | `data/drafts/kdart_qa_draft_v1.json` |
+| 2 | OpenAI로 40문항 초안 생성 (self-verification 포함) | `data/drafts/kdart_qa_draft_v1.json` |
 | 2.5 | 사용자(편집 책임자) 검수 (CLI 도구) | `data/reviewed/kdart_qa_reviewed_v1.json` |
 | 3 | gemini-2.5-flash 난이도 calibration → 최종 출력 | `data/calibration/results.json`, `data/final/kdart_qa.{jsonl,parquet}` |
 
@@ -17,14 +17,16 @@
 
 ### 환경 변수
 
-다음 키를 셸에 export 한 뒤 파이프라인을 실행하라. 코드는 환경에서만 읽고 어떤 파일에도 키를 기록하지 않는다.
+프로젝트 루트의 `.env` 파일에 다음 키를 정의하라. 실행 시 `src/common.py`가
+자동으로 로드한다. (export 해도 동일하게 동작함.)
 
-```bash
-export DART_API_KEY="..."     # https://opendart.fss.or.kr 발급
-export OPENAI_API_KEY="..."   # 임베딩용 (text-embedding-3-small)
-export ANTHROPIC_API_KEY="..."  # Phase 2 문항 초안 생성용 (Claude)
-export GOOGLE_API_KEY="..."   # Phase 3 calibration (gemini-2.5-flash)
+```dotenv
+DART_API_KEY=...     # https://opendart.fss.or.kr 발급
+OPENAI_API_KEY=...   # 임베딩(text-embedding-3-small) + Phase 2 문항 초안 생성
+GOOGLE_API_KEY=...   # Phase 3 calibration (gemini-2.5-flash)
 ```
+
+`.env`는 `.gitignore`에 포함되어 있으므로 커밋되지 않는다.
 
 ### 파이썬 환경
 
@@ -41,7 +43,7 @@ pip install -r requirements.txt
 | 항목 | 금액 (USD) |
 |---|---|
 | OpenAI 임베딩 (text-embedding-3-small) | ≈ 1–2 |
-| Anthropic Claude 문항 생성 (40문항 + 재시도) | ≈ 2–5 |
+| OpenAI 문항 생성 (gpt-4o, 40문항 + 재시도) | ≈ 2–5 |
 | Gemini Flash calibration (40문항 × 3시도) | ≈ 5–10 |
 | **합계** | **≈ 8–17** |
 

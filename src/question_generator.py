@@ -1,10 +1,10 @@
-"""Phase 2: generate draft K-DART-QA items via the Anthropic API (Claude).
+"""Phase 2: generate draft K-DART-QA items via the OpenAI API.
 
 Per task-type, the generator:
   1. Selects evidence chunks from the RAG index using type-specific queries +
      metadata filters. Iterates over (company, year) so distribution stays
      diverse and the per-bucket cap from config is respected.
-  2. Prompts Claude with the chunk text and a strict JSON schema. The system
+  2. Prompts OpenAI with the chunk text and a strict JSON schema. The system
      prompt enforces *evidence-bounded* generation — no outside knowledge.
   3. Parses the returned JSON and self-verifies:
         - reasoning_hops matches len(reasoning_steps)
@@ -13,7 +13,7 @@ Per task-type, the generator:
   4. On verification failure, regenerates up to `max_attempts` times before
      discarding the slot and moving on (logged to logs/).
 
-Anthropic credentials are read from ANTHROPIC_API_KEY only.
+OpenAI credentials are read from OPENAI_API_KEY (loaded from .env via common.py).
 """
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Iterable
 
-import anthropic
+from openai import OpenAI
 
 from .common import get_logger, require_env
 from .rag_index import RagIndex
@@ -160,7 +160,7 @@ class QuestionGenerator:
         seed: int = 42,
     ) -> None:
         self.index = index
-        self.client = anthropic.Anthropic(api_key=api_key or require_env("ANTHROPIC_API_KEY"))
+        self.client = OpenAI(api_key=api_key or require_env("OPENAI_API_KEY"))
         self.model = model
         self.max_tokens = max_tokens
         self.max_attempts = max_attempts
@@ -230,19 +230,18 @@ class QuestionGenerator:
             lines.append("")
         return "\n".join(lines)
 
-    def _call_claude(self, prompt: str) -> str:
-        resp = self.client.messages.create(
+    def _call_openai(self, prompt: str) -> str:
+        resp = self.client.chat.completions.create(
             model=self.model,
             max_tokens=self.max_tokens,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": prompt}],
+            response_format={"type": "json_object"},
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": prompt},
+            ],
         )
-        # concatenate text blocks (modern SDK returns content blocks)
-        parts = []
-        for block in resp.content:
-            if getattr(block, "type", None) == "text":
-                parts.append(block.text)
-        return "".join(parts).strip()
+        content = resp.choices[0].message.content or ""
+        return content.strip()
 
     @staticmethod
     def _extract_json(s: str) -> dict | None:
@@ -337,10 +336,10 @@ class QuestionGenerator:
         for attempt in range(1, self.max_attempts + 1):
             log.info("Generating %s/%s (%s %s, attempt %d)", spec.code, slot_index, company, year, attempt)
             try:
-                raw = self._call_claude(prompt)
+                raw = self._call_openai(prompt)
             except Exception as e:
                 last_err = f"api_error:{e}"
-                log.warning("Claude call failed (attempt %d): %s", attempt, e)
+                log.warning("OpenAI call failed (attempt %d): %s", attempt, e)
                 continue
             payload = self._extract_json(raw)
             if not payload:

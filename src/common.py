@@ -11,8 +11,13 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from dotenv import load_dotenv
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+# Load .env at import time so require_env() picks up keys from the project's
+# .env file without each script having to call load_dotenv() explicitly.
+load_dotenv(PROJECT_ROOT / ".env")
 
 
 def load_config(path: str | Path | None = None) -> dict[str, Any]:
@@ -69,7 +74,7 @@ def require_env(var: str) -> str:
     if not val:
         raise EnvironmentError(
             f"환경변수 {var}가 설정되지 않았습니다. "
-            f"export {var}='...' 후 재실행하세요."
+            f".env 파일에 {var}=... 를 추가하거나 export {var}='...' 후 재실행하세요."
         )
     return val
 
