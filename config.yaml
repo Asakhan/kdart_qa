@@ -45,7 +45,7 @@ sections:
   # Each entry: id (used in filenames), keyword patterns to match section titles.
   - id: 사업의내용_5_매출
     parent_patterns: ["사업의 내용", "사업의 내용"]
-    title_patterns: ["매출 및 수주", "매출및수주", "매출 현황", "주요 제품 및 서비스"]
+    title_patterns: ["매출 및 수주", "매출및수주", "매출 현황", "주요 제품 및 서비스", "영업의 현황", "영업의현황"]
   - id: 재무_1_요약
     parent_patterns: ["재무에 관한 사항", "재무에관한사항"]
     title_patterns: ["요약재무정보", "요약 재무정보"]

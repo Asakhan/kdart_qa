@@ -20,9 +20,15 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
+import warnings
+
 from bs4 import BeautifulSoup, NavigableString, Tag
+from bs4 import XMLParsedAsHTMLWarning
 
 from .common import ensure_dir, get_logger
+
+# DART XMLs are deliberately parsed in HTML mode; the warning is informational.
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
 log = get_logger("section_extractor")
 
@@ -90,10 +96,17 @@ def iter_zip_xml(zip_path: Path) -> Iterable[tuple[str, bytes]]:
 
 
 def load_soup(raw: bytes) -> BeautifulSoup:
-    """Parse XML/HTML bytes with the most forgiving parser available."""
-    # Many DART files declare encoding inside; let BS auto-detect.
+    """Parse XML/HTML bytes with the most forgiving parser available.
+
+    DART XML reports are technically XML but not always well-formed (some
+    entities + nesting trip up strict XML parsers). lxml-xml silently truncates
+    on such inputs (e.g. only the first 3 of 14 SECTION-1 nodes are surfaced
+    for some 사업보고서), so we prefer lxml's HTML mode which is tolerant and
+    captures the full document. Tag names are lowercased by HTML mode; the
+    extractor compensates with case-insensitive lookups.
+    """
     try:
-        return BeautifulSoup(raw, "lxml-xml")
+        return BeautifulSoup(raw, "lxml")
     except Exception:
         return BeautifulSoup(raw, "html.parser")
 

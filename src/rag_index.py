@@ -17,12 +17,18 @@ from pathlib import Path
 from typing import Any, Iterable, Sequence
 
 import chromadb
+import tiktoken
 from chromadb.api.types import EmbeddingFunction
 from openai import OpenAI
 
 from .common import ensure_dir, get_logger, require_env
 
 log = get_logger("rag_index")
+
+# OpenAI embedding models cap inputs at 8192 tokens. We leave headroom because
+# tiktoken's count and the server-side count can diverge by a handful of tokens
+# on edge cases (BOMs, escaped sequences inside HTML tables).
+_EMBEDDING_TOKEN_LIMIT = 8000
 
 
 @dataclass
@@ -46,6 +52,7 @@ class OpenAIEmbedder(EmbeddingFunction):
         self._client = OpenAI(api_key=api_key or require_env("OPENAI_API_KEY"))
         self._model = model
         self._batch = batch_size
+        self._enc = tiktoken.get_encoding("cl100k_base")
 
     def name(self) -> str:
         return f"openai/{self._model}"
@@ -53,12 +60,28 @@ class OpenAIEmbedder(EmbeddingFunction):
     def __call__(self, input: list[str]) -> list[list[float]]:  # type: ignore[override]
         return self.embed(input)
 
+    def _truncate(self, text: str) -> str:
+        """Cap a single input at the embedding model's token limit.
+
+        DART filings sometimes produce a single oversize table chunk (the
+        chunker keeps tables whole when preserve_tables=true). Without
+        truncation, OpenAI rejects the whole batch with a 400.
+        """
+        toks = self._enc.encode(text)
+        if len(toks) <= _EMBEDDING_TOKEN_LIMIT:
+            return text
+        log.warning(
+            "Truncating embedding input from %d to %d tokens (full text still stored in chunk).",
+            len(toks), _EMBEDDING_TOKEN_LIMIT,
+        )
+        return self._enc.decode(toks[:_EMBEDDING_TOKEN_LIMIT])
+
     def embed(self, texts: Sequence[str]) -> list[list[float]]:
         if not texts:
             return []
         out: list[list[float]] = []
         for i in range(0, len(texts), self._batch):
-            batch = list(texts[i:i + self._batch])
+            batch = [self._truncate(t) for t in texts[i:i + self._batch]]
             for attempt in range(5):
                 try:
                     resp = self._client.embeddings.create(model=self._model, input=batch)
