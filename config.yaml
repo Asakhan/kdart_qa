@@ -128,6 +128,11 @@ calibration:
   attempts_per_question: 3
   numeric_relative_tolerance: 0.01   # 1% relative error allowed for numeric answers
   results_filename: results.json
+  # calibration 프롬프트에 넣을 evidence 청크 수. 검색 recall 측정용 rag.top_k(=20)와
+  # 분리한다: rag.top_k는 "gold가 풀에 잡히는가"(recall ≥ 0.90)를 보려고 깊게 두지만,
+  # 그 20개를 그대로 프롬프트에 넣으면 distractor가 많아 난이도 측정이 왜곡된다.
+  # 여기서는 작게(8) 두어 프롬프트를 깔끔히 유지한다. 미지정 시 rag.top_k로 폴백.
+  top_k: 8
   # 문항 간 병렬 calibration worker 수. LLM API rate limit을 고려해 조절.
   # 1로 두면 순차 실행(기존 동작).
   max_workers: 4

@@ -87,7 +87,7 @@ def main() -> int:
         model_name=args.model,
         attempts=cfg["calibration"]["attempts_per_question"],
         rel_tol=cfg["calibration"]["numeric_relative_tolerance"],
-        top_k=cfg["rag"]["top_k"],
+        top_k=cfg["calibration"].get("top_k", cfg["rag"]["top_k"]),
         input_price_per_1m=in_price,
         output_price_per_1m=out_price,
         provider="openai",

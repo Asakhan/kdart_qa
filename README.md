@@ -126,7 +126,16 @@ python scripts/09_export_finqa_format.py \
 calibration은 문항 간 `ThreadPoolExecutor` 병렬화로 LLM 왕복을 겹쳐 40문항 소요
 시간을 크게 줄인다. worker 수는 `calibration.max_workers`(기본 4) 또는
 `--max-workers`로 제어하며, `1`로 두면 기존 순차 동작과 동일하다. 증분 저장은
-완료 콜백이 메인 스레드에서 순차 실행되어 thread-safe하다.
+완료 콜백이 메인 스레드에서 순차 실행되어 thread-safe하다. (실측: gpt-4o-mini
+6문항 기준 순차 294.8s → workers=6 병렬 59.8s, **약 4.9배 단축**.)
+
+검색용 `top_k`와 calibration 프롬프트용 `top_k`는 **분리**되어 있다.
+`rag.top_k`(=20)는 "gold가 후보 풀에 잡히는가"(recall ≥ 0.90)를 보려고 깊게 두지만,
+그 20개를 그대로 프롬프트에 넣으면 distractor가 많아 난이도 측정이 왜곡된다.
+calibration은 `calibration.top_k`(기본 8, 미지정 시 `rag.top_k`로 폴백)만큼만 evidence를
+프롬프트에 넣어 깔끔하게 유지한다. (난이도 측정의 retrieval 교란을 더 없애려면
+실험 입력처럼 gold 근거만 넣는 방식도 가능 — 본 레포의 `kdart_qa_finqa_format.json`이
+그 방식이다.)
 
 각 스크립트는 `--help`로 옵션을 확인할 수 있다. 모든 단계가 `logs/` 아래 타임스탬프 로그를 남긴다.
 
