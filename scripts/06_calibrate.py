@@ -88,7 +88,7 @@ def main() -> int:
         model_name=model_name,
         attempts=cfg["calibration"]["attempts_per_question"],
         rel_tol=cfg["calibration"]["numeric_relative_tolerance"],
-        top_k=cfg["rag"]["top_k"],
+        top_k=cfg["calibration"].get("top_k", cfg["rag"]["top_k"]),
         input_price_per_1m=cfg["calibration"]["cost_per_1m_input_tokens_usd"],
         output_price_per_1m=cfg["calibration"]["cost_per_1m_output_tokens_usd"],
     )
