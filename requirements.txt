@@ -16,8 +16,16 @@ tabulate==0.9.0
 tiktoken==0.8.0
 
 # --- Embeddings + Vector DB ---
-openai==1.59.6
+# Local, free embeddings (default: BAAI/bge-m3, rag.provider: local). GPU
+# optional — CPU auto-fallback. For CPU-only torch (smaller/faster):
+#   pip install --index-url https://download.pytorch.org/whl/cpu torch
+sentence-transformers==5.5.1
+torch==2.12.0
 chromadb==0.5.23
+# openai: still used by Phase 2 question generation (gpt-4o) and gpt-4o-mini
+# calibration. NOT needed for embeddings anymore — only if you switch
+# rag.provider back to openai.
+openai==1.59.6
 
 # --- LLMs (calibration) ---
 google-generativeai==0.8.3

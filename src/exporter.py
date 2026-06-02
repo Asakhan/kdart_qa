@@ -143,3 +143,35 @@ def summarize_calibration(calib: dict[str, dict]) -> dict[str, int]:
     for r in calib.values():
         out[r["classification"]] += 1
     return dict(out)
+
+
+# ---- Work 3: FinQA difficulty alignment ----------------------------------
+# FinQA's reasoning depth is dominated by 1-step (~57%) and 2-step (~36%)
+# programs. To isolate the *language* effect from the *reasoning-hop* effect we
+# label each K-DART item by a step group and carve out a FinQA-matched subset
+# (hops ≤ max_hops). The original 40-item set and all review decisions are left
+# untouched — this only *adds* a labelled subset file (academic-honesty rule).
+
+def finqa_difficulty_group(hops: int | None) -> str:
+    """Map reasoning_hops to a FinQA-aligned difficulty group label."""
+    if hops is None:
+        return "unknown"
+    if hops <= 2:
+        return "1-2_step"   # aligns with FinQA's 1-step + 2-step majority
+    if hops == 3:
+        return "3_step"
+    return "4plus_step"
+
+
+def build_finqa_matched(items: list[dict], *, max_hops: int = 2) -> list[dict]:
+    """Return the difficulty-aligned subset (hops ≤ max_hops), each item enriched
+    with `difficulty_group` and `finqa_matched` fields. Input order preserved."""
+    out: list[dict] = []
+    for it in items:
+        hops = it.get("reasoning_hops")
+        enriched = dict(it)
+        enriched["difficulty_group"] = finqa_difficulty_group(hops)
+        enriched["finqa_matched"] = hops is not None and hops <= max_hops
+        if enriched["finqa_matched"]:
+            out.append(enriched)
+    return out

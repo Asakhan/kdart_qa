@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.chunker import Chunker, chunk_section_html  # noqa: E402
 from src.common import ensure_dir, get_logger, load_config, project_path  # noqa: E402
-from src.rag_index import OpenAIEmbedder, RagIndex, estimate_embedding_cost  # noqa: E402
+from src.rag_index import RagIndex, build_embedder, estimate_embedding_cost  # noqa: E402
 
 log = get_logger("build_index", "phase1_build_index.log")
 
@@ -111,20 +111,21 @@ def main() -> int:
         log.info("--chunk-only set; skipping indexing.")
         return 0
 
-    # ---- Embedding cost confirmation ----
-    est = estimate_embedding_cost(all_chunks, price_per_1m_tokens_usd=cfg["rag"]["cost_per_1m_tokens_usd"])
-    log.info("임베딩 비용 예상: %s", est.render())
-    if not args.yes:
-        answer = input(f"임베딩을 진행하시겠습니까? ({est.render()}) [y/N] ").strip().lower()
-        if answer not in {"y", "yes"}:
-            log.info("Aborted by user.")
-            return 0
+    provider = cfg["rag"].get("provider", "local")
+    # ---- Embedding cost confirmation (only meaningful for the paid OpenAI path) ----
+    if provider == "openai":
+        est = estimate_embedding_cost(all_chunks, price_per_1m_tokens_usd=cfg["rag"]["cost_per_1m_tokens_usd"])
+        log.info("임베딩 비용 예상: %s", est.render())
+        if not args.yes:
+            answer = input(f"임베딩을 진행하시겠습니까? ({est.render()}) [y/N] ").strip().lower()
+            if answer not in {"y", "yes"}:
+                log.info("Aborted by user.")
+                return 0
+    else:
+        log.info("로컬 임베딩(%s) 사용 — API 키·비용 없음 (무료).", cfg["rag"]["model"])
 
     # ---- Build / refresh ChromaDB collection ----
-    embedder = OpenAIEmbedder(
-        model=cfg["rag"]["model"],
-        batch_size=cfg["rag"]["embedding_batch_size"],
-    )
+    embedder = build_embedder(cfg["rag"])
     if args.reset and index_dir.exists():
         import shutil
         shutil.rmtree(index_dir)
@@ -141,7 +142,8 @@ def main() -> int:
         log.info("Indexed %d / %d", min(i + batch, len(all_chunks)), len(all_chunks))
 
     log.info("Collection size now: %d", index.count())
-    log.info("Embedding model: %s | dim: %d", cfg["rag"]["model"], cfg["rag"]["embedding_dim"])
+    log.info("Embedding provider: %s | model: %s | dim: %d",
+             provider, cfg["rag"]["model"], cfg["rag"]["embedding_dim"])
     return 0
 
 
