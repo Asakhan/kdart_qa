@@ -66,13 +66,37 @@ chunker:
 
 # Embeddings + RAG index
 rag:
-  provider: openai
-  model: text-embedding-3-small
-  embedding_dim: 1536
+  # provider: local  → free sentence-transformers (default, no API key, $0 cost)
+  # provider: openai → legacy OpenAI embeddings (set model/embedding_dim back too)
+  provider: local
+  # bge-m3: 다국어·한국어 강함, 1024차원, max_seq 8192, prefix 불필요.
+  # fallback: intfloat/multilingual-e5-large (1024차원) — 이 경우 아래 prefix 사용.
+  model: BAAI/bge-m3
+  embedding_dim: 1024
+  normalize_embeddings: true
+  # e5 계열에서만 사용하는 프리픽스 규약. bge-m3는 빈 문자열로 둔다.
+  #   intfloat/multilingual-e5-large 사용 시:
+  #     query_prefix: "query: "
+  #     passage_prefix: "passage: "
+  query_prefix: ""
+  passage_prefix: ""
+  # 임베딩 입력 truncation 기준(토큰). bge-m3=8192.
+  max_seq_length: 8192
+  # auto → GPU 있으면 cuda, 없으면 cpu 자동 폴백. 강제하려면 cpu / cuda.
+  device: auto
   collection_name: kdart_chunks
-  top_k: 5
-  embedding_batch_size: 100
-  cost_per_1m_tokens_usd: 0.02  # OpenAI text-embedding-3-small pricing (Jan 2026)
+  # top_k: scripts/08_eval_retrieval.py로 측정한 gold-in-top-k recall 기준으로 정함.
+  # k=8은 0.75, k=15는 0.85에 그쳐 목표(≥0.90) 미달 — 신한지주·KB금융처럼 청크 풀이
+  # 175~318개인 대형 DART 보고서에서 깊은 k가 필요하다. k=20에서 recall 0.925 달성.
+  # FinQA 비교 시에도 동일 k를 적용한다(하드코딩 금지, 이 값만 조정).
+  top_k: 20
+  embedding_batch_size: 32
+  # 메모리 상한: 배치는 가장 긴 항목 길이로 패딩되므로 (배치수 × 최대길이)를
+  # 이 토큰 예산으로 제한한다. 긴 표 청크는 거의 단독 배치로 처리되어
+  # 저사양 CPU(소량 RAM)에서도 bge-m3(fp32 ~2.3GB)가 OOM 없이 동작한다.
+  max_batch_tokens: 6144
+  # 로컬 임베딩은 무료. provider: openai로 되돌릴 때만 의미 있는 값.
+  cost_per_1m_tokens_usd: 0.0
 
 # Question generation (Phase 2)
 generation:
@@ -104,6 +128,9 @@ calibration:
   attempts_per_question: 3
   numeric_relative_tolerance: 0.01   # 1% relative error allowed for numeric answers
   results_filename: results.json
+  # 문항 간 병렬 calibration worker 수. LLM API rate limit을 고려해 조절.
+  # 1로 두면 순차 실행(기존 동작).
+  max_workers: 4
   # Rough Gemini Flash pricing (Jan 2026) used only for cost estimate display.
   cost_per_1m_input_tokens_usd: 0.30
   cost_per_1m_output_tokens_usd: 2.50

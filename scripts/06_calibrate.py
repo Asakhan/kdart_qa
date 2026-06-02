@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.calibrator import Calibrator  # noqa: E402
 from src.common import ensure_dir, get_logger, load_config, project_path  # noqa: E402
-from src.rag_index import OpenAIEmbedder, RagIndex  # noqa: E402
+from src.rag_index import RagIndex, build_embedder  # noqa: E402
 
 log = get_logger("calibrate", "phase3_calibrate.log")
 
@@ -27,6 +27,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--model", default=None, help="Override Gemini model name (default: config calibration.llm_model).")
     p.add_argument("--out", default=None, help="Override output results JSON path.")
     p.add_argument("--yes", action="store_true", help="Skip cost confirmation.")
+    p.add_argument("--max-workers", type=int, default=None,
+                   help="Parallel calibration workers (default: config calibration.max_workers).")
     return p.parse_args()
 
 
@@ -74,7 +76,7 @@ def main() -> int:
         if ans not in {"y", "yes"}:
             return 0
 
-    embedder = OpenAIEmbedder(model=cfg["rag"]["model"], batch_size=cfg["rag"]["embedding_batch_size"])
+    embedder = build_embedder(cfg["rag"])
     index = RagIndex(
         persist_dir=project_path(cfg["paths"]["index"]),
         collection_name=cfg["rag"]["collection_name"],
@@ -91,13 +93,22 @@ def main() -> int:
         output_price_per_1m=cfg["calibration"]["cost_per_1m_output_tokens_usd"],
     )
 
-    results = []
-    for i, item in enumerate(items, start=1):
-        log.info("[%d/%d] %s", i, len(items), item["id"])
-        cr = calib.calibrate(item)
-        results.append(cr.to_dict())
-        # incremental save (cheap insurance)
-        out_path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+    max_workers = args.max_workers if args.max_workers is not None else cfg["calibration"].get("max_workers", 4)
+    log.info("Calibrating with %d parallel worker(s)", max_workers)
+
+    done = {"n": 0}
+    saved: dict[str, dict] = {}
+
+    def on_result(cr, item):
+        # Runs in the main thread as each result completes → save stays sequential.
+        done["n"] += 1
+        saved[cr.item_id] = cr.to_dict()
+        log.info("[%d/%d] %s → %s", done["n"], len(items), cr.item_id, cr.classification)
+        ordered = [saved[it["id"]] for it in items if it["id"] in saved]
+        out_path.write_text(json.dumps(ordered, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    calibrations = calib.calibrate_many(items, max_workers=max_workers, on_result=on_result)
+    results = [c.to_dict() for c in calibrations]
 
     # summary
     by_class = Counter(r["classification"] for r in results)

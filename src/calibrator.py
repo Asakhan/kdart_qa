@@ -12,10 +12,12 @@ from __future__ import annotations
 
 import json
 import re
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from .common import get_logger, require_env
 
@@ -151,6 +153,8 @@ class Calibrator:
         self.output_price = output_price_per_1m
         self._total_in = 0
         self._total_out = 0
+        # Guards the shared token counters when calibrate() runs across threads.
+        self._lock = threading.Lock()
 
     def estimate_usd(self) -> float:
         return (
@@ -196,12 +200,15 @@ class Calibrator:
             try:
                 raw, in_tok, out_tok = self._call_llm(prompt)
                 pred = self._extract_final(raw)
-                self._total_in += in_tok
-                self._total_out += out_tok
+                with self._lock:
+                    self._total_in += in_tok
+                    self._total_out += out_tok
                 return AttemptResult(raw=raw, predicted=pred, correct=False,
                                      input_tokens=in_tok, output_tokens=out_tok)
             except Exception as e:
-                wait = 2 ** retry
+                # Bounded exponential backoff (cap 8s) — uncapped growth just
+                # stalls the run on a persistently failing endpoint.
+                wait = min(2 ** retry, 8)
                 log.warning("%s call failed (retry %d): %s — sleeping %ds",
                             self.provider, retry, e, wait)
                 time.sleep(wait)
@@ -244,3 +251,39 @@ class Calibrator:
             attempts=attempts,
             retrieved_chunk_ids=[h["chunk_id"] for h in hits],
         )
+
+    def calibrate_many(
+        self,
+        items: list[dict],
+        *,
+        max_workers: int = 4,
+        on_result: Callable[[ItemCalibration, dict], None] | None = None,
+    ) -> list[ItemCalibration]:
+        """Calibrate items concurrently and return results in input order.
+
+        Each item still runs its `attempts` LLM calls sequentially inside
+        `calibrate()`; parallelism is across items, which overlaps the dominant
+        cost (LLM API round-trips). `max_workers` bounds concurrency for rate
+        limits. `on_result(calibration, item)` is invoked from the *calling*
+        thread as each result completes — safe for incremental saving without
+        extra locking — while the shared token counters are guarded internally.
+        """
+        if max_workers <= 1:
+            results = []
+            for it in items:
+                cr = self.calibrate(it)
+                if on_result:
+                    on_result(cr, it)
+                results.append(cr)
+            return results
+
+        results_by_id: dict[str, ItemCalibration] = {}
+        with ThreadPoolExecutor(max_workers=max_workers) as ex:
+            futures = {ex.submit(self.calibrate, it): it for it in items}
+            for fut in as_completed(futures):
+                it = futures[fut]
+                cr = fut.result()
+                results_by_id[cr.item_id] = cr
+                if on_result:  # runs in the main thread → save is sequential & safe
+                    on_result(cr, it)
+        return [results_by_id[it["id"]] for it in items if it["id"] in results_by_id]
