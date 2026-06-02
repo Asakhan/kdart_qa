@@ -81,9 +81,15 @@ python scripts/02_extract_sections.py    # 4개 섹션 추출
 python scripts/03_build_index.py --yes --reset  # 청크 분할 + 로컬 임베딩 + ChromaDB 적재
                                                 # (--reset로만 강제 재빌드, 평소엔 재사용)
 python scripts/08_eval_retrieval.py      # 검색 recall 측정 (목표 ≥ 0.90)
-python scripts/08_eval_retrieval.py --show-misses --top-k 8   # 미스 문항 확인 / k 스윕
+python scripts/08_eval_retrieval.py --show-misses --top-k 15  # 미스 문항 확인 / k 스윕
 
 # Phase 2
+#
+# 로컬 bge-m3 인덱스 기준 측정 결과(kdart_qa_gpt_quota.jsonl, company+year 필터):
+#   recall@8=0.75, @15=0.85, @20=0.925.  → rag.top_k=20에서 목표 0.90 달성.
+#   미달의 원인은 필터/임베딩이 아니라 순위 깊이: 신한지주·KB금융처럼 청크 풀이
+#   175~318개인 대형 보고서에서 gold가 깊은 순위(최대 58위)에 잡힌다. gold는 항상
+#   풀 안에 있으므로 k를 늘리면 해결된다(동일 k를 FinQA 비교에도 적용).
 python scripts/04_generate_drafts.py     # 40문항 초안 생성
 
 # Phase 2.5 — 사용자 검수

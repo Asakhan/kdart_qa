@@ -85,7 +85,11 @@ rag:
   # auto → GPU 있으면 cuda, 없으면 cpu 자동 폴백. 강제하려면 cpu / cuda.
   device: auto
   collection_name: kdart_chunks
-  top_k: 8
+  # top_k: scripts/08_eval_retrieval.py로 측정한 gold-in-top-k recall 기준으로 정함.
+  # k=8은 0.75, k=15는 0.85에 그쳐 목표(≥0.90) 미달 — 신한지주·KB금융처럼 청크 풀이
+  # 175~318개인 대형 DART 보고서에서 깊은 k가 필요하다. k=20에서 recall 0.925 달성.
+  # FinQA 비교 시에도 동일 k를 적용한다(하드코딩 금지, 이 값만 조정).
+  top_k: 20
   embedding_batch_size: 32
   # 메모리 상한: 배치는 가장 긴 항목 길이로 패딩되므로 (배치수 × 최대길이)를
   # 이 토큰 예산으로 제한한다. 긴 표 청크는 거의 단독 배치로 처리되어
